@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.2.0",
+  "kind": "animated-shader",
+  "id": "hooked-memory",
+  "name": "Hooked memory",
+  "family": "undertow",
+  "seed": 38105,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.45,
+    "intensity": 1.12,
+    "detail": 0.58
+  },
+  "palette": [
+    "#f7f2ef",
+    "#d63bb6",
+    "#67efb5"
+  ],
+  "tags": [
+    "pixel sorting",
+    "feedback",
+    "dither",
+    "scanlines"
+  ],
+  "review": "candidate"
+}

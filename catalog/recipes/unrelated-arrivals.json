@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "unrelated-arrivals",
+  "name": "Confluence / entropy study",
+  "family": "confluence",
+  "seed": 11903,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.4,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.58
+  },
+  "palette": [
+    "#16283b",
+    "#bdaeef",
+    "#f2cf51"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

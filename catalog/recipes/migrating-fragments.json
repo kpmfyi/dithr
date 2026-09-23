@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "migrating-fragments",
+  "name": "Flock / entropy study",
+  "family": "flock",
+  "seed": 23917,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.61
+  },
+  "palette": [
+    "#eee1d0",
+    "#2374ec",
+    "#ef4977"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

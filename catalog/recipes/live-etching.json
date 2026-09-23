@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.3.0",
+  "kind": "animated-shader",
+  "id": "live-etching",
+  "name": "Live etching",
+  "family": "filament",
+  "seed": 27643,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.64
+  },
+  "palette": [
+    "#092832",
+    "#ff7559",
+    "#edebc9"
+  ],
+  "tags": [
+    "departures",
+    "feedback",
+    "generative",
+    "kinetic"
+  ],
+  "review": "candidate"
+}

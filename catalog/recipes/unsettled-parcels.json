@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "unsettled-parcels",
+  "name": "Parcel / entropy study",
+  "family": "parcel",
+  "seed": 8251,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.4,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.55
+  },
+  "palette": [
+    "#131b32",
+    "#ed795d",
+    "#caf561"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

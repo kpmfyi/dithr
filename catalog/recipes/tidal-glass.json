@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.0.0",
+  "kind": "animated-shader",
+  "id": "tidal-glass",
+  "name": "Tidal glass",
+  "family": "caustics",
+  "seed": 284,
+  "time": 3.25,
+  "parameters": {
+    "scale": 4.2,
+    "speed": 0.35,
+    "intensity": 1.15,
+    "detail": 0.62
+  },
+  "palette": [
+    "#061c25",
+    "#147f81",
+    "#c6f8c6"
+  ],
+  "tags": [
+    "water",
+    "luminous",
+    "ambient"
+  ],
+  "review": "candidate"
+}

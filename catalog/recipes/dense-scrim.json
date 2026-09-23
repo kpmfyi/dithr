@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.6.0",
+  "kind": "animated-shader",
+  "id": "dense-scrim",
+  "name": "Scrim / intricacy study",
+  "family": "scrim",
+  "seed": 58133,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.4,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.68
+  },
+  "palette": [
+    "#e7f0df",
+    "#006e77",
+    "#f15a30"
+  ],
+  "tags": [
+    "intricacy",
+    "scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

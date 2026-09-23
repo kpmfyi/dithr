@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "trapped-fronts",
+  "name": "Raster bloom / pressure study",
+  "family": "raster-bloom",
+  "seed": 33193,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.6
+  },
+  "palette": [
+    "#e4eedb",
+    "#275ce2",
+    "#e3455e"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid + radial",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

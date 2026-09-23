@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "ribbon-stone",
+  "name": "Ribbon stone",
+  "family": "marble",
+  "seed": 39123,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.8,
+    "speed": 0.27,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#e4e8d3",
+    "#638a7b",
+    "#283b4a"
+  ],
+  "tags": [
+    "mineral",
+    "flow",
+    "veins"
+  ],
+  "review": "candidate"
+}

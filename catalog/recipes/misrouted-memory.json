@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "misrouted-memory",
+  "name": "Address drift / address failure",
+  "family": "address-drift",
+  "seed": 2783,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.2,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.58
+  },
+  "palette": [
+    "#e5ebdf",
+    "#006cee",
+    "#f2386a"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid only",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

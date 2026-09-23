@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "ink-in-water",
+  "name": "Ink in water",
+  "family": "ink",
+  "seed": 12037,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.7,
+    "speed": 0.28,
+    "intensity": 1.1,
+    "detail": 0.65
+  },
+  "palette": [
+    "#eee8d8",
+    "#7397a6",
+    "#14314d"
+  ],
+  "tags": [
+    "pigment",
+    "organic",
+    "diffusion"
+  ],
+  "review": "candidate"
+}

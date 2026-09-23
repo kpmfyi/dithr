@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.0.0",
+  "kind": "animated-shader",
+  "id": "soft-impression",
+  "name": "Soft impression",
+  "family": "halftone",
+  "seed": 193,
+  "time": 3.25,
+  "parameters": {
+    "scale": 6,
+    "speed": 0.3,
+    "intensity": 1.1,
+    "detail": 0.35
+  },
+  "palette": [
+    "#e6ddc8",
+    "#d55b39",
+    "#182f3b"
+  ],
+  "tags": [
+    "print",
+    "duotone",
+    "paper"
+  ],
+  "review": "candidate"
+}

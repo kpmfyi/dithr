@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "unfinished-seams",
+  "name": "Suture / entropy study",
+  "family": "suture",
+  "seed": 48311,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.7,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.55
+  },
+  "palette": [
+    "#132c32",
+    "#f15b3d",
+    "#f2dbaf"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

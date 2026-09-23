@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "wandering-branches",
+  "name": "Dendrite / entropy study",
+  "family": "dendrite",
+  "seed": 6331,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.57
+  },
+  "palette": [
+    "#edf1d3",
+    "#148f8a",
+    "#242b45"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

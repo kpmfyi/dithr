@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "boreal-curtain",
+  "name": "Boreal curtain",
+  "family": "aurora",
+  "seed": 26031,
+  "time": 3.25,
+  "parameters": {
+    "scale": 4.2,
+    "speed": 0.35,
+    "intensity": 1.15,
+    "detail": 0.66
+  },
+  "palette": [
+    "#080f29",
+    "#743a83",
+    "#83efbd"
+  ],
+  "tags": [
+    "sky",
+    "curtain",
+    "luminous"
+  ],
+  "review": "candidate"
+}

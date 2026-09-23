@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "slow-cartography",
+  "name": "Slow cartography",
+  "family": "contours",
+  "seed": 31451,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.6,
+    "speed": 0.28,
+    "intensity": 1.15,
+    "detail": 0.52
+  },
+  "palette": [
+    "#243e3c",
+    "#81946d",
+    "#e7d8ab"
+  ],
+  "tags": [
+    "terrain",
+    "isoline",
+    "maps"
+  ],
+  "review": "candidate"
+}

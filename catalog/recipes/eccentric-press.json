@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.3.0",
+  "kind": "animated-shader",
+  "id": "eccentric-press",
+  "name": "Eccentric press",
+  "family": "rotor",
+  "seed": 19873,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.5,
+    "intensity": 1.15,
+    "detail": 0.57
+  },
+  "palette": [
+    "#ece3d0",
+    "#ff4b2e",
+    "#1b2432"
+  ],
+  "tags": [
+    "departures",
+    "feedback",
+    "generative",
+    "kinetic"
+  ],
+  "review": "candidate"
+}

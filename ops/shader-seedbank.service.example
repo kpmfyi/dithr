@@ -1,0 +1,16 @@
+# Optional Linux user service. Replace /path/to/shader-seedbank before use.
+[Unit]
+Description=Shader Seedbank viewer
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/shader-seedbank
+ExecStart=/usr/bin/env npm start
+Environment=NODE_ENV=production
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

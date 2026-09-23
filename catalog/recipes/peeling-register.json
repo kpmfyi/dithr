@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "peeling-register",
+  "name": "Delamination / pressure study",
+  "family": "delamination",
+  "seed": 41287,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.1,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.56
+  },
+  "palette": [
+    "#222139",
+    "#ffb542",
+    "#baf077"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid + radial",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

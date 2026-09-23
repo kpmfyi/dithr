@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.0.0",
+  "kind": "animated-shader",
+  "id": "night-signal",
+  "name": "Night signal",
+  "family": "phosphor",
+  "seed": 718,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.5,
+    "speed": 0.65,
+    "intensity": 1.2,
+    "detail": 0.66
+  },
+  "palette": [
+    "#071a14",
+    "#249455",
+    "#c1ff9d"
+  ],
+  "tags": [
+    "crt",
+    "signal",
+    "analog"
+  ],
+  "review": "candidate"
+}

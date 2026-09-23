@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "glass-garden",
+  "name": "Glass garden",
+  "family": "glass",
+  "seed": 48813,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.8,
+    "speed": 0.4,
+    "intensity": 1.05,
+    "detail": 0.42
+  },
+  "palette": [
+    "#152e3a",
+    "#548e81",
+    "#ecc67e"
+  ],
+  "tags": [
+    "cells",
+    "mosaic",
+    "glass"
+  ],
+  "review": "candidate"
+}

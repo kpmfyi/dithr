@@ -1,0 +1,1846 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.6.0",
+  "entries": [
+    {
+      "id": "pink-signal-loss",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "01",
+      "kind": "animated-shader",
+      "name": "Chromatic signal loss",
+      "family": "broken-lcd",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/pink-signal-loss.json",
+      "source": "../src/seedbank/broken-lcd.ts",
+      "sourceSha256": "c823242b115d8a685bbfc05204004c5e26f3f1791bb20c4978bfb4c166cb2a39",
+      "evidenceSourceSha256": "c823242b115d8a685bbfc05204004c5e26f3f1791bb20c4978bfb4c166cb2a39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
+      },
+      "preview": "../public/previews/broken-lcd.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "lcd",
+        "glitch",
+        "dither",
+        "scanlines"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/broken-lcd-19-webgl2/pink-signal-loss/report.json",
+        "webgpu": "../artifacts/broken-lcd-19-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "opposing-currents",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "02",
+      "kind": "animated-shader",
+      "name": "Opposing currents",
+      "family": "crosscurrent",
+      "generatorVersion": "1.2.0",
+      "recipe": "recipes/opposing-currents.json",
+      "source": "../src/seedbank/pixel-sorters.ts",
+      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
+      },
+      "preview": "../public/previews/crosscurrent.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pixel sorting",
+        "feedback",
+        "dither",
+        "scanlines"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pixel-sorters-01-webgl2/opposing-currents/report.json",
+        "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "hooked-memory",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "03",
+      "kind": "animated-shader",
+      "name": "Hooked memory",
+      "family": "undertow",
+      "generatorVersion": "1.2.0",
+      "recipe": "recipes/hooked-memory.json",
+      "source": "../src/seedbank/pixel-sorters.ts",
+      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
+      },
+      "preview": "../public/previews/undertow.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pixel sorting",
+        "feedback",
+        "dither",
+        "scanlines"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pixel-sorters-01-webgl2/hooked-memory/report.json",
+        "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "falling-register",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "04",
+      "kind": "animated-shader",
+      "name": "Falling register",
+      "family": "downpour",
+      "generatorVersion": "1.2.0",
+      "recipe": "recipes/falling-register.json",
+      "source": "../src/seedbank/pixel-sorters.ts",
+      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
+      },
+      "preview": "../public/previews/downpour.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pixel sorting",
+        "feedback",
+        "dither",
+        "scanlines"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pixel-sorters-01-webgl2/falling-register/report.json",
+        "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "slipped-contours",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "05",
+      "kind": "animated-shader",
+      "name": "Slipped contours",
+      "family": "faultline",
+      "generatorVersion": "1.2.0",
+      "recipe": "recipes/slipped-contours.json",
+      "source": "../src/seedbank/pixel-sorters.ts",
+      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
+      },
+      "preview": "../public/previews/faultline.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pixel sorting",
+        "feedback",
+        "dither",
+        "scanlines"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pixel-sorters-01-webgl2/slipped-contours/report.json",
+        "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "eccentric-press",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "06",
+      "kind": "animated-shader",
+      "name": "Eccentric press",
+      "family": "rotor",
+      "generatorVersion": "1.3.0",
+      "recipe": "recipes/eccentric-press.json",
+      "source": "../src/seedbank/departures.ts",
+      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/rotor.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "departures",
+        "feedback",
+        "generative",
+        "kinetic"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/departures-sharp-01-webgl2/eccentric-press/report.json",
+        "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "tension-field",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "07",
+      "kind": "animated-shader",
+      "name": "Tension field",
+      "family": "slingshot",
+      "generatorVersion": "1.3.0",
+      "recipe": "recipes/tension-field.json",
+      "source": "../src/seedbank/departures.ts",
+      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/slingshot.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "departures",
+        "feedback",
+        "generative",
+        "kinetic"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/departures-sharp-01-webgl2/tension-field/report.json",
+        "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "restless-membrane",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "08",
+      "kind": "animated-shader",
+      "name": "Restless membrane",
+      "family": "cell-division",
+      "generatorVersion": "1.3.0",
+      "recipe": "recipes/restless-membrane.json",
+      "source": "../src/seedbank/departures.ts",
+      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/cell-division.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "departures",
+        "feedback",
+        "generative",
+        "kinetic"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/departures-sharp-01-webgl2/restless-membrane/report.json",
+        "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "successive-impacts",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "09",
+      "kind": "animated-shader",
+      "name": "Successive impacts",
+      "family": "shockfront",
+      "generatorVersion": "1.3.0",
+      "recipe": "recipes/successive-impacts.json",
+      "source": "../src/seedbank/departures.ts",
+      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/shockfront.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "departures",
+        "feedback",
+        "generative",
+        "kinetic"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/departures-sharp-01-webgl2/successive-impacts/report.json",
+        "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "live-etching",
+      "status": "active",
+      "featured": true,
+      "displayNumber": "10",
+      "kind": "animated-shader",
+      "name": "Live etching",
+      "family": "filament",
+      "generatorVersion": "1.3.0",
+      "recipe": "recipes/live-etching.json",
+      "source": "../src/seedbank/departures.ts",
+      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/filament.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "departures",
+        "feedback",
+        "generative",
+        "kinetic"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
+      },
+      "checks": {
+        "webgl2": "../artifacts/departures-sharp-01-webgl2/live-etching/report.json",
+        "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "latched-rows",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "11",
+      "kind": "animated-shader",
+      "name": "Row collapse / address failure",
+      "family": "row-collapse",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/latched-rows.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/row-collapse.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid only",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/latched-rows/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "slipping-gates",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "12",
+      "kind": "animated-shader",
+      "name": "Column shear / address failure",
+      "family": "column-shear",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/slipping-gates.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/column-shear.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid only",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/slipping-gates/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "misrouted-memory",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "13",
+      "kind": "animated-shader",
+      "name": "Address drift / address failure",
+      "family": "address-drift",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/misrouted-memory.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/address-drift.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid only",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/misrouted-memory/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "stepped-faults",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "14",
+      "kind": "animated-shader",
+      "name": "Staircase / address failure",
+      "family": "staircase",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/stepped-faults.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/staircase.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid only",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/stepped-faults/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "creeping-failure",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "15",
+      "kind": "animated-shader",
+      "name": "Dead channel / address failure",
+      "family": "dead-channel",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/creeping-failure.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/dead-channel.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid only",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/creeping-failure/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "ruptured-polarizer",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "16",
+      "kind": "animated-shader",
+      "name": "Puncture / pressure study",
+      "family": "puncture",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/ruptured-polarizer.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/puncture.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid + radial",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/ruptured-polarizer/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "capillary-loss",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "17",
+      "kind": "animated-shader",
+      "name": "Pressure leak / pressure study",
+      "family": "pressure-leak",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/capillary-loss.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/pressure-leak.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid + radial",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/capillary-loss/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "slipping-shards",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "18",
+      "kind": "animated-shader",
+      "name": "Shatter / pressure study",
+      "family": "shatter",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/slipping-shards.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/shatter.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid + radial",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/slipping-shards/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "peeling-register",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "19",
+      "kind": "animated-shader",
+      "name": "Delamination / pressure study",
+      "family": "delamination",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/peeling-register.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/delamination.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid + radial",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/peeling-register/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "trapped-fronts",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "20",
+      "kind": "animated-shader",
+      "name": "Raster bloom / pressure study",
+      "family": "raster-bloom",
+      "generatorVersion": "1.4.0",
+      "recipe": "recipes/trapped-fronts.json",
+      "source": "../src/seedbank/damage.ts",
+      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceDependencies": {
+        "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
+        "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
+      },
+      "preview": "../public/previews/raster-bloom.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "damaged lcd",
+        "grid + radial",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/damage-04-webgl2/trapped-fronts/report.json",
+        "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "restless-faults",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "21",
+      "kind": "animated-shader",
+      "name": "Rift / entropy study",
+      "family": "rift",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/restless-faults.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/rift.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/restless-faults/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "unsettled-parcels",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "22",
+      "kind": "animated-shader",
+      "name": "Parcel / entropy study",
+      "family": "parcel",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/unsettled-parcels.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/parcel.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/unsettled-parcels/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "unwinding-knots",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "23",
+      "kind": "animated-shader",
+      "name": "Tangle / entropy study",
+      "family": "tangle",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/unwinding-knots.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/tangle.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/unwinding-knots/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "shed-fragments",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "24",
+      "kind": "animated-shader",
+      "name": "Spall / entropy study",
+      "family": "spall",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/shed-fragments.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/spall.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/shed-fragments/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "wandering-branches",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "25",
+      "kind": "animated-shader",
+      "name": "Dendrite / entropy study",
+      "family": "dendrite",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/wandering-branches.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/dendrite.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/wandering-branches/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "unfinished-seams",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "26",
+      "kind": "animated-shader",
+      "name": "Suture / entropy study",
+      "family": "suture",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/unfinished-seams.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/suture.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/unfinished-seams/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "migrating-fragments",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "27",
+      "kind": "animated-shader",
+      "name": "Flock / entropy study",
+      "family": "flock",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/migrating-fragments.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/flock.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/migrating-fragments/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "unmoored-plates",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "28",
+      "kind": "animated-shader",
+      "name": "Palisade / entropy study",
+      "family": "palisade",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/unmoored-plates.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/palisade.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/unmoored-plates/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "exchanging-cavities",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "29",
+      "kind": "animated-shader",
+      "name": "Alveoli / entropy study",
+      "family": "alveoli",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/exchanging-cavities.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/alveoli.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/exchanging-cavities/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "unrelated-arrivals",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "30",
+      "kind": "animated-shader",
+      "name": "Confluence / entropy study",
+      "family": "confluence",
+      "generatorVersion": "1.5.0",
+      "recipe": "recipes/unrelated-arrivals.json",
+      "source": "../src/seedbank/entropy.ts",
+      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceDependencies": {
+        "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
+      },
+      "preview": "../public/previews/confluence.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "entropy",
+        "no scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/entropy-03-webgl2/unrelated-arrivals/report.json",
+        "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-intaglio",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "31",
+      "kind": "animated-shader",
+      "name": "Intaglio / intricacy study",
+      "family": "intaglio",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-intaglio.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/intaglio.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-intaglio/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-braid",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "32",
+      "kind": "animated-shader",
+      "name": "Braid / intricacy study",
+      "family": "braid",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-braid.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/braid.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-braid/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-scrim",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "33",
+      "kind": "animated-shader",
+      "name": "Scrim / intricacy study",
+      "family": "scrim",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-scrim.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/scrim.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-scrim/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-guilloche",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "34",
+      "kind": "animated-shader",
+      "name": "Guilloche / intricacy study",
+      "family": "guilloche",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-guilloche.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/guilloche.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-guilloche/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-imbricate",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "35",
+      "kind": "animated-shader",
+      "name": "Imbricate / intricacy study",
+      "family": "imbricate",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-imbricate.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/imbricate.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-imbricate/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-capillary",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "36",
+      "kind": "animated-shader",
+      "name": "Capillary / intricacy study",
+      "family": "capillary",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-capillary.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/capillary.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-capillary/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-palimpsest",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "37",
+      "kind": "animated-shader",
+      "name": "Palimpsest / intricacy study",
+      "family": "palimpsest",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-palimpsest.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/palimpsest.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-palimpsest/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-diffract",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "38",
+      "kind": "animated-shader",
+      "name": "Diffract / intricacy study",
+      "family": "diffract",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-diffract.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/diffract.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-diffract/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-microcode",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "39",
+      "kind": "animated-shader",
+      "name": "Microcode / intricacy study",
+      "family": "microcode",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-microcode.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/microcode.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-microcode/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "dense-plume",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "40",
+      "kind": "animated-shader",
+      "name": "Plume / intricacy study",
+      "family": "plume",
+      "generatorVersion": "1.6.0",
+      "recipe": "recipes/dense-plume.json",
+      "source": "../src/seedbank/intricacy.ts",
+      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceDependencies": {
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/plume.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "intricacy",
+        "scanlines",
+        "pixel transport",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/intricacy-01-webgl2/dense-plume/report.json",
+        "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "tidal-glass",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A01",
+      "kind": "animated-shader",
+      "name": "Tidal glass",
+      "family": "caustics",
+      "generatorVersion": "1.0.0",
+      "recipe": "recipes/tidal-glass.json",
+      "source": "../src/seedbank/effects.ts",
+      "sourceSha256": "67e30bfcbe90428bf31220c0df4f3f68bfeae10d31ddaf933bb4bb857f9aa717",
+      "evidenceSourceSha256": "8f42a2adf1b249609c74e5b7b4ba1dae04bbc2fb5bedc18174952230dbef46b9",
+      "sourceDependencies": {},
+      "preview": "../public/previews/caustics.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "water",
+        "luminous",
+        "ambient"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/verified-webgl2/tidal-glass/report.json",
+        "webgpu": "../artifacts/final-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "night-signal",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A02",
+      "kind": "animated-shader",
+      "name": "Night signal",
+      "family": "phosphor",
+      "generatorVersion": "1.0.0",
+      "recipe": "recipes/night-signal.json",
+      "source": "../src/seedbank/effects.ts",
+      "sourceSha256": "67e30bfcbe90428bf31220c0df4f3f68bfeae10d31ddaf933bb4bb857f9aa717",
+      "evidenceSourceSha256": "8f42a2adf1b249609c74e5b7b4ba1dae04bbc2fb5bedc18174952230dbef46b9",
+      "sourceDependencies": {},
+      "preview": "../public/previews/phosphor.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "crt",
+        "signal",
+        "analog"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/verified-webgl2/night-signal/report.json",
+        "webgpu": "../artifacts/final-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "soft-impression",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A03",
+      "kind": "animated-shader",
+      "name": "Soft impression",
+      "family": "halftone",
+      "generatorVersion": "1.0.0",
+      "recipe": "recipes/soft-impression.json",
+      "source": "../src/seedbank/effects.ts",
+      "sourceSha256": "67e30bfcbe90428bf31220c0df4f3f68bfeae10d31ddaf933bb4bb857f9aa717",
+      "evidenceSourceSha256": "8f42a2adf1b249609c74e5b7b4ba1dae04bbc2fb5bedc18174952230dbef46b9",
+      "sourceDependencies": {},
+      "preview": "../public/previews/halftone.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "print",
+        "duotone",
+        "paper"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/verified-webgl2/soft-impression/report.json",
+        "webgpu": "../artifacts/final-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "ink-in-water",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A04",
+      "kind": "animated-shader",
+      "name": "Ink in water",
+      "family": "ink",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/ink-in-water.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/ink.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pigment",
+        "organic",
+        "diffusion"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/ink-in-water/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pearl-membrane",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A05",
+      "kind": "animated-shader",
+      "name": "Pearl membrane",
+      "family": "iridescence",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/pearl-membrane.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/iridescence.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "thin film",
+        "pearl",
+        "color"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/pearl-membrane/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "cathedral-air",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A06",
+      "kind": "animated-shader",
+      "name": "Cathedral air",
+      "family": "shafts",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/cathedral-air.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/shafts.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "light",
+        "haze",
+        "atmosphere"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/cathedral-air/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "boreal-curtain",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A07",
+      "kind": "animated-shader",
+      "name": "Boreal curtain",
+      "family": "aurora",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/boreal-curtain.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/aurora.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "sky",
+        "curtain",
+        "luminous"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/boreal-curtain/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "beating-screens",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A08",
+      "kind": "animated-shader",
+      "name": "Beating screens",
+      "family": "moire",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/beating-screens.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/moire.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "optical",
+        "lines",
+        "interference"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/beating-screens/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "slow-cartography",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A09",
+      "kind": "animated-shader",
+      "name": "Slow cartography",
+      "family": "contours",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/slow-cartography.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/contours.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "terrain",
+        "isoline",
+        "maps"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/slow-cartography/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "silk-crossing",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A10",
+      "kind": "animated-shader",
+      "name": "Silk crossing",
+      "family": "weave",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/silk-crossing.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/weave.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "textile",
+        "threads",
+        "woven"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/silk-crossing/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "wind-written",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A11",
+      "kind": "animated-shader",
+      "name": "Wind written",
+      "family": "dunes",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/wind-written.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/dunes.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "sand",
+        "ridges",
+        "landscape"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/wind-written/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "rain-memory",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A12",
+      "kind": "animated-shader",
+      "name": "Rain memory",
+      "family": "ripples",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/rain-memory.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/ripples.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "water",
+        "rings",
+        "reflection"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/rain-memory/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "slow-orbit",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A13",
+      "kind": "animated-shader",
+      "name": "Slow orbit",
+      "family": "starfield",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/slow-orbit.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/starfield.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "space",
+        "stars",
+        "parallax"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/slow-orbit/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "ribbon-stone",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A14",
+      "kind": "animated-shader",
+      "name": "Ribbon stone",
+      "family": "marble",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/ribbon-stone.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/marble.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mineral",
+        "flow",
+        "veins"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/ribbon-stone/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "glass-garden",
+      "status": "deprecated",
+      "featured": false,
+      "displayNumber": "A15",
+      "kind": "animated-shader",
+      "name": "Glass garden",
+      "family": "glass",
+      "generatorVersion": "1.1.0",
+      "recipe": "recipes/glass-garden.json",
+      "source": "../src/seedbank/additional-effects.ts",
+      "sourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "evidenceSourceSha256": "a2e0574366a58ffacce66e65bafc569d1f4b8e82355b5aaad7f7845ef3638ceb",
+      "sourceDependencies": {},
+      "preview": "../public/previews/glass.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "cells",
+        "mosaic",
+        "glass"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "archived outside current crisp-pixel direction"
+      },
+      "checks": {
+        "webgl2": "../artifacts/expansion-01-webgl2/glass-garden/report.json",
+        "webgpu": "../artifacts/expansion-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.2.0",
+  "kind": "animated-shader",
+  "id": "slipped-contours",
+  "name": "Slipped contours",
+  "family": "faultline",
+  "seed": 52177,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.3,
+    "speed": 1.5,
+    "intensity": 1.12,
+    "detail": 0.6
+  },
+  "palette": [
+    "#f6f2ee",
+    "#174c52",
+    "#ff79b5"
+  ],
+  "tags": [
+    "pixel sorting",
+    "feedback",
+    "dither",
+    "scanlines"
+  ],
+  "review": "candidate"
+}

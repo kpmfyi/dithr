@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "pink-signal-loss",
+  "name": "Chromatic signal loss",
+  "family": "broken-lcd",
+  "seed": 14562,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.4,
+    "speed": 1.5,
+    "intensity": 1.15,
+    "detail": 0.62
+  },
+  "palette": [
+    "#f6f8f5",
+    "#0066ff",
+    "#a5ff32"
+  ],
+  "tags": [
+    "lcd",
+    "glitch",
+    "dither",
+    "scanlines"
+  ],
+  "review": "candidate"
+}

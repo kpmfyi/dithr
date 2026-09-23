@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "pearl-membrane",
+  "name": "Pearl membrane",
+  "family": "iridescence",
+  "seed": 6219,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.2,
+    "speed": 0.32,
+    "intensity": 1.05,
+    "detail": 0.57
+  },
+  "palette": [
+    "#202b49",
+    "#c594c7",
+    "#f1cf9a"
+  ],
+  "tags": [
+    "thin film",
+    "pearl",
+    "color"
+  ],
+  "review": "candidate"
+}

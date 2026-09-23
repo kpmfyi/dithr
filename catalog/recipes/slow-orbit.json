@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "slow-orbit",
+  "name": "Slow orbit",
+  "family": "starfield",
+  "seed": 55831,
+  "time": 3.25,
+  "parameters": {
+    "scale": 4.6,
+    "speed": 0.3,
+    "intensity": 1.2,
+    "detail": 0.58
+  },
+  "palette": [
+    "#080d21",
+    "#61406e",
+    "#b7dcf4"
+  ],
+  "tags": [
+    "space",
+    "stars",
+    "parallax"
+  ],
+  "review": "candidate"
+}

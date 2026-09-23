@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "unwinding-knots",
+  "name": "Tangle / entropy study",
+  "family": "tangle",
+  "seed": 54739,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.8,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.6
+  },
+  "palette": [
+    "#ede9d1",
+    "#795bea",
+    "#173f48"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

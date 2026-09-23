@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "exchanging-cavities",
+  "name": "Alveoli / entropy study",
+  "family": "alveoli",
+  "seed": 30467,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.3,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.57
+  },
+  "palette": [
+    "#f2decb",
+    "#e5614c",
+    "#20443c"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

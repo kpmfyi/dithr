@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "latched-rows",
+  "name": "Row collapse / address failure",
+  "family": "row-collapse",
+  "seed": 16383,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.4,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.63
+  },
+  "palette": [
+    "#f3f0da",
+    "#ef452c",
+    "#182720"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid only",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

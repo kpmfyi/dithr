@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "creeping-failure",
+  "name": "Dead channel / address failure",
+  "family": "dead-channel",
+  "seed": 14317,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.8,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.6
+  },
+  "palette": [
+    "#efe5cf",
+    "#824be9",
+    "#123f44"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid only",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

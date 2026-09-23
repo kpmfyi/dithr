@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "capillary-loss",
+  "name": "Pressure leak / pressure study",
+  "family": "pressure-leak",
+  "seed": 29641,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.55
+  },
+  "palette": [
+    "#0e2633",
+    "#27ded2",
+    "#f3a9cc"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid + radial",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

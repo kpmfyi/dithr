@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "restless-faults",
+  "name": "Rift / entropy study",
+  "family": "rift",
+  "seed": 39271,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.58
+  },
+  "palette": [
+    "#e8e1c9",
+    "#f24436",
+    "#193e37"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

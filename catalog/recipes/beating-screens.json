@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "beating-screens",
+  "name": "Beating screens",
+  "family": "moire",
+  "seed": 8793,
+  "time": 3.25,
+  "parameters": {
+    "scale": 4.5,
+    "speed": 0.4,
+    "intensity": 1.05,
+    "detail": 0.55
+  },
+  "palette": [
+    "#ebe2cf",
+    "#c36d46",
+    "#243b3b"
+  ],
+  "tags": [
+    "optical",
+    "lines",
+    "interference"
+  ],
+  "review": "candidate"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "slipping-gates",
+  "name": "Column shear / address failure",
+  "family": "column-shear",
+  "seed": 37021,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.57
+  },
+  "palette": [
+    "#151d33",
+    "#a4ff41",
+    "#747aff"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid only",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

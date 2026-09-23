@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "ruptured-polarizer",
+  "name": "Puncture / pressure study",
+  "family": "puncture",
+  "seed": 52419,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.3,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.62
+  },
+  "palette": [
+    "#eee7d4",
+    "#ee3d7d",
+    "#222550"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid + radial",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

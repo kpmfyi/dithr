@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.4.0",
+  "kind": "animated-shader",
+  "id": "slipping-shards",
+  "name": "Shatter / pressure study",
+  "family": "shatter",
+  "seed": 6179,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.2,
+    "speed": 1.55,
+    "intensity": 1.15,
+    "detail": 0.61
+  },
+  "palette": [
+    "#faebcc",
+    "#e74727",
+    "#242d2f"
+  ],
+  "tags": [
+    "damaged lcd",
+    "grid + radial",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

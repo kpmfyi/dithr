@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.5.0",
+  "kind": "animated-shader",
+  "id": "shed-fragments",
+  "name": "Spall / entropy study",
+  "family": "spall",
+  "seed": 17749,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.3,
+    "speed": 1.6,
+    "intensity": 1.15,
+    "detail": 0.54
+  },
+  "palette": [
+    "#211b39",
+    "#f075ae",
+    "#e9e783"
+  ],
+  "tags": [
+    "entropy",
+    "no scanlines",
+    "pixel transport",
+    "crisp"
+  ],
+  "review": "candidate"
+}

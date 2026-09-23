@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.2.0",
+  "kind": "animated-shader",
+  "id": "falling-register",
+  "name": "Falling register",
+  "family": "downpour",
+  "seed": 4932,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.8,
+    "speed": 1.5,
+    "intensity": 1.08,
+    "detail": 0.7
+  },
+  "palette": [
+    "#f1f4f6",
+    "#124dde",
+    "#edfa41"
+  ],
+  "tags": [
+    "pixel sorting",
+    "feedback",
+    "dither",
+    "scanlines"
+  ],
+  "review": "candidate"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "silk-crossing",
+  "name": "Silk crossing",
+  "family": "weave",
+  "seed": 4437,
+  "time": 3.25,
+  "parameters": {
+    "scale": 4.7,
+    "speed": 0.3,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#172d39",
+    "#ac5f69",
+    "#e3b68a"
+  ],
+  "tags": [
+    "textile",
+    "threads",
+    "woven"
+  ],
+  "review": "candidate"
+}

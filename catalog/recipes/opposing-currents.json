@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.2.0",
+  "kind": "animated-shader",
+  "id": "opposing-currents",
+  "name": "Opposing currents",
+  "family": "crosscurrent",
+  "seed": 23671,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.5,
+    "intensity": 1.08,
+    "detail": 0.64
+  },
+  "palette": [
+    "#f4f7ed",
+    "#0066ff",
+    "#bcff39"
+  ],
+  "tags": [
+    "pixel sorting",
+    "feedback",
+    "dither",
+    "scanlines"
+  ],
+  "review": "candidate"
+}

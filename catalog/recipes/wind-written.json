@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "wind-written",
+  "name": "Wind written",
+  "family": "dunes",
+  "seed": 21401,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3.8,
+    "speed": 0.3,
+    "intensity": 1.1,
+    "detail": 0.58
+  },
+  "palette": [
+    "#3a302a",
+    "#b27a4f",
+    "#f4d5a2"
+  ],
+  "tags": [
+    "sand",
+    "ridges",
+    "landscape"
+  ],
+  "review": "candidate"
+}

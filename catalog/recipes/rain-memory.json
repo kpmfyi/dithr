@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.1.0",
+  "kind": "animated-shader",
+  "id": "rain-memory",
+  "name": "Rain memory",
+  "family": "ripples",
+  "seed": 11739,
+  "time": 3.25,
+  "parameters": {
+    "scale": 4.2,
+    "speed": 0.6,
+    "intensity": 1.1,
+    "detail": 0.62
+  },
+  "palette": [
+    "#09233e",
+    "#387c94",
+    "#b5e4df"
+  ],
+  "tags": [
+    "water",
+    "rings",
+    "reflection"
+  ],
+  "review": "candidate"
+}
