@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.7.0",
+  "kind": "animated-shader",
+  "id": "rolling-writes",
+  "name": "Scanhead / mechanism study",
+  "family": "scanhead",
+  "seed": 28453,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.66
+  },
+  "palette": [
+    "#e8f1f5",
+    "#ff2e97",
+    "#003049"
+  ],
+  "tags": [
+    "mechanism",
+    "rolling shutter",
+    "scanlines",
+    "crisp"
+  ],
+  "review": "candidate"
+}

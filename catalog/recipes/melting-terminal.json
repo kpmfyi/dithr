@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.7.0",
+  "kind": "animated-shader",
+  "id": "melting-terminal",
+  "name": "Glyph / mechanism study",
+  "family": "glyph",
+  "seed": 9043,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.5,
+    "intensity": 1.05,
+    "detail": 0.6
+  },
+  "palette": [
+    "#0b2a1f",
+    "#ffb000",
+    "#b8ff9c"
+  ],
+  "tags": [
+    "mechanism",
+    "text",
+    "scanlines",
+    "crisp"
+  ],
+  "review": "candidate"
+}

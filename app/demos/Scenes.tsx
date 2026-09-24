@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
-import { families, isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, type Family } from '../../src/seedbank/recipes';
+import { families, isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, isMechanism, type Family } from '../../src/seedbank/recipes';
 
 // The shader supplies only light or material. All typography, geometry, and interface
 // elements are independent DOM/SVG layers, so they remain sharp and accessible.
 export function Scene({ family, surface }: { family: Family; surface: ReactNode }) {
-  if (isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family)) return <>
+  if (isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family) || isMechanism(family)) return <>
     <div className="departure-surface scene-surface">{surface}</div>
-    <div className="departure-edition"><span>SEEDBANK / {isIntricacy(family) ? 'INTRICACY STUDIES' : isEntropy(family) ? 'ENTROPY STUDIES' : isDamage(family) ? 'DAMAGE STUDIES' : 'DEPARTURES'}</span><span>{families[family].number} — 2026</span></div>
+    <div className="departure-edition"><span>SEEDBANK / {isMechanism(family) ? 'MECHANISM STUDIES' : isIntricacy(family) ? 'INTRICACY STUDIES' : isEntropy(family) ? 'ENTROPY STUDIES' : isDamage(family) ? 'DAMAGE STUDIES' : 'DEPARTURES'}</span><span>{families[family].number} — 2026</span></div>
     <div className="departure-caption"><span>STUDIES IN MOTION</span><h3>{families[family].name}</h3><p>{families[family].subtitle}</p></div>
   </>;
   if (isPixelSorter(family)) return <>
