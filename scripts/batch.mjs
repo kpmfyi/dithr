@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile, access, rename } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
-import { presets, isIntricacy, isPixelSorter, isDeparture, isDamage, isEntropy, variation, validateRecipe, serializeRecipe } from '../src/seedbank/recipes.ts';
+import { presets, isMechanism, isIntricacy, isPixelSorter, isDeparture, isDamage, isEntropy, variation, validateRecipe, serializeRecipe } from '../src/seedbank/recipes.ts';
 import { launch, openConsumer } from './browser-support.mjs';
 const args = process.argv.slice(2);
 const allowed = new Set(['--limit', '--backend', '--out', '--url', '--seed', '--offset']);
@@ -56,7 +56,7 @@ try {
         let changed = 0; const colors = new Set();
         for (let i = 0; i < pixels.length; i += 4) { if (Math.abs(pixels[i] - next[i]) + Math.abs(pixels[i + 1] - next[i + 1]) + Math.abs(pixels[i + 2] - next[i + 2]) > 6) changed++; if (i % 256 === 0) colors.add(`${pixels[i]},${pixels[i + 1]},${pixels[i + 2]}`); }
         const controlResponse = {};
-        if (['1.5.0', '1.6.0'].includes(recipe.generatorVersion)) {
+        if (['1.5.0', '1.6.0', '1.7.0'].includes(recipe.generatorVersion)) {
           for (const key of ['scale', 'intensity', 'detail']) {
             const value = ({ scale: [2.1, 7.3], intensity: [.6, 1.7], detail: [.1, .9] })[key].find(v => v !== recipe.parameters[key]);
             runtime.setRecipe({ ...recipe, parameters: { ...recipe.parameters, [key]: value } });
@@ -74,8 +74,8 @@ try {
       }, recipe);
       if (errors.length) throw new Error(errors.join('\n'));
       // Flat-tone departure displays use nine tones plus small GPU rounding differences.
-      const minimumSampledColors = (isDeparture(recipe.family) || isDamage(recipe.family) || isEntropy(recipe.family) || isIntricacy(recipe.family)) ? 3 : 20;
-      const maximumSampledColors = (isDeparture(recipe.family) || isDamage(recipe.family) || isEntropy(recipe.family) || isIntricacy(recipe.family)) ? 16 : Infinity;
+      const minimumSampledColors = (isDeparture(recipe.family) || isDamage(recipe.family) || isEntropy(recipe.family) || isIntricacy(recipe.family) || isMechanism(recipe.family)) ? 3 : 20;
+      const maximumSampledColors = (isDeparture(recipe.family) || isDamage(recipe.family) || isEntropy(recipe.family) || isIntricacy(recipe.family) || isMechanism(recipe.family)) ? 16 : Infinity;
       result.technical.minimumSampledColors = minimumSampledColors;
       if (Number.isFinite(maximumSampledColors)) result.technical.maximumSampledColors = maximumSampledColors;
       if (Object.values(result.technical.controlResponse).some(passed => !passed) || !result.technical.frozenRepeatIdentical || result.technical.sampledColors < minimumSampledColors || result.technical.sampledColors > maximumSampledColors || result.technical.changedPixelFraction < .01) throw new Error(`Render validation failed: ${JSON.stringify(result.technical)}`);
@@ -85,11 +85,12 @@ try {
       await writeFile(join(dir, 'later.png'), png(result.later));
       await mkdir(join(dir, 'motion'), { recursive: true });
       for (let i = 0; i < result.motion.length; i++) await writeFile(join(dir, 'motion', `${i.toString().padStart(2, '0')}.png`), png(result.motion[i]));
-      const source = isIntricacy(recipe.family) ? 'src/seedbank/intricacy.ts' : isEntropy(recipe.family) ? 'src/seedbank/entropy.ts' : isDamage(recipe.family) ? 'src/seedbank/damage.ts' : isDeparture(recipe.family) ? 'src/seedbank/departures.ts' : isPixelSorter(recipe.family) ? 'src/seedbank/pixel-sorters.ts' : recipe.family === 'broken-lcd' ? 'src/seedbank/broken-lcd.ts' : ['caustics', 'phosphor', 'halftone'].includes(recipe.family) ? 'src/seedbank/effects.ts' : 'src/seedbank/additional-effects.ts';
+      const source = isMechanism(recipe.family) ? 'src/seedbank/mechanism.ts' : isIntricacy(recipe.family) ? 'src/seedbank/intricacy.ts' : isEntropy(recipe.family) ? 'src/seedbank/entropy.ts' : isDamage(recipe.family) ? 'src/seedbank/damage.ts' : isDeparture(recipe.family) ? 'src/seedbank/departures.ts' : isPixelSorter(recipe.family) ? 'src/seedbank/pixel-sorters.ts' : recipe.family === 'broken-lcd' ? 'src/seedbank/broken-lcd.ts' : ['caustics', 'phosphor', 'halftone'].includes(recipe.family) ? 'src/seedbank/effects.ts' : 'src/seedbank/additional-effects.ts';
       const sourceDependencies = recipe.family === 'broken-lcd' || isPixelSorter(recipe.family) || isDeparture(recipe.family) || isDamage(recipe.family) ? { 'src/seedbank/lcd-evolution.ts': createHash('sha256').update(await readFile('src/seedbank/lcd-evolution.ts')).digest('hex') } : {};
       if (isDeparture(recipe.family) || isDamage(recipe.family)) sourceDependencies['src/seedbank/impulse-evolution.ts'] = createHash('sha256').update(await readFile('src/seedbank/impulse-evolution.ts')).digest('hex');
       if (isEntropy(recipe.family)) sourceDependencies['src/seedbank/entropy-evolution.ts'] = createHash('sha256').update(await readFile('src/seedbank/entropy-evolution.ts')).digest('hex');
-      if (isIntricacy(recipe.family)) sourceDependencies['src/seedbank/intricacy-evolution.ts'] = createHash('sha256').update(await readFile('src/seedbank/intricacy-evolution.ts')).digest('hex');
+      if (isMechanism(recipe.family)) sourceDependencies['src/seedbank/mechanism-evolution.ts'] = createHash('sha256').update(await readFile('src/seedbank/mechanism-evolution.ts')).digest('hex');
+      if (isIntricacy(recipe.family) || isMechanism(recipe.family)) sourceDependencies['src/seedbank/intricacy-evolution.ts'] = createHash('sha256').update(await readFile('src/seedbank/intricacy-evolution.ts')).digest('hex');
       const report = { sourceDependencies, id: recipe.id, recipeSha256: createHash('sha256').update(serializeRecipe(recipe)).digest('hex'), pngSha256: createHash('sha256').update(png(result.frame)).digest('hex'), source, sourceSha256: createHash('sha256').update(await readFile(source)).digest('hex'), runtimeSha256: createHash('sha256').update(await readFile('src/seedbank/renderer.ts')).digest('hex'), review: 'candidate — human aesthetic review pending', technical: result.technical, measurement: result.measurement, motion: { frames: 8, fps: 4, firstTime: recipe.time }, launch: process.env.SEEDBANK_GPU === 'hardware' ? 'default host GPU selection; consult adapter field' : 'SwiftShader software rendering; not physical GPU evidence' };
       await writeFile(join(dir, 'report.json'), JSON.stringify(report, null, 2));
       item.status = 'complete'; item.report = `${recipe.id}/report.json`; console.log(`Rendered ${recipe.id}: ${result.measurement.backend}, ${result.technical.sampledColors} sampled colors`);

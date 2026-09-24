@@ -1,6 +1,6 @@
 export const RECIPE_VERSION = 1 as const;
-export const GENERATOR_VERSION = '1.6.0' as const;
-export type GeneratorVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.5.0' | typeof GENERATOR_VERSION;
+export const GENERATOR_VERSION = '1.7.0' as const;
+export type GeneratorVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.5.0' | '1.6.0' | typeof GENERATOR_VERSION;
 export const pixelSorterFamilies = ['crosscurrent', 'undertow', 'downpour', 'faultline'] as const;
 export type PixelSorterFamily = typeof pixelSorterFamilies[number];
 export const isPixelSorter = (family: string): family is PixelSorterFamily => pixelSorterFamilies.some(value => value === family);
@@ -16,13 +16,16 @@ export const isEntropy = (family: string): family is EntropyFamily => entropyFam
 export const intricacyFamilies = ["intaglio", "braid", "scrim", "guilloche", "imbricate", "capillary", "palimpsest", "diffract", "microcode", "plume"] as const;
 export type IntricacyFamily = typeof intricacyFamilies[number];
 export const isIntricacy = (family: string): family is IntricacyFamily => intricacyFamilies.some(value => value === family);
+export const mechanismFamilies = ['shellsort', 'frost', 'rule', 'buoyancy', 'macroblock', 'larsen', 'glyph', 'loupe', 'scanhead', 'interlace'] as const;
+export type MechanismFamily = typeof mechanismFamilies[number];
+export const isMechanism = (family: string): family is MechanismFamily => mechanismFamilies.some(value => value === family);
 /** Absolute-time scores clamp at finite precision horizons; legacy bounds stay unchanged. */
-export const timeLimit = (family: string) => isIntricacy(family) ? 1000000000000 : isEntropy(family) ? 315360000 : 3600;
+export const timeLimit = (family: string) => isIntricacy(family) || isMechanism(family) ? 1000000000000 : isEntropy(family) ? 315360000 : 3600;
 export function advanceTime(family: string, time: number, delta: number) {
-  return isEntropy(family) || isIntricacy(family) ? Math.min(timeLimit(family), time + delta) : (time + delta) % 3600;
+  return isEntropy(family) || isIntricacy(family) || isMechanism(family) ? Math.min(timeLimit(family), time + delta) : (time + delta) % 3600;
 }
-export const isCrisp = (family: string) => family === 'broken-lcd' || isPixelSorter(family) || isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family);
-export type Family = 'caustics' | 'phosphor' | 'halftone' | 'ink' | 'iridescence' | 'shafts' | 'aurora' | 'moire' | 'contours' | 'weave' | 'dunes' | 'ripples' | 'starfield' | 'marble' | 'glass' | 'broken-lcd' | PixelSorterFamily | DepartureFamily | DamageFamily | EntropyFamily | IntricacyFamily;
+export const isCrisp = (family: string) => family === 'broken-lcd' || isPixelSorter(family) || isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family) || isMechanism(family);
+export type Family = 'caustics' | 'phosphor' | 'halftone' | 'ink' | 'iridescence' | 'shafts' | 'aurora' | 'moire' | 'contours' | 'weave' | 'dunes' | 'ripples' | 'starfield' | 'marble' | 'glass' | 'broken-lcd' | PixelSorterFamily | DepartureFamily | DamageFamily | EntropyFamily | IntricacyFamily | MechanismFamily;
 export type Backend = 'auto' | 'webgpu' | 'webgl2';
 export type Parameters = { scale: number; speed: number; intensity: number; detail: number };
 export type Recipe = {
@@ -93,6 +96,16 @@ export const families: Record<Family, { name: string; subtitle: string; descript
   'diffract': { name: 'Diffract', subtitle: "The fringes refuse to align.", description: "Unequal warped wavefronts split into dense interference fringes with interrupted raster flicker.", detail: 'Incision density', number: '38' },
   'microcode': { name: 'Microcode', subtitle: "An address becomes a texture.", description: "Nested unequal address cells route fine combs and binary cuts through changing row and column paths.", detail: 'Incision density', number: '39' },
   'plume': { name: 'Plume', subtitle: "Fine barbs ride the current.", description: "Bending feather spines carry hundreds of fine barbs into sheared, stippled trailing wakes.", detail: 'Incision density', number: '40' },
+  'shellsort': { name: 'Shellsort', subtitle: "The sort takes longer strides.", description: "Gapped compare/exchange passes drag torn islands into long stepped runs that flip direction band by band.", detail: 'Sort threshold', number: '41' },
+  'frost': { name: 'Frost', subtitle: "Every nucleus grows facets.", description: "Directional dilation grows faceted crystal branches from drifting nuclei while local thaws eat them back.", detail: 'Porosity', number: '42' },
+  'rule': { name: 'Rule', subtitle: "Three neighbours decide the next row.", description: "Elementary automata cascade down interleaved fields; regional rules change independently and events flip single bits.", detail: 'Rule contrast', number: '43' },
+  'buoyancy': { name: 'Buoyancy', subtitle: "Bright pixels rise along the current.", description: "Alternating 2×2 blocks sort their pixels along a curling field, so light streams one way and dark sinks the other.", detail: 'Sort gate', number: '44' },
+  'macroblock': { name: 'Macroblock', subtitle: "The motion vectors lost their keyframe.", description: "Blocks copy history through their own motion vectors, smearing across borders with DCT residuals and sparse intra refreshes.", detail: 'Block size', number: '45' },
+  'larsen': { name: 'Larsen', subtitle: "The camera is pointed at its own monitor.", description: "Rotating, zooming and folding video feedback turns each arrival into spirals of nearest-neighbor copies.", detail: 'Incision density', number: '46' },
+  'glyph': { name: 'Glyph', subtitle: "A terminal that melts as it types.", description: "Mirrored 5×7 glyphs are retyped by staggered cursors while melt zones sort their pixels into drips.", detail: 'Incision density', number: '47' },
+  'loupe': { name: 'Loupe', subtitle: "Resolution fails in circles.", description: "Hard-edged lenses crush the moving image into growing mosaic cells; currents tear the enlarged blocks apart.", detail: 'Mosaic size', number: '48' },
+  'scanhead': { name: 'Scanhead', subtitle: "Three heads write; every row slips.", description: "Rolling write heads lay down fresh detail while row bands slide and wrap at their own changing speeds.", detail: 'Incision density', number: '49' },
+  'interlace': { name: 'Interlace', subtitle: "Two fields, two currents.", description: "Odd and even rows carry different images through different currents, combing every moving edge.", detail: 'Incision density', number: '50' },
 };
 /** Complete registry, including deprecated recipes for import compatibility. */
 export const allPresets: Recipe[] = [
@@ -153,8 +166,19 @@ export const allPresets: Recipe[] = [
   {"schemaVersion": 1, "generatorVersion": "1.6.0", "id": "dense-diffract", "name": "Diffract / intricacy study", "kind": "animated-shader", "family": "diffract", "seed": 13841, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.68}, "palette": ["#152e34", "#f56139", "#d9ef89"], "tags": ["intricacy", "scanlines", "pixel transport", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.6.0", "id": "dense-microcode", "name": "Microcode / intricacy study", "kind": "animated-shader", "family": "microcode", "seed": 39719, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.68}, "palette": ["#eef0dc", "#145bea", "#baec46"], "tags": ["intricacy", "scanlines", "pixel transport", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.6.0", "id": "dense-plume", "name": "Plume / intricacy study", "kind": "animated-shader", "family": "plume", "seed": 22483, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.68}, "palette": ["#ece6d5", "#d64068", "#154f68"], "tags": ["intricacy", "scanlines", "pixel transport", "crisp"], "review": "candidate"},
+
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "long-strides", "name": "Shellsort / mechanism study", "kind": "animated-shader", "family": "shellsort", "seed": 24611, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.6}, "palette": ["#f2efe6", "#ff3d6e", "#1b1f4b"], "tags": ["mechanism", "pixel sorting", "scanlines", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "faceted-growth", "name": "Frost / mechanism study", "kind": "animated-shader", "family": "frost", "seed": 50923, "time": 3.25, "parameters": {"scale": 2.4, "speed": 1.5, "intensity": 1.15, "detail": 0.45}, "palette": ["#e8eef2", "#3d5afe", "#0a1a2f"], "tags": ["mechanism", "morphology", "growth", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "cascading-rules", "name": "Rule / mechanism study", "kind": "animated-shader", "family": "rule", "seed": 7349, "time": 3.25, "parameters": {"scale": 2.3, "speed": 1.5, "intensity": 1.0, "detail": 0.6}, "palette": ["#efeadb", "#ff6a1f", "#14213d"], "tags": ["mechanism", "automaton", "scanlines", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "rising-pixels", "name": "Buoyancy / mechanism study", "kind": "animated-shader", "family": "buoyancy", "seed": 41161, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.35}, "palette": ["#1d1233", "#ffd23f", "#ff5fa2"], "tags": ["mechanism", "pixel sorting", "2d sort", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "lost-keyframe", "name": "Macroblock / mechanism study", "kind": "animated-shader", "family": "macroblock", "seed": 18839, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.5}, "palette": ["#e9ecef", "#00c46a", "#7a2cf0"], "tags": ["mechanism", "datamosh", "blocks", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "monitor-loop", "name": "Larsen / mechanism study", "kind": "animated-shader", "family": "larsen", "seed": 62207, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.62}, "palette": ["#f3ede0", "#ff2d2d", "#111111"], "tags": ["mechanism", "video feedback", "radial", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "melting-terminal", "name": "Glyph / mechanism study", "kind": "animated-shader", "family": "glyph", "seed": 9043, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.05, "detail": 0.6}, "palette": ["#0b2a1f", "#ffb000", "#b8ff9c"], "tags": ["mechanism", "text", "scanlines", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "crushed-lenses", "name": "Loupe / mechanism study", "kind": "animated-shader", "family": "loupe", "seed": 35527, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.55}, "palette": ["#f7f3ea", "#2a6cff", "#ff4f2e"], "tags": ["mechanism", "mosaic", "radial", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "rolling-writes", "name": "Scanhead / mechanism study", "kind": "animated-shader", "family": "scanhead", "seed": 28453, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#e8f1f5", "#ff2e97", "#003049"], "tags": ["mechanism", "rolling shutter", "scanlines", "crisp"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "combed-fields", "name": "Interlace / mechanism study", "kind": "animated-shader", "family": "interlace", "seed": 46099, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.62}, "palette": ["#171a2b", "#3cf2c8", "#ff7a45"], "tags": ["mechanism", "interlace", "scanlines", "crisp"], "review": "candidate"},
 ];
-/** Browsing order: the ten user-endorsed crisp studies, then damage, entropy and intricacy studies. */
+/** Browsing order: the ten user-endorsed crisp studies, then damage, entropy, intricacy and mechanism studies. */
 export const presets = allPresets.filter(recipe => isCrisp(recipe.family));
 export const deprecatedPresets = allPresets.filter(recipe => !isCrisp(recipe.family));
 
@@ -165,15 +189,16 @@ function range(value: unknown, min: number, max: number, field: string) {
 }
 export function validateRecipe(value: unknown): Recipe {
   if (!object(value)) throw new Error('Expected a recipe object.');
-  if (value.schemaVersion !== RECIPE_VERSION || (value.generatorVersion !== '1.0.0' && value.generatorVersion !== '1.1.0' && value.generatorVersion !== '1.2.0' && value.generatorVersion !== '1.3.0' && value.generatorVersion !== '1.4.0' && value.generatorVersion !== '1.5.0' && value.generatorVersion !== GENERATOR_VERSION)) throw new Error('Unsupported recipe or generator version.');
+  if (value.schemaVersion !== RECIPE_VERSION || (value.generatorVersion !== '1.0.0' && value.generatorVersion !== '1.1.0' && value.generatorVersion !== '1.2.0' && value.generatorVersion !== '1.3.0' && value.generatorVersion !== '1.4.0' && value.generatorVersion !== '1.5.0' && value.generatorVersion !== '1.6.0' && value.generatorVersion !== GENERATOR_VERSION)) throw new Error('Unsupported recipe or generator version.');
   if (value.kind !== 'animated-shader') throw new Error('Expected an animated-shader recipe.');
   if (typeof value.family !== 'string' || !Object.hasOwn(families, value.family)) throw new Error('Unknown effect family.');
   if (value.generatorVersion === '1.0.0' && !['caustics', 'phosphor', 'halftone'].includes(value.family)) throw new Error('This family requires generator version 1.1.0.');
-  if (isPixelSorter(value.family) && !['1.2.0', '1.3.0', '1.4.0', '1.5.0', '1.6.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.2.0.');
-  if (isDeparture(value.family) && !['1.3.0', '1.4.0', '1.5.0', '1.6.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.3.0.');
-  if (isDamage(value.family) && !['1.4.0', '1.5.0', '1.6.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.4.0.');
-  if (isEntropy(value.family) && !['1.5.0', '1.6.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.5.0.');
-  if (isIntricacy(value.family) && value.generatorVersion !== '1.6.0') throw new Error('This family requires generator version 1.6.0.');
+  if (isPixelSorter(value.family) && !['1.2.0', '1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.2.0.');
+  if (isDeparture(value.family) && !['1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.3.0.');
+  if (isDamage(value.family) && !['1.4.0', '1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.4.0.');
+  if (isEntropy(value.family) && !['1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.5.0.');
+  if (isIntricacy(value.family) && !['1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.6.0.');
+  if (isMechanism(value.family) && value.generatorVersion !== '1.7.0') throw new Error('This family requires generator version 1.7.0.');
   if (typeof value.id !== 'string' || !/^[a-z0-9][a-z0-9-]{0,63}$/.test(value.id)) throw new Error('Recipe ID must use 1–64 lowercase letters, numbers or hyphens.');
   if (typeof value.name !== 'string' || !value.name.trim() || value.name.length > 80) throw new Error('Recipe name must contain 1–80 characters.');
   const seed = range(value.seed, 0, 65535, 'Seed');

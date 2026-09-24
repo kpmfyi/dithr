@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.7.0",
+  "kind": "animated-shader",
+  "id": "combed-fields",
+  "name": "Interlace / mechanism study",
+  "family": "interlace",
+  "seed": 46099,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.5,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.62
+  },
+  "palette": [
+    "#171a2b",
+    "#3cf2c8",
+    "#ff7a45"
+  ],
+  "tags": [
+    "mechanism",
+    "interlace",
+    "scanlines",
+    "crisp"
+  ],
+  "review": "candidate"
+}

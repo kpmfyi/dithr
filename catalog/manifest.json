@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatorVersion": "1.6.0",
+  "generatorVersion": "1.7.0",
   "entries": [
     {
       "id": "pink-signal-loss",
@@ -1374,6 +1374,356 @@
       "checks": {
         "webgl2": "../artifacts/intricacy-01-webgl2/dense-plume/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "long-strides",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "41",
+      "kind": "animated-shader",
+      "name": "Shellsort / mechanism study",
+      "family": "shellsort",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/long-strides.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/shellsort.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "pixel sorting",
+        "scanlines",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/long-strides/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "faceted-growth",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "42",
+      "kind": "animated-shader",
+      "name": "Frost / mechanism study",
+      "family": "frost",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/faceted-growth.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/frost.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "morphology",
+        "growth",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/faceted-growth/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "cascading-rules",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "43",
+      "kind": "animated-shader",
+      "name": "Rule / mechanism study",
+      "family": "rule",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/cascading-rules.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/rule.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "automaton",
+        "scanlines",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/cascading-rules/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "rising-pixels",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "44",
+      "kind": "animated-shader",
+      "name": "Buoyancy / mechanism study",
+      "family": "buoyancy",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/rising-pixels.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/buoyancy.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "pixel sorting",
+        "2d sort",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/rising-pixels/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "lost-keyframe",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "45",
+      "kind": "animated-shader",
+      "name": "Macroblock / mechanism study",
+      "family": "macroblock",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/lost-keyframe.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/macroblock.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "datamosh",
+        "blocks",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/lost-keyframe/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "monitor-loop",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "46",
+      "kind": "animated-shader",
+      "name": "Larsen / mechanism study",
+      "family": "larsen",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/monitor-loop.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/larsen.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "video feedback",
+        "radial",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/monitor-loop/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "melting-terminal",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "47",
+      "kind": "animated-shader",
+      "name": "Glyph / mechanism study",
+      "family": "glyph",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/melting-terminal.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/glyph.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "text",
+        "scanlines",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/melting-terminal/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "crushed-lenses",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "48",
+      "kind": "animated-shader",
+      "name": "Loupe / mechanism study",
+      "family": "loupe",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/crushed-lenses.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/loupe.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "mosaic",
+        "radial",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/crushed-lenses/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "rolling-writes",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "49",
+      "kind": "animated-shader",
+      "name": "Scanhead / mechanism study",
+      "family": "scanhead",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/rolling-writes.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/scanhead.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "rolling shutter",
+        "scanlines",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/rolling-writes/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "combed-fields",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "50",
+      "kind": "animated-shader",
+      "name": "Interlace / mechanism study",
+      "family": "interlace",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/combed-fields.json",
+      "source": "../src/seedbank/mechanism.ts",
+      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceDependencies": {
+        "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/interlace.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "mechanism",
+        "interlace",
+        "scanlines",
+        "crisp"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/mechanism-02-webgl2/combed-fields/report.json",
+        "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
     },

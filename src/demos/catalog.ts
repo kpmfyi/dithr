@@ -1,4 +1,4 @@
-import { intricacyFamilies, isIntricacy, entropyFamilies, isEntropy, damageFamilies, pixelSorterFamilies, departureFamilies, families, presets, allPresets, validateRecipe, type Family, type Parameters, type Recipe } from '../seedbank/recipes.ts';
+import { mechanismFamilies, isMechanism, intricacyFamilies, isIntricacy, entropyFamilies, isEntropy, damageFamilies, pixelSorterFamilies, departureFamilies, families, presets, allPresets, validateRecipe, type Family, type Parameters, type Recipe } from '../seedbank/recipes.ts';
 
 export type UsageDemo = {
   family: Family; title: string; context: string; category: string;
@@ -137,14 +137,14 @@ export const allDemos: UsageDemo[] = [
       motion: 'Persistent pixel transport with irregular local replenishment. A fast scanline carrier sits below coherent afterimages. Pause to select a print frame.',
     }, { ...preset.parameters });
   }),
-  ...[...departureFamilies, ...damageFamilies, ...entropyFamilies, ...intricacyFamilies].map(family => {
+  ...[...departureFamilies, ...damageFamilies, ...entropyFamilies, ...intricacyFamilies, ...mechanismFamilies].map(family => {
     const preset = allPresets.find(item => item.family === family)!;
     return demo(family, {
       title: families[family].name + ' / motion study', context: 'Art / kinetic edition', category: 'Moving image', animate: true,
       purpose: families[family].description,
       placement: 'Give the animation a full frame. A compact opaque caption leaves the composition open and keeps the title readable.',
       tuning: isEntropy(family) ? `Scale changes the size of forms; ${families[family].detail.toLowerCase()} adjusts their structure; intensity changes pigment and trace coverage. All three colors remain editable.` : 'Scale changes the spacing of forms; structure changes their density or edge width; intensity changes the coverage of persistent traces. All three colors remain editable.',
-      motion: isIntricacy(family) ? 'Dense incisions, persistent pixel transport and locally interrupted scanlines. Fresh events continue along an absolute timeline without a designed animation loop.' : isEntropy(family) ? 'No scanline carrier. Local births, erasures and changing currents are addressed by absolute time; playback continues beyond one hour without wrapping. Freeze any moment to reproduce it.' : 'Fast continuous movement and persistent image memory, with independently evolving fields. Pause to inspect a frame or export its exact recipe.',
+      motion: isMechanism(family) ? 'The accumulator itself is the subject: gapped sorts, automata, block sorts, crystal growth, datamosh, video feedback, lenses, write heads and interlaced fields. Fresh events continue along an absolute timeline without a designed animation loop.' : isIntricacy(family) ? 'Dense incisions, persistent pixel transport and locally interrupted scanlines. Fresh events continue along an absolute timeline without a designed animation loop.' : isEntropy(family) ? 'No scanline carrier. Local births, erasures and changing currents are addressed by absolute time; playback continues beyond one hour without wrapping. Freeze any moment to reproduce it.' : 'Fast continuous movement and persistent image memory, with independently evolving fields. Pause to inspect a frame or export its exact recipe.',
     }, { ...preset.parameters });
   }),
 ];

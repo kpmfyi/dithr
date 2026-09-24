@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
 import { demos, findDemo } from '../../src/demos/catalog';
-import { families, isCrisp, isDamage, isEntropy, isIntricacy, serializeRecipe } from '../../src/seedbank/recipes';
+import { families, isCrisp, isDamage, isEntropy, isIntricacy, isMechanism, serializeRecipe } from '../../src/seedbank/recipes';
 import { ShaderSurface, type SurfaceReport } from './ShaderSurface';
 import { Scene } from './Scenes';
 import './demos.css';
@@ -65,7 +65,7 @@ surface.render(recipe.time); // the curated frozen moment
       <section className="active-demo" id="active-demo" aria-label="Selected usage demo">
         <div className="demo-heading"><div><span className="eyebrow">{families[selected.family].number} / {families[selected.family].name.toUpperCase()}</span><h2>{!isCrisp(selected.family) && 'Deprecated · '}{selected.title}</h2></div><div className="demo-selector"><label className="visually-hidden" htmlFor="demo-select">Choose a usage demo</label><select id="demo-select" value={selected.family} onChange={event => choose(event.target.value)}>{!isCrisp(selected.family) && <option value={selected.family}>Archive / {families[selected.family].name}</option>}{demos.map(demo => <option value={demo.family} key={demo.family}>{families[demo.family].number} / {families[demo.family].name}</option>)}</select><button aria-label="Previous usage demo" onClick={() => choose(demos[index < 0 ? demos.length - 1 : (index + demos.length - 1) % demos.length].family)}>←</button><button aria-label="Next usage demo" onClick={() => choose(demos[(index + 1) % demos.length].family)}>→</button></div></div>
         <div className="demo-workspace"><div className="demo-preview">
-          <div className={`usage-stage scene-${selected.family}${isDamage(selected.family) || isEntropy(selected.family) || isIntricacy(selected.family) ? ' scene-damage' : ''}`} data-family={selected.family} key={selected.family} role="group" aria-label={`${selected.title} composition`}>
+          <div className={`usage-stage scene-${selected.family}${isDamage(selected.family) || isEntropy(selected.family) || isIntricacy(selected.family) || isMechanism(selected.family) ? ' scene-damage' : ''}`} data-family={selected.family} key={selected.family} role="group" aria-label={`${selected.title} composition`}>
             <Scene family={selected.family} surface={mounted ? <ShaderSurface demo={selected} playing={playing} reset={reset} onReport={onReport}/> : null}/>
           </div>
           <div className="demo-transport"><button disabled={!report.ready} onClick={() => setPlaying(value => !value)} aria-label={playing ? 'Pause demo motion' : 'Play demo motion'}><span>{playing ? 'Ⅱ' : '▶'}</span> {playing ? 'Pause motion' : 'Play motion'}</button><button disabled={!report.ready} onClick={() => { setPlaying(false); setReset(value => value + 1); }}>Reset still ↺</button><span className="demo-render-state" role="status">{report.error ? 'Still preview · live renderer unavailable' : report.ready ? `${playing ? 'LIVE' : 'FROZEN'} / ${report.backend?.toUpperCase()}` : 'Preparing surface…'}</span></div>

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { access, mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
 import { demos, allDemos } from '../src/demos/catalog.ts';
-import { isDeparture, isDamage, isEntropy, isIntricacy, presets, validateRecipe } from '../src/seedbank/recipes.ts';
+import { isDeparture, isDamage, isEntropy, isIntricacy, isMechanism, presets, validateRecipe } from '../src/seedbank/recipes.ts';
 import { launch, openConsumer } from './browser-support.mjs';
 
 const url = process.env.SEEDBANK_URL || 'http://127.0.0.1:5187';
@@ -40,8 +40,8 @@ try {
     }, demo.recipe);
     // Sharp departure displays deliberately use three flat colors at three
     // exposure levels, rather than the old continuously shaded palette.
-    const minimumSampledColors = (isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family)) ? 3 : 21;
-    const maximumSampledColors = (isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family)) ? 16 : Infinity;
+    const minimumSampledColors = (isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family) || isMechanism(demo.family)) ? 3 : 21;
+    const maximumSampledColors = (isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family) || isMechanism(demo.family)) ? 16 : Infinity;
     assert.ok(result.stable && result.animated && result.sampledColors >= minimumSampledColors && result.sampledColors <= maximumSampledColors, `${demo.family}: reproducible, animated, nonblank surface`);
     const bytes = Buffer.from(result.frame.split(',')[1], 'base64');
     await writeFile(`${out}/${demo.family}-texture.png`, bytes);

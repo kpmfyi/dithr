@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.7.0",
+  "kind": "animated-shader",
+  "id": "monitor-loop",
+  "name": "Larsen / mechanism study",
+  "family": "larsen",
+  "seed": 62207,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.62
+  },
+  "palette": [
+    "#f3ede0",
+    "#ff2d2d",
+    "#111111"
+  ],
+  "tags": [
+    "mechanism",
+    "video feedback",
+    "radial",
+    "crisp"
+  ],
+  "review": "candidate"
+}
