@@ -19,6 +19,7 @@ import { PaletteDrawer, applyFilter, emptyFilter, type PaletteFilter } from './c
 import { ExportDrawer, downloadFile, type RecordState } from './components/export-panel';
 import { PaletteRail } from './components/palette-rail';
 import { Icon } from './components/icons';
+import { SiteCredit } from './components/site-credit';
 
 const STORAGE = 'shader-seedbank.recipes.v1';
 const scopeNames: [keyof RollScope, string, string][] = [
@@ -246,7 +247,7 @@ export default function Studio() {
     <header className="topbar">
       {/* A full reload is intentional: it starts a fresh session with a new random study. */}
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-      <a className="wordmark" href="/" aria-label="Shader Seedbank, start over"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">seedbank</span></a>
+      <a className="wordmark" href="/" aria-label="Dithr, start over"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">dithr</span></a>
       <nav className="topnav" aria-label="Browse">
         <button className="btn" aria-expanded={drawer === 'studies'} onClick={() => setDrawer('studies')}>Studies <span className="count">{presets.length}</span></button>
         <button className="btn" aria-expanded={drawer === 'palettes'} onClick={() => setDrawer('palettes')}>Palettes <span className="count">{palettePresets.length}</span></button>
@@ -294,6 +295,7 @@ export default function Studio() {
           {tab === 'color' && <ColorControls {...history} locks={locks} setLocks={setLocks} busy={busy} onMessage={setStatus} openPalettes={() => setDrawer('palettes')} pool={pool}/>}
           {tab === 'frame' && <FrameControls recipe={recipe} time={time} busy={busy} ready={ready} begin={begin} end={end} onSeek={seekTo} onFreeze={freeze} output={output} setOutput={setOutput} previewEdge={previewEdge} setPreviewEdge={setPreviewEdge} backend={backend} setBackend={setBackend} actualBackend={actualBackend}/>}
         </div>
+        <SiteCredit/>
       </aside>
     </main>
     {drawer === 'studies' && <StudyDrawer current={recipe} saved={saved} onChoose={r => { choose(r.id.startsWith('saved-') ? r : { ...r, palette: r.palette }); setDrawer(null); }} onRemove={remove} onClose={() => setDrawer(null)} seriesFilter={seriesFilter} setSeriesFilter={setSeriesFilter}/>}

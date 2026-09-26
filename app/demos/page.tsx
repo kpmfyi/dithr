@@ -9,6 +9,7 @@ import { ShaderSurface, type SurfaceReport } from './ShaderSurface';
 import { Scene } from './Scenes';
 import './demos.css';
 import './context.css';
+import { SiteCredit } from '../components/site-credit';
 
 export default function UsageDemos() {
   const [selected, setSelected] = useState(demos[0]);
@@ -68,8 +69,8 @@ surface.render(recipe.time); // the curated frozen moment
   return <div className="studio context-page" style={themeStyle}>
     <header className="topbar">
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-      <a className="wordmark" href="/" aria-label="Shader Seedbank studio"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">seedbank</span></a>
-      <nav className="topnav" aria-label="Seedbank">
+      <a className="wordmark" href="/" aria-label="Dithr studio"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">dithr</span></a>
+      <nav className="topnav" aria-label="Dithr">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a className="btn" href="/">Studio</a>
         <a className="btn" href="/demos" aria-current="page">In context <span className="count">{demos.length}</span></a>
@@ -123,6 +124,7 @@ surface.render(recipe.time); // the curated frozen moment
           <strong><span>{families[demo.family].number}</span>{families[demo.family].name}</strong><small>{demo.context}</small>
         </a>)}</div>
       </section>
+      <SiteCredit className="context-credit"/>
     </main>
   </div>;
 }
