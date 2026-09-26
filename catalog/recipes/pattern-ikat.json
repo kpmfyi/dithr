@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "pattern-ikat",
+  "name": "Ikat / pattern study",
+  "family": "ikat",
+  "seed": 51338,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#f2e8d5",
+    "#c1440e",
+    "#1d3557",
+    "#e09f3e",
+    "#335c67"
+  ],
+  "tags": [
+    "pattern",
+    "ornament",
+    "crisp",
+    "textile"
+  ],
+  "review": "candidate"
+}

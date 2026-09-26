@@ -57,3 +57,9 @@ yarn-error.log*
 .npmrc
 .netrc
 *.bundle
+
+# Rebuilt research harness
+/public/synthesis-lab/
+
+# Rebuilt portable code export
+/public/export/

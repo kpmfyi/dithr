@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "raster-vectorscope",
+  "name": "Vectorscope / raster study",
+  "family": "vectorscope",
+  "seed": 60564,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1,
+    "intensity": 1.2,
+    "detail": 0.5
+  },
+  "palette": [
+    "#050807",
+    "#1aff8c",
+    "#b7ffd6",
+    "#1f6b4a",
+    "#ffb000"
+  ],
+  "tags": [
+    "raster",
+    "demoscene",
+    "crisp",
+    "linework"
+  ],
+  "review": "candidate"
+}

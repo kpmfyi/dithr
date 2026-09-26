@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "matter-cumulus",
+  "name": "Cumulus / matter study",
+  "family": "cumulus",
+  "seed": 29662,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1,
+    "intensity": 1.1,
+    "detail": 0.55
+  },
+  "palette": [
+    "#3d6fa8",
+    "#ffe8d6",
+    "#f7f4ef",
+    "#9fb8d9",
+    "#f4a261"
+  ],
+  "tags": [
+    "matter",
+    "natural",
+    "crisp",
+    "sky"
+  ],
+  "review": "candidate"
+}

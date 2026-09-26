@@ -1,3 +1,4 @@
+import { pigmentRoles } from './palette';
 import { HalfFloatType, NearestFilter, NoColorSpace, RenderTarget, Vector2, Vector4 } from 'three';
 import { MeshBasicNodeMaterial, QuadMesh, type Node, type WebGPURenderer } from 'three/webgpu';
 import type { EntropyFamily } from './recipes';
@@ -193,10 +194,10 @@ export function createEntropy(u: Inputs, family: EntropyFamily) {
   material.colorNode = Fn(() => {
     const pixel = floor(uv().mul(screen)), st = pixel.add(.5).div(screen);
     const state = result.sample(st);
-    const [ground, accent, ink] = u.colors;
     // Integer PCG noise avoids the diagonal correlations of a sine hash and
     // removes the repeating 2×2 rank motif. Thresholds remain fixed in space.
     const threshold = pixelHash(uint(pixel.x).add(uint(pixel.y).mul(65537)).add(uint(u.seed.mul(65535))));
+    const [ground, accent, ink] = pigmentRoles(u.colors, state.r, threshold);
     const fine = ['rift', 'tangle', 'spall', 'dendrite', 'suture', 'flock', 'alveoli', 'confluence'].includes(family);
     const cut = family === 'dendrite' || family === 'rift' ? .4 : fine ? .24 : .43;
     const body = step(threshold, smoothstep(cut - .04, cut + .04, state.r));

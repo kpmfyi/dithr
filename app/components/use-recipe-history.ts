@@ -19,5 +19,7 @@ export function useRecipeHistory(initial: Recipe) {
     gesture.current = 'idle';
     live.current = travelRecipe(live.current, direction); update(live.current);
   }, []);
-  return { recipe: history.present, setRecipe, begin, end, undo: () => travel('undo'), redo: () => travel('redo'), canUndo: !!history.past.length, canRedo: !!history.future.length };
+  /** Replace the present recipe without an undo entry (initial load or a shared link). */
+  const reset = useCallback((recipe: Recipe) => { gesture.current = 'idle'; live.current = { past: [], present: recipe, future: [] }; update(live.current); }, []);
+  return { recipe: history.present, setRecipe, begin, end, reset, undo: () => travel('undo'), redo: () => travel('redo'), canUndo: !!history.past.length, canRedo: !!history.future.length };
 }

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "raster-mode7",
+  "name": "Mode 7 / raster study",
+  "family": "mode7",
+  "seed": 29652,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1,
+    "intensity": 1.1,
+    "detail": 0.5
+  },
+  "palette": [
+    "#1d3557",
+    "#e63946",
+    "#f1faee",
+    "#457b9d",
+    "#ffb703"
+  ],
+  "tags": [
+    "raster",
+    "demoscene",
+    "crisp",
+    "perspective"
+  ],
+  "review": "candidate"
+}

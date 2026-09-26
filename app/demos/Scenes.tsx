@@ -1,12 +1,31 @@
 import type { ReactNode } from 'react';
-import { families, isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, isMechanism, type Family } from '../../src/seedbank/recipes';
+import { families, isPixelSorter, isDeparture, isDamage, isEntropy, isMechanism, isSynthesis, isIntricacy, isPattern, isRaster, isMatter, type Family } from '../../src/seedbank/recipes';
 
 // The shader supplies only light or material. All typography, geometry, and interface
 // elements are independent DOM/SVG layers, so they remain sharp and accessible.
 export function Scene({ family, surface }: { family: Family; surface: ReactNode }) {
-  if (isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family) || isMechanism(family)) return <>
+  const f = families[family];
+  // Pattern studies as printed surfaces: a record sleeve with its disc half out.
+  if (isPattern(family)) return <>
+    <div className="sleeve-disc" aria-hidden="true"><i/></div>
+    <div className="sleeve scene-surface">{surface}<span className="sleeve-sticker"><b>{f.name}</b><small>Side A, 33⅓</small></span></div>
+    <div className="sleeve-copy"><span>Surface editions / No. {f.number}</span><h3>{f.name}</h3><p>{f.subtitle} {f.description}</p><span className="sleeve-foot">Printed from a live recipe</span></div>
+  </>;
+  // Raster studies as stage visuals: an LED wall above a crowd, with a performer HUD.
+  if (isRaster(family)) return <>
+    <div className="wall scene-surface">{surface}</div>
+    <div className="wall-hud"><span>Live visuals</span><span>Deck {f.number}</span><span className="wall-rec">On air</span></div>
+    <div className="wall-title"><h3>{f.name}</h3><p>{f.subtitle}</p></div>
+    <div className="wall-crowd" aria-hidden="true"/>
+  </>;
+  // Matter studies as editorial covers: the motion is the cover image.
+  if (isMatter(family)) return <>
+    <div className="cover scene-surface">{surface}<span className="cover-masthead">Field Notes</span><span className="cover-issue">Issue {f.number}</span><span className="cover-line">{f.name}</span></div>
+    <div className="cover-copy"><span>Natural motion, quarterly</span><h3>{f.subtitle}</h3><p>{f.description}</p><span className="cover-foot">Cover: {f.name}, a live study</span></div>
+  </>;
+  if ((isSynthesis(family) || isMechanism(family)) || isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family)) return <>
     <div className="departure-surface scene-surface">{surface}</div>
-    <div className="departure-edition"><span>SEEDBANK / {isMechanism(family) ? 'MECHANISM STUDIES' : isIntricacy(family) ? 'INTRICACY STUDIES' : isEntropy(family) ? 'ENTROPY STUDIES' : isDamage(family) ? 'DAMAGE STUDIES' : 'DEPARTURES'}</span><span>{families[family].number} — 2026</span></div>
+    <div className="departure-edition"><span>SEEDBANK / {isMechanism(family) ? 'MECHANISM STUDIES' : isSynthesis(family) ? 'SYNTHESIS STUDIES' : isIntricacy(family) ? 'INTRICACY STUDIES' : isEntropy(family) ? 'ENTROPY STUDIES' : isDamage(family) ? 'DAMAGE STUDIES' : 'DEPARTURES'}</span><span>{families[family].number} — 2026</span></div>
     <div className="departure-caption"><span>STUDIES IN MOTION</span><h3>{families[family].name}</h3><p>{families[family].subtitle}</p></div>
   </>;
   if (isPixelSorter(family)) return <>

@@ -1,3 +1,4 @@
+import { pigmentRoles } from './palette';
 import { HalfFloatType, NearestFilter, NoColorSpace, RenderTarget, Vector2, Vector4 } from 'three';
 import { MeshBasicNodeMaterial, QuadMesh, type Node, type WebGPURenderer } from 'three/webgpu';
 import { createLcdEvolution } from './lcd-evolution';
@@ -112,7 +113,9 @@ export function createBrokenLcd(u: Inputs) {
   material.colorNode = Fn(() => {
     const st = uv(), pixel = floor(st.mul(screen));
     const state = result.sample(st);
-    const [paper, blue, lime] = u.colors;
+    const rank = pixel.x.add(pixel.y).mod(2).mul(2).add(pixel.y.mod(2)).div(4);
+    const threshold = fract(rank.add(hash(floor(pixel.div(2)).add(vec2(u.seed.mul(37), u.seed.mul(13))))));
+    const [paper, blue, lime] = pigmentRoles(u.colors, state.r, threshold);
     const high = smoothstep(.74, .86, state.r);
     const mid = smoothstep(.08, .16, state.r).mul(float(1).sub(high));
     let base = mix(paper, paper.mul(.38), mid);
@@ -132,8 +135,6 @@ export function createBrokenLcd(u: Inputs) {
     const mask = smoothstep(.025, .18, state.g).mul(u.intensity).clamp(0, 1);
     // A fixed stochastic threshold has no tiled Bayer cell and does not
     // animate independently of the shape covering it.
-    const rank = pixel.x.add(pixel.y).mod(2).mul(2).add(pixel.y.mod(2)).div(4);
-    const threshold = fract(rank.add(hash(floor(pixel.div(2)).add(vec2(u.seed.mul(37), u.seed.mul(13))))));
     const dots = step(threshold, mask);
     return mix(base, blue, dots).max(vec3(0));
   })();

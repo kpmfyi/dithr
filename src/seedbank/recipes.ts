@@ -1,6 +1,13 @@
+import { patternFamilies, isPattern, patternInfo, patternPresets, type PatternFamily } from './pattern-meta.ts';
+import { rasterFamilies, isRaster, rasterInfo, rasterPresets, type RasterFamily } from './raster-meta.ts';
+import { matterFamilies, isMatter, matterInfo, matterPresets, type MatterFamily } from './matter-meta.ts';
+export { patternFamilies, isPattern, rasterFamilies, isRaster, matterFamilies, isMatter, type PatternFamily, type RasterFamily, type MatterFamily };
 export const RECIPE_VERSION = 1 as const;
-export const GENERATOR_VERSION = '1.7.0' as const;
-export type GeneratorVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.5.0' | '1.6.0' | typeof GENERATOR_VERSION;
+export const GENERATOR_VERSION = '1.9.0' as const;
+export type GeneratorVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.5.0' | '1.6.0' | '1.7.0' | '1.8.0' | typeof GENERATOR_VERSION;
+const generatorVersions: readonly string[] = ['1.0.0', '1.1.0', '1.2.0', '1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0', '1.8.0', GENERATOR_VERSION];
+/** Pattern, raster and matter studies (61–90) share the kit lifecycle and generator 1.9.0. */
+export const isKit = (family: string) => isPattern(family) || isRaster(family) || isMatter(family);
 export const pixelSorterFamilies = ['crosscurrent', 'undertow', 'downpour', 'faultline'] as const;
 export type PixelSorterFamily = typeof pixelSorterFamilies[number];
 export const isPixelSorter = (family: string): family is PixelSorterFamily => pixelSorterFamilies.some(value => value === family);
@@ -16,22 +23,27 @@ export const isEntropy = (family: string): family is EntropyFamily => entropyFam
 export const intricacyFamilies = ["intaglio", "braid", "scrim", "guilloche", "imbricate", "capillary", "palimpsest", "diffract", "microcode", "plume"] as const;
 export type IntricacyFamily = typeof intricacyFamilies[number];
 export const isIntricacy = (family: string): family is IntricacyFamily => intricacyFamilies.some(value => value === family);
+export const synthesisFamilies = ['estuary', 'excitable', 'sgraffito', 'relay', 'slipstream', 'grain-boundary', 'countermarch', 'overprint', 'avalanche', 'magnetron'] as const;
+export type SynthesisFamily = typeof synthesisFamilies[number];
+export const isSynthesis = (family: string): family is SynthesisFamily => synthesisFamilies.some(value => value === family);
 export const mechanismFamilies = ['shellsort', 'frost', 'rule', 'buoyancy', 'macroblock', 'larsen', 'glyph', 'loupe', 'scanhead', 'interlace'] as const;
 export type MechanismFamily = typeof mechanismFamilies[number];
 export const isMechanism = (family: string): family is MechanismFamily => mechanismFamilies.some(value => value === family);
 /** Absolute-time scores clamp at finite precision horizons; legacy bounds stay unchanged. */
-export const timeLimit = (family: string) => isIntricacy(family) || isMechanism(family) ? 1000000000000 : isEntropy(family) ? 315360000 : 3600;
+export const timeLimit = (family: string) => (isIntricacy(family) || isSynthesis(family) || isMechanism(family) || isKit(family)) ? 1000000000000 : isEntropy(family) ? 315360000 : 3600;
 export function advanceTime(family: string, time: number, delta: number) {
-  return isEntropy(family) || isIntricacy(family) || isMechanism(family) ? Math.min(timeLimit(family), time + delta) : (time + delta) % 3600;
+  return isEntropy(family) || isIntricacy(family) || isSynthesis(family) || isMechanism(family) || isKit(family) ? Math.min(timeLimit(family), time + delta) : (time + delta) % 3600;
 }
-export const isCrisp = (family: string) => family === 'broken-lcd' || isPixelSorter(family) || isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family) || isMechanism(family);
-export type Family = 'caustics' | 'phosphor' | 'halftone' | 'ink' | 'iridescence' | 'shafts' | 'aurora' | 'moire' | 'contours' | 'weave' | 'dunes' | 'ripples' | 'starfield' | 'marble' | 'glass' | 'broken-lcd' | PixelSorterFamily | DepartureFamily | DamageFamily | EntropyFamily | IntricacyFamily | MechanismFamily;
+export const isCrisp = (family: string) => family === 'broken-lcd' || isPixelSorter(family) || isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family) || isSynthesis(family) || isMechanism(family) || isKit(family);
+export type Family = 'caustics' | 'phosphor' | 'halftone' | 'ink' | 'iridescence' | 'shafts' | 'aurora' | 'moire' | 'contours' | 'weave' | 'dunes' | 'ripples' | 'starfield' | 'marble' | 'glass' | 'broken-lcd' | PixelSorterFamily | DepartureFamily | DamageFamily | EntropyFamily | IntricacyFamily | SynthesisFamily | MechanismFamily | PatternFamily | RasterFamily | MatterFamily;
 export type Backend = 'auto' | 'webgpu' | 'webgl2';
 export type Parameters = { scale: number; speed: number; intensity: number; detail: number };
+export type Palette = [string, string] | [string, string, string] | [string, string, string, string] | [string, string, string, string, string];
+export type PaletteSize = 2 | 3 | 4 | 5;
 export type Recipe = {
   schemaVersion: 1; generatorVersion: GeneratorVersion; id: string; name: string;
   kind: 'animated-shader'; family: Family; seed: number; time: number;
-  parameters: Parameters; palette: [string, string, string]; tags: string[];
+  parameters: Parameters; palette: Palette; tags: string[];
   review: 'candidate' | 'accepted';
 };
 export const controls = {
@@ -95,17 +107,28 @@ export const families: Record<Family, { name: string; subtitle: string; descript
   'palimpsest': { name: 'Palimpsest', subtitle: "One image writes over another.", description: "Two displaced contour maps overwrite each other in local patches, leaving fine crosshatched memory.", detail: 'Incision density', number: '37' },
   'diffract': { name: 'Diffract', subtitle: "The fringes refuse to align.", description: "Unequal warped wavefronts split into dense interference fringes with interrupted raster flicker.", detail: 'Incision density', number: '38' },
   'microcode': { name: 'Microcode', subtitle: "An address becomes a texture.", description: "Nested unequal address cells route fine combs and binary cuts through changing row and column paths.", detail: 'Incision density', number: '39' },
+  'relay': { name: "Relay", subtitle: "The trace chooses the next route.", description: "Latched rectangular channels switch between row and column currents as their stored charge changes.", detail: "Address density", number: '44' },
+  'slipstream': { name: "Slipstream", subtitle: "A wake becomes a guide.", description: "Curved engraved jets capture neighboring pixels; older wakes switch material between tangential and crossing streams.", detail: "Wake filaments", number: '45' },
+  'grain-boundary': { name: "Grain boundary", subtitle: "The seam carries the pressure.", description: "Competing angular domains etch fine terraces; their seams jam and release transported pigment.", detail: "Terrace density", number: '46' },
+  'countermarch': { name: "Countermarch", subtitle: "Opposing steps exchange their weight.", description: "Unequal herringbone conveyors move in opposite directions and exchange pigment when their histories disagree.", detail: "Tooth density", number: '47' },
+  'overprint': { name: "Overprint", subtitle: "The old mark shifts the new one.", description: "Two skewed mesh registers develop beat patterns; surviving marks determine which register can print again.", detail: "Mesh frequency", number: '48' },
+  'avalanche': { name: "Avalanche", subtitle: "A ledge gives way locally.", description: "Terraced stepped deposits hold and release in uneven cascades, leaving incised trails through their previous positions.", detail: "Ledge teeth", number: '49' },
+  'magnetron': { name: "Magnetron", subtitle: "Every orbit has an escape.", description: "Offset lobes pull engraved fragments around migrating centers; accumulated change releases them into outward bursts.", detail: "Orbit cuts", number: '50' },
+  'estuary': { name: 'Estuary', subtitle: 'The current writes its banks.', description: 'Crossing currents carry engraved sediment; accumulated change diverts pigment into branching distributaries.', detail: 'Channel density', number: '41' },
+  'excitable': { name: 'Excitable', subtitle: 'A pulse leaves a refractory wake.', description: 'Etched wavelets move through recovering regions; fresh impacts meet the memory of earlier fronts.', detail: 'Pulse teeth', number: '42' },
+  'sgraffito': { name: 'Sgraffito', subtitle: 'The underlayer pushes back.', description: 'Abraded crosshatching exposes another contour system; transported scars decide where new layers take hold.', detail: 'Cut density', number: '43' },
   'plume': { name: 'Plume', subtitle: "Fine barbs ride the current.", description: "Bending feather spines carry hundreds of fine barbs into sheared, stippled trailing wakes.", detail: 'Incision density', number: '40' },
-  'shellsort': { name: 'Shellsort', subtitle: "The sort takes longer strides.", description: "Gapped compare/exchange passes drag torn islands into long stepped runs that flip direction band by band.", detail: 'Sort threshold', number: '41' },
-  'frost': { name: 'Frost', subtitle: "Every nucleus grows facets.", description: "Directional dilation grows faceted crystal branches from drifting nuclei while local thaws eat them back.", detail: 'Porosity', number: '42' },
-  'rule': { name: 'Rule', subtitle: "Three neighbours decide the next row.", description: "Elementary automata cascade down interleaved fields; regional rules change independently and events flip single bits.", detail: 'Rule contrast', number: '43' },
-  'buoyancy': { name: 'Buoyancy', subtitle: "Bright pixels rise along the current.", description: "Alternating 2×2 blocks sort their pixels along a curling field, so light streams one way and dark sinks the other.", detail: 'Sort gate', number: '44' },
-  'macroblock': { name: 'Macroblock', subtitle: "The motion vectors lost their keyframe.", description: "Blocks copy history through their own motion vectors, smearing across borders with DCT residuals and sparse intra refreshes.", detail: 'Block size', number: '45' },
-  'larsen': { name: 'Larsen', subtitle: "The camera is pointed at its own monitor.", description: "Rotating, zooming and folding video feedback turns each arrival into spirals of nearest-neighbor copies.", detail: 'Incision density', number: '46' },
-  'glyph': { name: 'Glyph', subtitle: "A terminal that melts as it types.", description: "Mirrored 5×7 glyphs are retyped by staggered cursors while melt zones sort their pixels into drips.", detail: 'Incision density', number: '47' },
-  'loupe': { name: 'Loupe', subtitle: "Resolution fails in circles.", description: "Hard-edged lenses crush the moving image into growing mosaic cells; currents tear the enlarged blocks apart.", detail: 'Mosaic size', number: '48' },
-  'scanhead': { name: 'Scanhead', subtitle: "Three heads write; every row slips.", description: "Rolling write heads lay down fresh detail while row bands slide and wrap at their own changing speeds.", detail: 'Incision density', number: '49' },
-  'interlace': { name: 'Interlace', subtitle: "Two fields, two currents.", description: "Odd and even rows carry different images through different currents, combing every moving edge.", detail: 'Incision density', number: '50' },
+  'shellsort': { name: 'Shellsort', subtitle: "The sort takes longer strides.", description: "Gapped compare/exchange passes drag torn islands into long stepped runs that flip direction band by band.", detail: 'Sort threshold', number: '51' },
+  'frost': { name: 'Frost', subtitle: "Every nucleus grows facets.", description: "Directional dilation grows faceted crystal branches from drifting nuclei while local thaws eat them back.", detail: 'Porosity', number: '52' },
+  'rule': { name: 'Rule', subtitle: "Three neighbours decide the next row.", description: "Elementary automata cascade down interleaved fields; regional rules change independently and events flip single bits.", detail: 'Rule contrast', number: '53' },
+  'buoyancy': { name: 'Buoyancy', subtitle: "Bright pixels rise along the current.", description: "Alternating 2×2 blocks sort their pixels along a curling field, so light streams one way and dark sinks the other.", detail: 'Sort gate', number: '54' },
+  'macroblock': { name: 'Macroblock', subtitle: "The motion vectors lost their keyframe.", description: "Blocks copy history through their own motion vectors, smearing across borders with DCT residuals and sparse intra refreshes.", detail: 'Block size', number: '55' },
+  'larsen': { name: 'Larsen', subtitle: "The camera is pointed at its own monitor.", description: "Rotating, zooming and folding video feedback turns each arrival into spirals of nearest-neighbor copies.", detail: 'Incision density', number: '56' },
+  'glyph': { name: 'Glyph', subtitle: "A terminal that melts as it types.", description: "Mirrored 5×7 glyphs are retyped by staggered cursors while melt zones sort their pixels into drips.", detail: 'Incision density', number: '57' },
+  'loupe': { name: 'Loupe', subtitle: "Resolution fails in circles.", description: "Hard-edged lenses crush the moving image into growing mosaic cells; currents tear the enlarged blocks apart.", detail: 'Mosaic size', number: '58' },
+  'scanhead': { name: 'Scanhead', subtitle: "Three heads write; every row slips.", description: "Rolling write heads lay down fresh detail while row bands slide and wrap at their own changing speeds.", detail: 'Incision density', number: '59' },
+  'interlace': { name: 'Interlace', subtitle: "Two fields, two currents.", description: "Odd and even rows carry different images through different currents, combing every moving edge.", detail: 'Incision density', number: '60' },
+  ...patternInfo, ...rasterInfo, ...matterInfo,
 };
 /** Complete registry, including deprecated recipes for import compatibility. */
 export const allPresets: Recipe[] = [
@@ -166,7 +189,16 @@ export const allPresets: Recipe[] = [
   {"schemaVersion": 1, "generatorVersion": "1.6.0", "id": "dense-diffract", "name": "Diffract / intricacy study", "kind": "animated-shader", "family": "diffract", "seed": 13841, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.68}, "palette": ["#152e34", "#f56139", "#d9ef89"], "tags": ["intricacy", "scanlines", "pixel transport", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.6.0", "id": "dense-microcode", "name": "Microcode / intricacy study", "kind": "animated-shader", "family": "microcode", "seed": 39719, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.68}, "palette": ["#eef0dc", "#145bea", "#baec46"], "tags": ["intricacy", "scanlines", "pixel transport", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.6.0", "id": "dense-plume", "name": "Plume / intricacy study", "kind": "animated-shader", "family": "plume", "seed": 22483, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.68}, "palette": ["#ece6d5", "#d64068", "#154f68"], "tags": ["intricacy", "scanlines", "pixel transport", "crisp"], "review": "candidate"},
-
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-estuary", "name": "Estuary / synthesis study", "kind": "animated-shader", "family": "estuary", "seed": 42433, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#edf2df", "#006bff", "#b9ef36"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-excitable", "name": "Excitable / synthesis study", "kind": "animated-shader", "family": "excitable", "seed": 7139, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#182c3d", "#ff6759", "#e8edb2"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-sgraffito", "name": "Sgraffito / synthesis study", "kind": "animated-shader", "family": "sgraffito", "seed": 58217, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#efe6d1", "#d64071", "#1f625b"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-relay", "name": "Relay / synthesis study", "kind": "animated-shader", "family": "relay", "seed": 14833, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#e7ecd5", "#e63e63", "#1553be"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport", "grid only"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-slipstream", "name": "Slipstream / synthesis study", "kind": "animated-shader", "family": "slipstream", "seed": 52791, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#152a35", "#f46b38", "#d4ee91"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-grain-boundary", "name": "Grain boundary / synthesis study", "kind": "animated-shader", "family": "grain-boundary", "seed": 9367, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#f1e6d0", "#655be5", "#23695d"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-countermarch", "name": "Countermarch / synthesis study", "kind": "animated-shader", "family": "countermarch", "seed": 31871, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#20283e", "#fa744e", "#e7ecb8"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport", "grid only"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-overprint", "name": "Overprint / synthesis study", "kind": "animated-shader", "family": "overprint", "seed": 48713, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#ecead8", "#006cea", "#e8577b"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-avalanche", "name": "Avalanche / synthesis study", "kind": "animated-shader", "family": "avalanche", "seed": 27149, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#eee9d0", "#bc3f79", "#224e50"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport", "grid only"], "review": "candidate"},
+  {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "coupled-magnetron", "name": "Magnetron / synthesis study", "kind": "animated-shader", "family": "magnetron", "seed": 61223, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#142d38", "#ff7052", "#e0f486"], "tags": ["synthesis", "coupled feedback", "crisp", "pixel transport"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "long-strides", "name": "Shellsort / mechanism study", "kind": "animated-shader", "family": "shellsort", "seed": 24611, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.6}, "palette": ["#f2efe6", "#ff3d6e", "#1b1f4b"], "tags": ["mechanism", "pixel sorting", "scanlines", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "faceted-growth", "name": "Frost / mechanism study", "kind": "animated-shader", "family": "frost", "seed": 50923, "time": 3.25, "parameters": {"scale": 2.4, "speed": 1.5, "intensity": 1.15, "detail": 0.45}, "palette": ["#e8eef2", "#3d5afe", "#0a1a2f"], "tags": ["mechanism", "morphology", "growth", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "cascading-rules", "name": "Rule / mechanism study", "kind": "animated-shader", "family": "rule", "seed": 7349, "time": 3.25, "parameters": {"scale": 2.3, "speed": 1.5, "intensity": 1.0, "detail": 0.6}, "palette": ["#efeadb", "#ff6a1f", "#14213d"], "tags": ["mechanism", "automaton", "scanlines", "crisp"], "review": "candidate"},
@@ -177,8 +209,10 @@ export const allPresets: Recipe[] = [
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "crushed-lenses", "name": "Loupe / mechanism study", "kind": "animated-shader", "family": "loupe", "seed": 35527, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.55}, "palette": ["#f7f3ea", "#2a6cff", "#ff4f2e"], "tags": ["mechanism", "mosaic", "radial", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "rolling-writes", "name": "Scanhead / mechanism study", "kind": "animated-shader", "family": "scanhead", "seed": 28453, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#e8f1f5", "#ff2e97", "#003049"], "tags": ["mechanism", "rolling shutter", "scanlines", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "combed-fields", "name": "Interlace / mechanism study", "kind": "animated-shader", "family": "interlace", "seed": 46099, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.62}, "palette": ["#171a2b", "#3cf2c8", "#ff7a45"], "tags": ["mechanism", "interlace", "scanlines", "crisp"], "review": "candidate"},
+
+  ...patternPresets, ...rasterPresets, ...matterPresets,
 ];
-/** Browsing order: the ten user-endorsed crisp studies, then damage, entropy, intricacy and mechanism studies. */
+/** Browsing order: the ten user-endorsed crisp studies, then damage, entropy, intricacy, synthesis, mechanism, pattern, raster and matter studies. */
 export const presets = allPresets.filter(recipe => isCrisp(recipe.family));
 export const deprecatedPresets = allPresets.filter(recipe => !isCrisp(recipe.family));
 
@@ -189,16 +223,18 @@ function range(value: unknown, min: number, max: number, field: string) {
 }
 export function validateRecipe(value: unknown): Recipe {
   if (!object(value)) throw new Error('Expected a recipe object.');
-  if (value.schemaVersion !== RECIPE_VERSION || (value.generatorVersion !== '1.0.0' && value.generatorVersion !== '1.1.0' && value.generatorVersion !== '1.2.0' && value.generatorVersion !== '1.3.0' && value.generatorVersion !== '1.4.0' && value.generatorVersion !== '1.5.0' && value.generatorVersion !== '1.6.0' && value.generatorVersion !== GENERATOR_VERSION)) throw new Error('Unsupported recipe or generator version.');
+  if (value.schemaVersion !== RECIPE_VERSION || typeof value.generatorVersion !== 'string' || !generatorVersions.includes(value.generatorVersion)) throw new Error('Unsupported recipe or generator version.');
   if (value.kind !== 'animated-shader') throw new Error('Expected an animated-shader recipe.');
   if (typeof value.family !== 'string' || !Object.hasOwn(families, value.family)) throw new Error('Unknown effect family.');
   if (value.generatorVersion === '1.0.0' && !['caustics', 'phosphor', 'halftone'].includes(value.family)) throw new Error('This family requires generator version 1.1.0.');
-  if (isPixelSorter(value.family) && !['1.2.0', '1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.2.0.');
-  if (isDeparture(value.family) && !['1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.3.0.');
-  if (isDamage(value.family) && !['1.4.0', '1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.4.0.');
-  if (isEntropy(value.family) && !['1.5.0', '1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.5.0.');
-  if (isIntricacy(value.family) && !['1.6.0', '1.7.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.6.0.');
-  if (isMechanism(value.family) && value.generatorVersion !== '1.7.0') throw new Error('This family requires generator version 1.7.0.');
+  if (isPixelSorter(value.family) && !['1.2.0', '1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.2.0.');
+  if (isDeparture(value.family) && !['1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.3.0.');
+  if (isDamage(value.family) && !['1.4.0', '1.5.0', '1.6.0', '1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.4.0.');
+  if (isEntropy(value.family) && !['1.5.0', '1.6.0', '1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.5.0.');
+  if (isIntricacy(value.family) && !['1.6.0', '1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.6.0.');
+  if (isMechanism(value.family) && !['1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.7.0.');
+  if (isSynthesis(value.family) && !['1.7.0', '1.8.0', '1.9.0'].includes(String(value.generatorVersion))) throw new Error('This family requires generator version 1.7.0.');
+  if (isKit(value.family) && value.generatorVersion !== '1.9.0') throw new Error('This family requires generator version 1.9.0.');
   if (typeof value.id !== 'string' || !/^[a-z0-9][a-z0-9-]{0,63}$/.test(value.id)) throw new Error('Recipe ID must use 1–64 lowercase letters, numbers or hyphens.');
   if (typeof value.name !== 'string' || !value.name.trim() || value.name.length > 80) throw new Error('Recipe name must contain 1–80 characters.');
   const seed = range(value.seed, 0, 65535, 'Seed');
@@ -207,7 +243,8 @@ export function validateRecipe(value: unknown): Recipe {
   if (!object(value.parameters)) throw new Error('Missing parameters.');
   const parameters = {} as Parameters;
   for (const [key, spec] of Object.entries(controls)) parameters[key as keyof Parameters] = range(value.parameters[key], spec.min, spec.max, key);
-  if (!Array.isArray(value.palette) || value.palette.length !== 3 || !value.palette.every(c => typeof c === 'string' && /^#[0-9a-f]{6}$/i.test(c))) throw new Error('Palette needs three six-digit hex colors.');
+  if (!Array.isArray(value.palette) || (value.palette.length < 2 || value.palette.length > 5) || !Array.from(value.palette).every(c => typeof c === 'string' && /^#[0-9a-f]{6}$/i.test(c))) throw new Error('Palette needs two to five six-digit hex colors.');
+  if (value.palette.length !== 3 && value.generatorVersion !== '1.8.0' && value.generatorVersion !== '1.9.0') throw new Error('Two, four and five colors require generator version 1.8.0.');
   if (!Array.isArray(value.tags) || value.tags.length > 8 || !value.tags.every(t => typeof t === 'string' && t.length > 0 && t.length <= 32)) throw new Error('Use up to eight short tags.');
   if (value.review !== 'candidate' && value.review !== 'accepted') throw new Error('Invalid review status.');
   return { schemaVersion: 1, generatorVersion: value.generatorVersion as GeneratorVersion, kind: 'animated-shader', id: value.id, name: value.name.trim(), family: value.family as Family, seed, time, parameters, palette: [...value.palette] as Recipe['palette'], tags: [...value.tags], review: value.review };

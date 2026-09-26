@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
-import { paletteCollections, palettePresets, filterPalettes } from '../src/workbench/palettes.ts';
-import { presets } from '../src/seedbank/recipes.ts';
+import { paletteCollections, palettePresets, filterPalettes, paletteVariant } from '../src/workbench/palettes.ts';
+import { presets, GENERATOR_VERSION } from '../src/seedbank/recipes.ts';
 import { launch, openConsumer } from './browser-support.mjs';
 const out = process.env.PALETTE_EVIDENCE_DIR || 'artifacts/palette-library';
 const url = process.env.SEEDBANK_URL || 'http://127.0.0.1:5187';
@@ -17,8 +17,9 @@ try {
   await page.getByRole('button', { name: /Broken LCD/ }).click();
   await page.getByRole('button', { name: 'Inspect recipe ↗' }).click();
   const recipe = async () => JSON.parse(await page.locator('.recipe-code').innerText());
+  await page.getByRole('tab', {name:'Color',exact:true}).click();
   const paletteButton = page.getByRole('button', { name: '⤨ Reroll', exact: true });
-  await page.getByText('Browse 588 palette ideas', { exact: true }).click();
+  await page.getByText('Browse 673 palette ideas', { exact: true }).click();
   assert.equal(await page.locator('.palette-grid button').count(), 12);
   assert.equal(await page.getByRole('button', { name: 'Previous palette page' }).isDisabled(), true);
   await page.getByRole('button', { name: 'Next palette page' }).click();
@@ -30,24 +31,24 @@ try {
   await page.getByLabel('Search palettes').fill('Copper');
   assert.equal(await page.locator('.palette-grid button').count(), 4);
   await page.getByRole('button', { name: 'Use Copper Patina palette', exact: true }).click();
-  assert.deepEqual((await recipe()).palette, palettePresets.find(p => p.id === 'earth-copper-patina').colors);
+  assert.deepEqual((await recipe()).palette, paletteVariant(palettePresets.find(p => p.id === 'earth-copper-patina').colors, 3));
   await page.getByLabel('Search palettes').fill('Copper Patina');
   assert.equal(await paletteButton.isDisabled(), true, 'single current palette has no different reroll');
   await page.getByRole('button', { name: 'Clear palette search' }).click();
   for (let i = 0; i < 5; i++) {
     const before = await recipe(); await paletteButton.click();
     const after = await recipe();
-    assert.ok(filterPalettes('earth').some(p => JSON.stringify(p.colors) === JSON.stringify(after.palette)));
+    assert.ok(filterPalettes('earth').some(p => JSON.stringify(paletteVariant(p.colors, 3)) === JSON.stringify(after.palette)));
     assert.notDeepEqual(after.palette, before.palette);
     assert.deepEqual(after.parameters, before.parameters); assert.equal(after.seed, before.seed);
   }
   const beforeAll = await recipe();
   await page.getByRole('button', { name: 'Generate a new variation' }).click();
   const allReroll = await recipe();
-  assert.ok(filterPalettes('earth').some(p => JSON.stringify(p.colors) === JSON.stringify(allReroll.palette)));
+  assert.ok(filterPalettes('earth').some(p => JSON.stringify(paletteVariant(p.colors, 3)) === JSON.stringify(allReroll.palette)));
   await page.getByRole('button', { name: 'Undo recipe change' }).click();
   assert.deepEqual(await recipe(), beforeAll);
-  checks.push('588 palettes; bounded pagination; collection/search intersection; single-option handling; scoped rerolls and undo');
+  checks.push('673 palettes; bounded pagination; collection/search intersection; single-option handling; scoped rerolls and undo');
   await page.getByRole('button', { name: 'Lock color 1', exact: true }).click();
   const locked = await recipe(); await paletteButton.click();
   const afterLock = await recipe(); assert.equal(afterLock.palette[0], locked.palette[0]);
@@ -87,7 +88,7 @@ try {
     const samples = [pool[(5 + group * 7) % pool.length], pool[(39 + group * 11) % pool.length]];
     for (let index = 0; index < samples.length; index++) {
       const palette = samples[index], family = index ? 'rotor' : 'broken-lcd';
-      const input = { ...presets.find(p => p.family === family), palette: palette.colors };
+      const input = { ...presets.find(p => p.family === family), generatorVersion: GENERATOR_VERSION, palette: palette.colors };
       const result = await consumer.evaluate(async recipe => {
         const r = window.seedbank.runtime; r.setRecipe(recipe); r.resize(480, 320); await r.compile();
         const blob = await r.capture(recipe.time);

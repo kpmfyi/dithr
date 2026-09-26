@@ -1,3 +1,4 @@
+import { pigmentRoles } from './palette';
 import { HalfFloatType, NearestFilter, NoColorSpace, RenderTarget, Vector2, Vector4 } from 'three';
 import { MeshBasicNodeMaterial, QuadMesh, type Node, type WebGPURenderer } from 'three/webgpu';
 import type { DamageFamily } from './recipes';
@@ -222,9 +223,9 @@ export function createDamage(u: Inputs, family: DamageFamily) {
   material.colorNode = Fn(() => {
     const pixel = floor(uv().mul(screen)), st = pixel.add(.5).div(screen);
     const state = result.sample(st);
-    const [ground, accent, ink] = u.colors;
     const rank = pixel.x.add(pixel.y).mod(2).mul(2).add(pixel.y.mod(2)).div(4);
     const threshold = fract(rank.add(hash(floor(pixel.div(2)).add(vec2(u.seed.mul(37), u.seed.mul(13))))));
+    const [ground, accent, ink] = pigmentRoles(u.colors, state.r, threshold);
     const fine = impact || family === 'dead-channel';
     const cut = fine ? .24 : family === 'pressure-leak' ? .38 : .44;
     const body = step(threshold, smoothstep(cut - .045, cut + .045, state.r));

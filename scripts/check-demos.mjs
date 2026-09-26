@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { access, mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
 import { demos, allDemos } from '../src/demos/catalog.ts';
-import { isDeparture, isDamage, isEntropy, isIntricacy, isMechanism, presets, validateRecipe } from '../src/seedbank/recipes.ts';
+import { isMechanism, isSynthesis, isDeparture, isDamage, isEntropy, isIntricacy, isKit, presets, validateRecipe } from '../src/seedbank/recipes.ts';
 import { launch, openConsumer } from './browser-support.mjs';
 
 const url = process.env.SEEDBANK_URL || 'http://127.0.0.1:5187';
@@ -40,8 +40,8 @@ try {
     }, demo.recipe);
     // Sharp departure displays deliberately use three flat colors at three
     // exposure levels, rather than the old continuously shaded palette.
-    const minimumSampledColors = (isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family) || isMechanism(demo.family)) ? 3 : 21;
-    const maximumSampledColors = (isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family) || isMechanism(demo.family)) ? 16 : Infinity;
+    const minimumSampledColors = (isKit(demo.family) || (isSynthesis(demo.family) || isMechanism(demo.family)) || isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family)) ? 3 : 21;
+    const maximumSampledColors = (isKit(demo.family) || (isSynthesis(demo.family) || isMechanism(demo.family)) || isDeparture(demo.family) || isDamage(demo.family) || isEntropy(demo.family) || isIntricacy(demo.family)) ? 16 : Infinity;
     assert.ok(result.stable && result.animated && result.sampledColors >= minimumSampledColors && result.sampledColors <= maximumSampledColors, `${demo.family}: reproducible, animated, nonblank surface`);
     const bytes = Buffer.from(result.frame.split(',')[1], 'base64');
     await writeFile(`${out}/${demo.family}-texture.png`, bytes);
@@ -100,7 +100,7 @@ try {
   await page.getByRole('button', { name: 'Play demo motion', exact: true }).click();
   await page.locator('#all-demos').scrollIntoViewIfNeeded(); await page.waitForTimeout(200);
   const outside = await time(); await page.waitForTimeout(200); assert.equal(await time(), outside, 'Offscreen animation stops');
-  await page.getByRole('link', { name: /Raster bloom \/ motion study — Art/ }).click();
+  await page.getByRole('link', { name: /Raster bloom \/ motion study, Art/ }).click();
   await waitReady(); assert.match(page.url(), /study=raster-bloom/);
   await page.getByRole('button', { name: 'Previous usage demo' }).click(); await waitReady(); assert.match(page.url(), /study=delamination/);
   await page.goBack(); await waitReady(); assert.equal(await page.getByLabel('Choose a usage demo').inputValue(), 'raster-bloom');
@@ -109,24 +109,28 @@ try {
   assert.match(await page.locator('.integration-body code').innerText(), /context-raster-bloom.json/);
   await page.getByText('Use this surface in your project', { exact: false }).click();
   // Every thumbnail is a real rendered composition, not the source texture.
-  await page.locator('.context-thumbnail img').evaluateAll(imgs => Promise.all(imgs.map(img => { img.loading = 'eager'; return img.decode(); })));
-  await page.locator('.demo-gallery').screenshot({ path: `${out}/gallery.png` });
+  await page.locator('.context-gallery img').evaluateAll(imgs => Promise.all(imgs.map(img => { img.loading = 'eager'; return img.decode(); })));
+  await page.locator('.context-gallery').screenshot({ path: `${out}/gallery.png` });
   await page.getByLabel('Choose a usage demo').selectOption('puncture'); await waitReady();
   await page.screenshot({ path: `${out}/page-desktop.png`, fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: `${out}/page-mobile.png`, fullPage: true });
   // Deep links carry only allowlisted built-in recipes into the existing workbench.
+  await page.setViewportSize({ width: 1380, height: 1000 });
   for (const family of ['caustics', 'iridescence', 'glass', 'faultline', 'filament', 'address-drift', 'puncture', 'raster-bloom', 'rift', 'confluence']) {
     const demo = allDemos.find(item => item.family === family);
     await page.goto(`${url}/demos?study=${family}`, { waitUntil: 'networkidle' }); await waitReady();
-    await page.getByRole('link', { name: 'Edit this recipe' }).click();
-    await page.waitForFunction(() => !document.querySelector('.play-button')?.disabled);
+    await page.getByRole('link', { name: 'Edit this recipe' }).first().click();
+    await page.waitForFunction(() => document.querySelector('.canvas-frame canvas') && !document.querySelector('.canvas-note'));
     assert.equal(await page.getByLabel('Preset name').inputValue(), demo.recipe.name);
+    await page.getByRole('button', { name: 'Export', exact: true }).click();
+    await page.getByRole('tab', { name: 'Recipe & link' }).click();
     const downloaded = page.waitForEvent('download');
-    await page.getByRole('button', { name: 'Recipe ↓', exact: true }).click();
+    await page.getByRole('button', { name: 'Download recipe', exact: true }).click();
     await (await downloaded).saveAs(`${out}/workbench-${family}.json`);
     assert.deepEqual(JSON.parse(await readFile(`${out}/workbench-${family}.json`, 'utf8')), demo.recipe);
-    await page.getByRole('link', { name: 'See in context' }).click(); await waitReady();
+    await page.keyboard.press('Escape');
+    await page.getByRole('link', { name: 'In context' }).click(); await waitReady();
     assert.equal(await page.getByLabel('Choose a usage demo').inputValue(), family);
   }
   await page.goto(`${url}/demos?study=__proto__`, { waitUntil: 'networkidle' }); await waitReady();
@@ -148,7 +152,7 @@ try {
     };
   });
   await fallback.goto(`${url}/demos?study=shockfront`, { waitUntil: 'networkidle' });
-  await fallback.getByRole('status').filter({ hasText: 'live renderer unavailable' }).waitFor();
+  await fallback.getByRole('status').filter({ hasText: 'live renderer is unavailable' }).waitFor();
   await fallback.locator('.shader-fallback').evaluate(img => img.decode());
   assert.ok(await fallback.getByRole('button', { name: 'Play demo motion', exact: true }).isDisabled());
   assert.equal(await fallback.locator('.usage-stage canvas').evaluate(canvas => getComputedStyle(canvas).opacity), '0');

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "raster-orbit",
+  "name": "Orbit / raster study",
+  "family": "orbit",
+  "seed": 5574,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1,
+    "intensity": 1.3,
+    "detail": 0.6
+  },
+  "palette": [
+    "#0a0612",
+    "#ff2e88",
+    "#7df9ff",
+    "#3d1a5b",
+    "#f5f3ff"
+  ],
+  "tags": [
+    "raster",
+    "demoscene",
+    "crisp",
+    "points"
+  ],
+  "review": "candidate"
+}

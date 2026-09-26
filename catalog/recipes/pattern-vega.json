@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "pattern-vega",
+  "name": "Vega / pattern study",
+  "family": "vega",
+  "seed": 29642,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.1,
+    "detail": 0.55
+  },
+  "palette": [
+    "#111111",
+    "#e63946",
+    "#f1faee",
+    "#457b9d",
+    "#a8dadc"
+  ],
+  "tags": [
+    "pattern",
+    "ornament",
+    "crisp",
+    "op art"
+  ],
+  "review": "candidate"
+}

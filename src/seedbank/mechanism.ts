@@ -1,3 +1,4 @@
+import { pigmentRoles } from './palette';
 import { HalfFloatType, NearestFilter, NoColorSpace, RenderTarget, Vector2, Vector4 } from 'three';
 import { MeshBasicNodeMaterial, QuadMesh, type Node, type WebGPURenderer } from 'three/webgpu';
 import type { MechanismFamily } from './recipes';
@@ -365,9 +366,9 @@ export function createMechanism(u: Inputs, family: MechanismFamily) {
     const pixel = floor(uv().mul(screen)), st = pixel.add(.5).div(screen);
     const cellPixel = floor(st.mul(dimensions));
     const state = result.sample(st);
-    const [ground, accent, ink] = u.colors;
     // Stationary integer PCG coverage thresholds; three flat pigments.
     const threshold = pixelHash(uint(pixel.x).add(uint(pixel.y).mul(65537)).add(uint(u.seed.mul(65535))));
+    const [ground, accent, ink] = pigmentRoles(u.colors, state.r.add(state.g.mul(2.1)), threshold);
     const cut = family === 'frost' ? .62 : family === 'rule' ? .75 : .72;
     const high = step(threshold, smoothstep(cut - .04, cut + .1, state.r));
     const middle = step(fract(threshold.add(.37)), smoothstep(.09, .2, state.r)).mul(float(1).sub(high));

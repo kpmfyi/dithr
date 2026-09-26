@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "matter-borealis",
+  "name": "Borealis / matter study",
+  "family": "borealis",
+  "seed": 34210,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#050d1a",
+    "#2dffb3",
+    "#b388ff",
+    "#1b6f6a",
+    "#7df9ff"
+  ],
+  "tags": [
+    "matter",
+    "natural",
+    "crisp",
+    "sky"
+  ],
+  "review": "candidate"
+}

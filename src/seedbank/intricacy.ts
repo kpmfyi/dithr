@@ -1,3 +1,4 @@
+import { pigmentRoles } from './palette';
 import { HalfFloatType, NearestFilter, NoColorSpace, RenderTarget, Vector2, Vector4 } from 'three';
 import { MeshBasicNodeMaterial, QuadMesh, type Node, type WebGPURenderer } from 'three/webgpu';
 import type { IntricacyFamily } from './recipes';
@@ -171,10 +172,10 @@ export function createIntricacy(u: Inputs, family: IntricacyFamily) {
   material.colorNode = Fn(() => {
     const pixel = floor(uv().mul(screen)), st = pixel.add(.5).div(screen);
     const state = result.sample(st);
-    const [ground, accent, ink] = u.colors;
     // Integer PCG noise avoids the diagonal correlations of a sine hash and
     // removes the repeating 2×2 rank motif. Thresholds remain fixed in space.
     const threshold = pixelHash(uint(pixel.x).add(uint(pixel.y).mul(65537)).add(uint(u.seed.mul(65535))));
+    const [ground, accent, ink] = pigmentRoles(u.colors, state.r, threshold);
     const high = step(threshold, smoothstep(.70, .85, state.r));
     const middle = step(fract(threshold.add(.37)), smoothstep(.09, .2, state.r)).mul(float(1).sub(high));
     const pigment = mix(mix(ground, ground.mul(.32), middle), ink, high);
