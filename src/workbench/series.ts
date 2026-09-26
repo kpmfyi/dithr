@@ -1,4 +1,4 @@
-import { damageFamilies, entropyFamilies, intricacyFamilies, synthesisFamilies, mechanismFamilies, patternFamilies, rasterFamilies, matterFamilies, presets, type Family } from '../seedbank/recipes.ts';
+import { damageFamilies, entropyFamilies, intricacyFamilies, synthesisFamilies, mechanismFamilies, patternFamilies, rasterFamilies, matterFamilies, logicFamilies, presets, type Family } from '../seedbank/recipes.ts';
 
 /** Browsing groups for the active catalog, in catalog order. */
 export const series: readonly { id: string; name: string; note: string; families: readonly Family[] }[] = [
@@ -11,6 +11,7 @@ export const series: readonly { id: string; name: string; note: string; families
   { id: 'pattern', name: 'Pattern', note: 'Textiles, tiles, print and ornament.', families: patternFamilies },
   { id: 'raster', name: 'Raster', note: 'Fire, tunnels, starfields and other screen classics.', families: rasterFamilies },
   { id: 'matter', name: 'Matter', note: 'Water, stone, sky, swarms and smoke.', families: matterFamilies },
+  { id: 'logic', name: 'Logic', note: 'Bitwise, permuted, quantized and self-steered pixel machines.', families: logicFamilies },
 ];
 export const seriesOf = (family: Family) => series.find(s => s.families.includes(family));
 /** Active presets in a series ('all' returns the whole active catalog). */
