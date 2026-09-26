@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import './studio.css';
+// Share cards need absolute URLs. Vercel exposes the production domain at build
+// time; SEEDBANK_SITE_URL overrides it for other hosts.
+const site = process.env.SEEDBANK_SITE_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : undefined);
 export const metadata: Metadata = {
+  ...(site ? { metadataBase: new URL(site) } : {}),
   title: 'Shader Seedbank: roll and export pixel shaders',
   icons: { icon: '/favicon.svg' },
   openGraph: { title: 'Shader Seedbank', description: 'Roll, tune and export crisp-pixel animated shaders. Free: PNG, video, React or plain JavaScript.', images: [{ url: '/og.png', width: 1200, height: 630 }] },
