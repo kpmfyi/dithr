@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "raster-flipdot",
+  "name": "Flipdot / raster study",
+  "family": "flipdot",
+  "seed": 12870,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#141414",
+    "#ffd400",
+    "#f5f5f0",
+    "#3a3a3a",
+    "#ff1f5a"
+  ],
+  "tags": [
+    "raster",
+    "demoscene",
+    "crisp",
+    "grid only"
+  ],
+  "review": "candidate"
+}

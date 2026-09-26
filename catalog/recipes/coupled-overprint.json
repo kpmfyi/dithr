@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.7.0",
+  "kind": "animated-shader",
+  "id": "coupled-overprint",
+  "name": "Overprint / synthesis study",
+  "family": "overprint",
+  "seed": 48713,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.66
+  },
+  "palette": [
+    "#ecead8",
+    "#006cea",
+    "#e8577b"
+  ],
+  "tags": [
+    "synthesis",
+    "coupled feedback",
+    "crisp",
+    "pixel transport"
+  ],
+  "review": "candidate"
+}

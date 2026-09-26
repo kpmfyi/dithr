@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* In-context page: studio chrome (tokens, top bar, buttons, rails come from
+ * studio.css) around fictional layouts. The layouts keep their own type. */
+.studio.context-page { display: block; height: auto; min-height: 100dvh; overflow: visible; }
+.context-page .topbar { position: sticky; top: 0; z-index: 5; height: var(--bar); }
+.context-page .topnav .btn[aria-current=page] { color: var(--text); background: var(--raised); }
+.context-main { max-width: 1480px; margin: 0 auto; padding: 0 24px 72px; }
+.context-intro { padding: 44px 0 30px; }
+.context-intro h1 { margin: 0; font: 900 clamp(46px, 6.2vw, 88px)/.88 var(--display); letter-spacing: 1px; font-variation-settings: 'ROND' 0; }
+.context-intro p { max-width: 64ch; margin: 18px 0 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.context-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 20px 0 16px; border-top: 1px solid var(--line); }
+.context-heading h2 { margin: 0; font: 900 clamp(32px, 3.6vw, 50px)/.92 var(--display); letter-spacing: 1px; font-variation-settings: 'ROND' 0; }
+.context-heading p { margin: 9px 0 0; color: var(--muted); }
+.context-heading .series-name { color: var(--accent-text); font-variant-numeric: tabular-nums; }
+.context-heading .select { max-width: 230px; height: 34px; }
+.context-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 30px; align-items: start; }
+.context-transport { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 0; }
+.context-state, .context-credit { color: var(--muted); font-size: 12px; }
+.context-credit { margin-left: auto; color: var(--faint); }
+.context-notes h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
+.context-notes h4 { margin: 20px 0 6px; font-size: 13px; font-weight: 600; }
+.context-notes p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.context-palette { display: grid; gap: 7px; margin: 24px 0 14px; }
+.context-palette .rail { height: 30px; }
+.context-palette span { color: var(--faint); font-size: 12px; }
+.context-page .integration-notes { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.context-page .integration-notes summary { cursor: pointer; font-weight: 600; }
+.context-page .integration-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 14px; }
+.context-page .integration-body p { margin: 0 0 12px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.context-page .integration-body .code-box { min-height: 0; margin: 0; overflow: auto; }
+.context-gallery { margin-top: 56px; }
+.context-gallery h2 { margin: 0 0 18px; font: 900 36px/1 var(--display); letter-spacing: 1px; font-variation-settings: 'ROND' 0; }
+.context-gallery .study-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.context-gallery .study-card { text-decoration: none; color: inherit; }
+.context-gallery .study-card img { image-rendering: auto; }
+@media (max-width: 1000px) {
+  .context-workspace, .context-page .integration-body { grid-template-columns: minmax(0, 1fr); }
+  .context-heading { flex-wrap: wrap; align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  .context-main { padding: 0 16px 56px; }
+  .context-intro { padding: 28px 0 22px; }
+  .context-intro p { font-size: 15px; }
+  .context-heading .stepper { width: 100%; }
+  .context-heading .select { flex: 1; max-width: none; }
+  .context-credit { display: none; }
+  .context-gallery .study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Scene art direction keeps its original faces and tokens inside the stage. */
+.context-page .usage-stage { --serif: 'Instrument Serif', Georgia, serif; --mono: 'DM Mono', ui-monospace, monospace; --sans: 'DM Sans', Arial, sans-serif; --line: #ddded4; --muted: #777d73; --green: #465743; font-family: var(--sans); }
+
+/* Pattern: a record sleeve with its disc half out, on a paper table. */
+.usage-stage.scene-pattern { background: #e6e1d5; color: #1f2320; }
+.scene-pattern .sleeve-disc { position: absolute; left: 21%; top: 12.5%; width: 46cqw; aspect-ratio: 1; border-radius: 50%; background: repeating-radial-gradient(circle, #161616 0 .35cqw, #1f1f1f .35cqw .7cqw); box-shadow: 0 2cqw 4cqw #0004; }
+.scene-pattern .sleeve-disc i { position: absolute; inset: 35%; border-radius: 50%; background: var(--p1); box-shadow: inset 0 0 0 .4cqw #0003; }
+.scene-pattern .sleeve-disc i::after { content: ''; position: absolute; inset: 46%; border-radius: 50%; background: #e6e1d5; }
+.scene-pattern .sleeve { left: 6%; top: 9%; width: 50cqw; aspect-ratio: 1; box-shadow: 0 2.4cqw 4.4cqw #0005, 0 .2cqw .4cqw #0003; }
+.scene-pattern .sleeve-sticker { position: absolute; right: 5%; top: 5%; z-index: 2; display: grid; gap: .3cqw; padding: 1.2cqw 1.5cqw; background: #f4f1ea; color: #1f2320; border-radius: .3cqw; font: 500 1.35cqw/1.2 var(--sans); }
+.scene-pattern .sleeve-sticker b { font-size: 1.7cqw; }
+.scene-pattern .sleeve-sticker small { font: 1.05cqw var(--mono); color: #5d625b; }
+.scene-pattern .sleeve-copy { position: absolute; left: 71%; right: 4.5%; top: 14%; bottom: 10%; display: flex; flex-direction: column; gap: 1.6cqw; }
+.scene-pattern .sleeve-copy > span { font: 1.05cqw var(--mono); letter-spacing: .1cqw; color: #5d625b; }
+.scene-pattern .sleeve-copy h3 { font-size: 4.6cqw; }
+.scene-pattern .sleeve-copy p { margin: 0; font-size: 1.3cqw; color: #3d423c; }
+.scene-pattern .sleeve-foot { margin-top: auto; }
+
+/* Raster: an LED wall over a crowd, with a performer HUD. */
+.usage-stage.scene-raster { background: radial-gradient(ellipse 70% 55% at 50% 38%, color-mix(in srgb, var(--p1) 22%, #0b0b0d), #0b0b0d 70%); color: #f2f2f2; }
+.scene-raster .wall { left: 9%; right: 9%; top: 8%; height: 60%; outline: .5cqw solid #050505; box-shadow: 0 0 6cqw color-mix(in srgb, var(--p1) 35%, transparent); }
+.scene-raster .wall-hud { position: absolute; left: 9%; right: 9%; top: 3.2%; display: flex; gap: 2.4cqw; font: 1.05cqw var(--mono); letter-spacing: .12cqw; text-transform: uppercase; color: #cfcfcf; }
+.scene-raster .wall-rec { margin-left: auto; color: #ff4d4d; }
+.scene-raster .wall-rec::before { content: ''; display: inline-block; width: .8cqw; height: .8cqw; margin-right: .7cqw; background: #ff4d4d; }
+.scene-raster .wall-title { position: absolute; left: 9%; top: 71%; display: flex; align-items: baseline; gap: 2cqw; }
+.scene-raster .wall-title h3 { font: 900 4.4cqw/1 var(--sans); letter-spacing: -.15cqw; }
+.scene-raster .wall-title p { margin: 0; font-size: 1.4cqw; color: #bdbdbd; }
+.scene-raster .wall-crowd { position: absolute; left: 0; right: 0; bottom: 0; height: 18%; background:
+  radial-gradient(circle at 50% 30%, #050505 1.6cqw, transparent 1.7cqw) 0 0 / 5.2cqw 100% repeat-x,
+  radial-gradient(circle at 50% 42%, #080808 1.9cqw, transparent 2cqw) 2.6cqw 1.2cqw / 6.1cqw 100% repeat-x,
+  linear-gradient(transparent 38%, #050505 38%); }
+
+/* Matter: an editorial cover whose image is the live study. */
+.usage-stage.scene-matter { background: #dcd6c9; color: #1c1f1d; }
+.scene-matter .cover { left: 8%; top: 7%; height: 86%; aspect-ratio: 3 / 4; box-shadow: 0 2.2cqw 4.4cqw #0004; }
+.scene-matter .cover-masthead { position: absolute; left: 6%; right: 6%; top: 4%; z-index: 2; font: 400 7.2cqw/1 var(--serif); color: #fff; mix-blend-mode: difference; }
+.scene-matter .cover-issue { position: absolute; right: 6%; top: 15%; z-index: 2; font: 1cqw var(--mono); color: #fff; mix-blend-mode: difference; letter-spacing: .1cqw; }
+.scene-matter .cover-line { position: absolute; left: 6%; bottom: 5%; z-index: 2; padding: .6cqw 1cqw; background: #f4f1ea; color: #1c1f1d; font: 500 1.6cqw var(--sans); }
+.scene-matter .cover-copy { position: absolute; left: 58%; right: 6%; top: 16%; bottom: 10%; display: flex; flex-direction: column; gap: 1.6cqw; }
+.scene-matter .cover-copy > span { font: 1.05cqw var(--mono); letter-spacing: .1cqw; color: #5d625b; }
+.scene-matter .cover-copy h3 { font-size: 5cqw; }
+.scene-matter .cover-copy p { margin: 0; font-size: 1.35cqw; color: #3d423c; }
+.scene-matter .cover-foot { margin-top: auto; }

@@ -1,3 +1,4 @@
+import { pigmentRoles } from './palette';
 import { HalfFloatType, NearestFilter, NoColorSpace, RenderTarget, Vector2, Vector4 } from 'three';
 import { MeshBasicNodeMaterial, QuadMesh, type Node, type WebGPURenderer } from 'three/webgpu';
 import type { DepartureFamily } from './recipes';
@@ -183,10 +184,10 @@ export function createDeparture(u: Inputs, family: DepartureFamily) {
     const pixel = floor(uv().mul(screen));
     const st = pixel.add(.5).div(screen);
     const state = result.sample(st);
-    const [ground, accent, ink] = u.colors;
     const fine = impact || family === 'filament';
     const rank = pixel.x.add(pixel.y).mod(2).mul(2).add(pixel.y.mod(2)).div(4);
     const threshold = fract(rank.add(hash(floor(pixel.div(2)).add(vec2(u.seed.mul(37), u.seed.mul(13))))));
+    const [ground, accent, ink] = pigmentRoles(u.colors, state.r, threshold);
 
     // Flat pigment zones, with coverage expressed as individual hard pixels.
     // Keep each family's signal threshold, but replace the old wide shaded ramps

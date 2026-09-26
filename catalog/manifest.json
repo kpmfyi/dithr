@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatorVersion": "1.7.0",
+  "generatorVersion": "1.9.0",
   "entries": [
     {
       "id": "pink-signal-loss",
@@ -13,8 +13,8 @@
       "generatorVersion": "1.1.0",
       "recipe": "recipes/pink-signal-loss.json",
       "source": "../src/seedbank/broken-lcd.ts",
-      "sourceSha256": "c823242b115d8a685bbfc05204004c5e26f3f1791bb20c4978bfb4c166cb2a39",
-      "evidenceSourceSha256": "c823242b115d8a685bbfc05204004c5e26f3f1791bb20c4978bfb4c166cb2a39",
+      "sourceSha256": "46628036d79408af6606fc30d30bc27a363fd5c151cafc93eb28ef46d3ef62e1",
+      "evidenceSourceSha256": "46628036d79408af6606fc30d30bc27a363fd5c151cafc93eb28ef46d3ef62e1",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
       },
@@ -31,7 +31,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/broken-lcd-19-webgl2/pink-signal-loss/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/pink-signal-loss/report.json",
         "webgpu": "../artifacts/broken-lcd-19-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -47,8 +47,8 @@
       "generatorVersion": "1.2.0",
       "recipe": "recipes/opposing-currents.json",
       "source": "../src/seedbank/pixel-sorters.ts",
-      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
-      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
+      "evidenceSourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
       },
@@ -65,7 +65,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/pixel-sorters-01-webgl2/opposing-currents/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/opposing-currents/report.json",
         "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -81,8 +81,8 @@
       "generatorVersion": "1.2.0",
       "recipe": "recipes/hooked-memory.json",
       "source": "../src/seedbank/pixel-sorters.ts",
-      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
-      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
+      "evidenceSourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
       },
@@ -99,7 +99,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/pixel-sorters-01-webgl2/hooked-memory/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/hooked-memory/report.json",
         "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -115,8 +115,8 @@
       "generatorVersion": "1.2.0",
       "recipe": "recipes/falling-register.json",
       "source": "../src/seedbank/pixel-sorters.ts",
-      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
-      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
+      "evidenceSourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
       },
@@ -133,7 +133,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/pixel-sorters-01-webgl2/falling-register/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/falling-register/report.json",
         "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -149,8 +149,8 @@
       "generatorVersion": "1.2.0",
       "recipe": "recipes/slipped-contours.json",
       "source": "../src/seedbank/pixel-sorters.ts",
-      "sourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
-      "evidenceSourceSha256": "7b4e9122446cc745c30b5330a65ceead2b1da61d4c5bdac840551ea9f489ce05",
+      "sourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
+      "evidenceSourceSha256": "135545b1db5217ba3684b41ddb4d73fa9641bb596bd529f902244fc409875d7e",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20"
       },
@@ -167,7 +167,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/pixel-sorters-01-webgl2/slipped-contours/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/slipped-contours/report.json",
         "webgpu": "../artifacts/pixel-sorters-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -183,8 +183,8 @@
       "generatorVersion": "1.3.0",
       "recipe": "recipes/eccentric-press.json",
       "source": "../src/seedbank/departures.ts",
-      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
-      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
+      "evidenceSourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -202,7 +202,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/departures-sharp-01-webgl2/eccentric-press/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/eccentric-press/report.json",
         "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -218,8 +218,8 @@
       "generatorVersion": "1.3.0",
       "recipe": "recipes/tension-field.json",
       "source": "../src/seedbank/departures.ts",
-      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
-      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
+      "evidenceSourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -237,7 +237,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/departures-sharp-01-webgl2/tension-field/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/tension-field/report.json",
         "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -253,8 +253,8 @@
       "generatorVersion": "1.3.0",
       "recipe": "recipes/restless-membrane.json",
       "source": "../src/seedbank/departures.ts",
-      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
-      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
+      "evidenceSourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -272,7 +272,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/departures-sharp-01-webgl2/restless-membrane/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/restless-membrane/report.json",
         "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -288,8 +288,8 @@
       "generatorVersion": "1.3.0",
       "recipe": "recipes/successive-impacts.json",
       "source": "../src/seedbank/departures.ts",
-      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
-      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
+      "evidenceSourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -307,7 +307,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/departures-sharp-01-webgl2/successive-impacts/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/successive-impacts/report.json",
         "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -323,8 +323,8 @@
       "generatorVersion": "1.3.0",
       "recipe": "recipes/live-etching.json",
       "source": "../src/seedbank/departures.ts",
-      "sourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
-      "evidenceSourceSha256": "d6793d4f398dcc10847b36af0e1da7c843c4aa31346bd44aa09e0bd77991d50b",
+      "sourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
+      "evidenceSourceSha256": "6989683cf910b1213deb965d907e62aefa7fa6a52311e26efe5f94f22466903d",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -342,7 +342,7 @@
         "aestheticApproval": "user endorsed as usable; promoted benchmark, further refinement welcome"
       },
       "checks": {
-        "webgl2": "../artifacts/departures-sharp-01-webgl2/live-etching/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/signal-webgl2/live-etching/report.json",
         "webgpu": "../artifacts/departures-sharp-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -358,8 +358,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/latched-rows.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -377,7 +377,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/latched-rows/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/latched-rows/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -393,8 +393,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/slipping-gates.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -412,7 +412,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/slipping-gates/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/slipping-gates/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -428,8 +428,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/misrouted-memory.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -447,7 +447,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/misrouted-memory/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/misrouted-memory/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -463,8 +463,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/stepped-faults.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -482,7 +482,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/stepped-faults/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/stepped-faults/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -498,8 +498,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/creeping-failure.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -517,7 +517,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/creeping-failure/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/creeping-failure/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -533,8 +533,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/ruptured-polarizer.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -552,7 +552,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/ruptured-polarizer/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/ruptured-polarizer/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -568,8 +568,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/capillary-loss.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -587,7 +587,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/capillary-loss/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/capillary-loss/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -603,8 +603,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/slipping-shards.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -622,7 +622,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/slipping-shards/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/slipping-shards/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -638,8 +638,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/peeling-register.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -657,7 +657,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/peeling-register/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/peeling-register/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -673,8 +673,8 @@
       "generatorVersion": "1.4.0",
       "recipe": "recipes/trapped-fronts.json",
       "source": "../src/seedbank/damage.ts",
-      "sourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
-      "evidenceSourceSha256": "d22efc6e9f8d8d22a477050dc7910028295198f066bada0f71562d7c35936c39",
+      "sourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
+      "evidenceSourceSha256": "a5a7b966b670ddf6c2cff892cd8a092e81328441bc241b45d1a801300b455a32",
       "sourceDependencies": {
         "src/seedbank/lcd-evolution.ts": "92503bc7749bbf77eab46dda243f87009114ec03b884ac22b7fec0f4f5936b20",
         "src/seedbank/impulse-evolution.ts": "5084de633837041356f430282ac9d16da842b93190e092a562691a463ecb7797"
@@ -692,7 +692,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/damage-04-webgl2/trapped-fronts/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/damage-webgl2/trapped-fronts/report.json",
         "webgpu": "../artifacts/damage-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -708,8 +708,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/restless-faults.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -726,7 +726,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/restless-faults/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/restless-faults/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -742,8 +742,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/unsettled-parcels.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -760,7 +760,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/unsettled-parcels/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/unsettled-parcels/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -776,8 +776,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/unwinding-knots.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -794,7 +794,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/unwinding-knots/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/unwinding-knots/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -810,8 +810,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/shed-fragments.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -828,7 +828,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/shed-fragments/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/shed-fragments/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -844,8 +844,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/wandering-branches.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -862,7 +862,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/wandering-branches/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/wandering-branches/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -878,8 +878,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/unfinished-seams.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -896,7 +896,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/unfinished-seams/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/unfinished-seams/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -912,8 +912,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/migrating-fragments.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -930,7 +930,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/migrating-fragments/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/migrating-fragments/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -946,8 +946,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/unmoored-plates.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -964,7 +964,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/unmoored-plates/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/unmoored-plates/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -980,8 +980,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/exchanging-cavities.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -998,7 +998,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/exchanging-cavities/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/exchanging-cavities/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1014,8 +1014,8 @@
       "generatorVersion": "1.5.0",
       "recipe": "recipes/unrelated-arrivals.json",
       "source": "../src/seedbank/entropy.ts",
-      "sourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
-      "evidenceSourceSha256": "56222835a953c1c6ea70f3955acd02bb83c599a9d0efb08098d47517c52cce54",
+      "sourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
+      "evidenceSourceSha256": "a08b00750cb377bb11597c654d7f8f26a1a445e789cc361cca8ce00176afe011",
       "sourceDependencies": {
         "src/seedbank/entropy-evolution.ts": "18b13a4f06af5d6cb7faea34454e9eb36831c9f33211e7eea3ae08565bd89b42"
       },
@@ -1032,7 +1032,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/entropy-03-webgl2/unrelated-arrivals/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/entropy-webgl2/unrelated-arrivals/report.json",
         "webgpu": "../artifacts/entropy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1048,8 +1048,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-intaglio.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1066,7 +1066,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-intaglio/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-intaglio/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1082,8 +1082,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-braid.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1100,7 +1100,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-braid/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-braid/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1116,8 +1116,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-scrim.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1134,7 +1134,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-scrim/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-scrim/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1150,8 +1150,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-guilloche.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1168,7 +1168,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-guilloche/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-guilloche/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1184,8 +1184,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-imbricate.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1202,7 +1202,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-imbricate/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-imbricate/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1218,8 +1218,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-capillary.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1236,7 +1236,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-capillary/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-capillary/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1252,8 +1252,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-palimpsest.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1270,7 +1270,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-palimpsest/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-palimpsest/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1286,8 +1286,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-diffract.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1304,7 +1304,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-diffract/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-diffract/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1320,8 +1320,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-microcode.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1338,7 +1338,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-microcode/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-microcode/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1354,8 +1354,8 @@
       "generatorVersion": "1.6.0",
       "recipe": "recipes/dense-plume.json",
       "source": "../src/seedbank/intricacy.ts",
-      "sourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
-      "evidenceSourceSha256": "6a1a3e47cdd6be154af562070fe997c2d5351a9ff756a211880a3fcf75e5f904",
+      "sourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
+      "evidenceSourceSha256": "e692ecf6b8530055b0958bfdc3cfec25b8a0d4474e763de0bb21d2fe5cb23c93",
       "sourceDependencies": {
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
       },
@@ -1372,8 +1372,361 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/intricacy-01-webgl2/dense-plume/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/intricacy-webgl2/dense-plume/report.json",
         "webgpu": "../artifacts/intricacy-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-estuary",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "41",
+      "kind": "animated-shader",
+      "name": "Estuary / synthesis study",
+      "family": "estuary",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-estuary.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/estuary.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-estuary/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-excitable",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "42",
+      "kind": "animated-shader",
+      "name": "Excitable / synthesis study",
+      "family": "excitable",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-excitable.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/excitable.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-excitable/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-sgraffito",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "43",
+      "kind": "animated-shader",
+      "name": "Sgraffito / synthesis study",
+      "family": "sgraffito",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-sgraffito.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/sgraffito.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-sgraffito/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-relay",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "44",
+      "kind": "animated-shader",
+      "name": "Relay / synthesis study",
+      "family": "relay",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-relay.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/relay.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport",
+        "grid only"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-relay/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-slipstream",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "45",
+      "kind": "animated-shader",
+      "name": "Slipstream / synthesis study",
+      "family": "slipstream",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-slipstream.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/slipstream.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-slipstream/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-grain-boundary",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "46",
+      "kind": "animated-shader",
+      "name": "Grain boundary / synthesis study",
+      "family": "grain-boundary",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-grain-boundary.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/grain-boundary.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-grain-boundary/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-countermarch",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "47",
+      "kind": "animated-shader",
+      "name": "Countermarch / synthesis study",
+      "family": "countermarch",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-countermarch.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/countermarch.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport",
+        "grid only"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-countermarch/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-overprint",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "48",
+      "kind": "animated-shader",
+      "name": "Overprint / synthesis study",
+      "family": "overprint",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-overprint.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/overprint.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-overprint/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-avalanche",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "49",
+      "kind": "animated-shader",
+      "name": "Avalanche / synthesis study",
+      "family": "avalanche",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-avalanche.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/avalanche.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport",
+        "grid only"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-avalanche/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "coupled-magnetron",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "50",
+      "kind": "animated-shader",
+      "name": "Magnetron / synthesis study",
+      "family": "magnetron",
+      "generatorVersion": "1.7.0",
+      "recipe": "recipes/coupled-magnetron.json",
+      "source": "../src/seedbank/synthesis.ts",
+      "sourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "evidenceSourceSha256": "f9fd94e6b330400dd4d92ab66d7d48d4dc59b7880c77a5eaac3fc67ff5fe2bf5",
+      "sourceDependencies": {
+        "src/seedbank/synthesis-evolution.ts": "dc86c947e6fa68a69da3113d8bf82bf720a85e97e333dc275cef32b364dc276c",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
+      },
+      "preview": "../public/previews/magnetron.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "synthesis",
+        "coupled feedback",
+        "crisp",
+        "pixel transport"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/catalog-refresh-01/synthesis-webgl2/coupled-magnetron/report.json",
+        "webgpu": "../artifacts/synthesis-pilot-01-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
     },
@@ -1381,15 +1734,15 @@
       "id": "long-strides",
       "status": "active",
       "featured": false,
-      "displayNumber": "41",
+      "displayNumber": "51",
       "kind": "animated-shader",
       "name": "Shellsort / mechanism study",
       "family": "shellsort",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/long-strides.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1407,7 +1760,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/long-strides/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/long-strides/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1416,15 +1769,15 @@
       "id": "faceted-growth",
       "status": "active",
       "featured": false,
-      "displayNumber": "42",
+      "displayNumber": "52",
       "kind": "animated-shader",
       "name": "Frost / mechanism study",
       "family": "frost",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/faceted-growth.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1442,7 +1795,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/faceted-growth/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/faceted-growth/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1451,15 +1804,15 @@
       "id": "cascading-rules",
       "status": "active",
       "featured": false,
-      "displayNumber": "43",
+      "displayNumber": "53",
       "kind": "animated-shader",
       "name": "Rule / mechanism study",
       "family": "rule",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/cascading-rules.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1477,7 +1830,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/cascading-rules/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/cascading-rules/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1486,15 +1839,15 @@
       "id": "rising-pixels",
       "status": "active",
       "featured": false,
-      "displayNumber": "44",
+      "displayNumber": "54",
       "kind": "animated-shader",
       "name": "Buoyancy / mechanism study",
       "family": "buoyancy",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/rising-pixels.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1512,7 +1865,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/rising-pixels/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/rising-pixels/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1521,15 +1874,15 @@
       "id": "lost-keyframe",
       "status": "active",
       "featured": false,
-      "displayNumber": "45",
+      "displayNumber": "55",
       "kind": "animated-shader",
       "name": "Macroblock / mechanism study",
       "family": "macroblock",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/lost-keyframe.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1547,7 +1900,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/lost-keyframe/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/lost-keyframe/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1556,15 +1909,15 @@
       "id": "monitor-loop",
       "status": "active",
       "featured": false,
-      "displayNumber": "46",
+      "displayNumber": "56",
       "kind": "animated-shader",
       "name": "Larsen / mechanism study",
       "family": "larsen",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/monitor-loop.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1582,7 +1935,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/monitor-loop/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/monitor-loop/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1591,15 +1944,15 @@
       "id": "melting-terminal",
       "status": "active",
       "featured": false,
-      "displayNumber": "47",
+      "displayNumber": "57",
       "kind": "animated-shader",
       "name": "Glyph / mechanism study",
       "family": "glyph",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/melting-terminal.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1617,7 +1970,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/melting-terminal/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/melting-terminal/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1626,15 +1979,15 @@
       "id": "crushed-lenses",
       "status": "active",
       "featured": false,
-      "displayNumber": "48",
+      "displayNumber": "58",
       "kind": "animated-shader",
       "name": "Loupe / mechanism study",
       "family": "loupe",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/crushed-lenses.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1652,7 +2005,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/crushed-lenses/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/crushed-lenses/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1661,15 +2014,15 @@
       "id": "rolling-writes",
       "status": "active",
       "featured": false,
-      "displayNumber": "49",
+      "displayNumber": "59",
       "kind": "animated-shader",
       "name": "Scanhead / mechanism study",
       "family": "scanhead",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/rolling-writes.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1687,7 +2040,7 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/rolling-writes/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/rolling-writes/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
@@ -1696,15 +2049,15 @@
       "id": "combed-fields",
       "status": "active",
       "featured": false,
-      "displayNumber": "50",
+      "displayNumber": "60",
       "kind": "animated-shader",
       "name": "Interlace / mechanism study",
       "family": "interlace",
       "generatorVersion": "1.7.0",
       "recipe": "recipes/combed-fields.json",
       "source": "../src/seedbank/mechanism.ts",
-      "sourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
-      "evidenceSourceSha256": "ae9bee4447b934916d64fb2e77fe6db8213f96736febe647e2ceca9fd64ddbda",
+      "sourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
+      "evidenceSourceSha256": "874985c5ce9d9ee8c18a021a50a7e3d1b4201a6a05cbdd738326d19bc65d4e95",
       "sourceDependencies": {
         "src/seedbank/mechanism-evolution.ts": "5d6aab9a99505521399ccbfad210f6aafbee0839db709ed8260d72090718d526",
         "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc"
@@ -1722,8 +2075,1118 @@
         "aestheticApproval": "pending human review"
       },
       "checks": {
-        "webgl2": "../artifacts/mechanism-02-webgl2/combed-fields/report.json",
+        "webgl2": "../artifacts/catalog-refresh-01/mechanism-webgl2/combed-fields/report.json",
         "webgpu": "../artifacts/mechanism-02-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-tartan",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "61",
+      "kind": "animated-shader",
+      "name": "Tartan / pattern study",
+      "family": "tartan",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-tartan.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/tartan.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "grid only"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-tartan/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-ikat",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "62",
+      "kind": "animated-shader",
+      "name": "Ikat / pattern study",
+      "family": "ikat",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-ikat.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/ikat.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "textile"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-ikat/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-truchet",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "63",
+      "kind": "animated-shader",
+      "name": "Truchet / pattern study",
+      "family": "truchet",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-truchet.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/truchet.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "tiling"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-truchet/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-bauhaus",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "64",
+      "kind": "animated-shader",
+      "name": "Bauhaus / pattern study",
+      "family": "bauhaus",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-bauhaus.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/bauhaus.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "tiling"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-bauhaus/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-marbling",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "65",
+      "kind": "animated-shader",
+      "name": "Marbling / pattern study",
+      "family": "marbling",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-marbling.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/marbling.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "print"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-marbling/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-rosette",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "66",
+      "kind": "animated-shader",
+      "name": "Rosette / pattern study",
+      "family": "rosette",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-rosette.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/rosette.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "print"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-rosette/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-bargello",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "67",
+      "kind": "animated-shader",
+      "name": "Bargello / pattern study",
+      "family": "bargello",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-bargello.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/bargello.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "textile"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-bargello/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-vega",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "68",
+      "kind": "animated-shader",
+      "name": "Vega / pattern study",
+      "family": "vega",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-vega.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/vega.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "op art"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-vega/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-kaleidoscope",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "69",
+      "kind": "animated-shader",
+      "name": "Kaleidoscope / pattern study",
+      "family": "kaleidoscope",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-kaleidoscope.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/kaleidoscope.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "radial"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-kaleidoscope/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "pattern-hatch",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "70",
+      "kind": "animated-shader",
+      "name": "Hatch / pattern study",
+      "family": "hatch",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/pattern-hatch.json",
+      "source": "../src/seedbank/pattern.ts",
+      "sourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "evidenceSourceSha256": "f028c7de1a7f8ae341ddd22146cc9c6e39d1b39e1e6062a75f6cfb476bb1993b",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/pattern-evolution.ts": "d84880490d4f86fd0441d4ba584e8e1f8722817dc25f36765fd558508c18775b"
+      },
+      "preview": "../public/previews/hatch.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "pattern",
+        "ornament",
+        "crisp",
+        "linework"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/pattern-01-webgl2/pattern-hatch/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-pyre",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "71",
+      "kind": "animated-shader",
+      "name": "Pyre / raster study",
+      "family": "pyre",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-pyre.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/pyre.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "fire"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-pyre/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-tunnel",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "72",
+      "kind": "animated-shader",
+      "name": "Tunnel / raster study",
+      "family": "tunnel",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-tunnel.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/tunnel.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "radial"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-tunnel/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-warp",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "73",
+      "kind": "animated-shader",
+      "name": "Warp / raster study",
+      "family": "warp",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-warp.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/warp.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "radial"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-warp/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-copper",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "74",
+      "kind": "animated-shader",
+      "name": "Copper / raster study",
+      "family": "copper",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-copper.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/copper.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "scanlines"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-copper/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-vectorscope",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "75",
+      "kind": "animated-shader",
+      "name": "Vectorscope / raster study",
+      "family": "vectorscope",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-vectorscope.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/vectorscope.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "linework"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-vectorscope/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-flipdot",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "76",
+      "kind": "animated-shader",
+      "name": "Flipdot / raster study",
+      "family": "flipdot",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-flipdot.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/flipdot.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "grid only"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-flipdot/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-voxel",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "77",
+      "kind": "animated-shader",
+      "name": "Voxel / raster study",
+      "family": "voxel",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-voxel.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/voxel.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "landscape"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-voxel/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-mode7",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "78",
+      "kind": "animated-shader",
+      "name": "Mode 7 / raster study",
+      "family": "mode7",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-mode7.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/mode7.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "perspective"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-mode7/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-orbit",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "79",
+      "kind": "animated-shader",
+      "name": "Orbit / raster study",
+      "family": "orbit",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-orbit.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/orbit.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "points"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-orbit/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "raster-twister",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "80",
+      "kind": "animated-shader",
+      "name": "Twister / raster study",
+      "family": "twister",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/raster-twister.json",
+      "source": "../src/seedbank/raster.ts",
+      "sourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "evidenceSourceSha256": "1eac253565efc9eb8c9a40f18769edd80a6222028799d35348e8c8f7f2542b25",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/raster-evolution.ts": "e61245a7c38f36b52f74e010af378199e58f4d33453c85bf145aa7c2dccba84b"
+      },
+      "preview": "../public/previews/twister.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "raster",
+        "demoscene",
+        "crisp",
+        "3d"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/raster-01-webgl2/raster-twister/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-ripple",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "81",
+      "kind": "animated-shader",
+      "name": "Ripple / matter study",
+      "family": "ripple",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-ripple.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/ripple.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "water"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-ripple/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-agate",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "82",
+      "kind": "animated-shader",
+      "name": "Agate / matter study",
+      "family": "agate",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-agate.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/agate.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "mineral"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-agate/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-grain",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "83",
+      "kind": "animated-shader",
+      "name": "Grain / matter study",
+      "family": "grain",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-grain.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/grain.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "material"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-grain/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-borealis",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "84",
+      "kind": "animated-shader",
+      "name": "Borealis / matter study",
+      "family": "borealis",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-borealis.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/borealis.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "sky"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-borealis/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-lightning",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "85",
+      "kind": "animated-shader",
+      "name": "Lightning / matter study",
+      "family": "lightning",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-lightning.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/lightning.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "sky"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-lightning/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-swarm",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "86",
+      "kind": "animated-shader",
+      "name": "Swarm / matter study",
+      "family": "swarm",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-swarm.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/swarm.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "points"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-swarm/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-strata",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "87",
+      "kind": "animated-shader",
+      "name": "Strata / matter study",
+      "family": "strata",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-strata.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/strata.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "mineral"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-strata/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-cumulus",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "88",
+      "kind": "animated-shader",
+      "name": "Cumulus / matter study",
+      "family": "cumulus",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-cumulus.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/cumulus.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "sky"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-cumulus/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-phyllotaxis",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "89",
+      "kind": "animated-shader",
+      "name": "Phyllotaxis / matter study",
+      "family": "phyllotaxis",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-phyllotaxis.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/phyllotaxis.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "radial"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-phyllotaxis/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
+      },
+      "provenance": "../docs/PROVENANCE.md"
+    },
+    {
+      "id": "matter-smoke",
+      "status": "active",
+      "featured": false,
+      "displayNumber": "90",
+      "kind": "animated-shader",
+      "name": "Smoke / matter study",
+      "family": "smoke",
+      "generatorVersion": "1.9.0",
+      "recipe": "recipes/matter-smoke.json",
+      "source": "../src/seedbank/matter.ts",
+      "sourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "evidenceSourceSha256": "76440a7bb55f73d5f1c3e009ad8e61deff69308b16197c10be59122a7f0a49b2",
+      "sourceDependencies": {
+        "src/seedbank/kit.ts": "20114ce6781ff801a03f26b8b28fb773bd64cb106108ae1969c3135b4f47d9b8",
+        "src/seedbank/kit-evolution.ts": "510771870823ea107272361c46226bd952171c73864e515ba1c2c87cd2b279bd",
+        "src/seedbank/intricacy-evolution.ts": "6f0d02d3418c8699c9ef1720ffddeb25e00803ea0bbce6163dfc0a4bed4dfbfc",
+        "src/seedbank/matter-evolution.ts": "e62c762d74ff3fb0b889cf3efd85ba494ba5cee31d2a29095d71248536b764a0"
+      },
+      "preview": "../public/previews/smoke.png",
+      "runtimeExample": "../examples/consumer/main.ts",
+      "tags": [
+        "matter",
+        "natural",
+        "crisp",
+        "flow"
+      ],
+      "review": {
+        "status": "candidate",
+        "aestheticApproval": "pending human review"
+      },
+      "checks": {
+        "webgl2": "../artifacts/matter-01-webgl2/matter-smoke/report.json",
+        "webgpu": "../artifacts/studies-61-90-webgpu/backend-unavailable.json"
       },
       "provenance": "../docs/PROVENANCE.md"
     },
@@ -1738,7 +3201,7 @@
       "generatorVersion": "1.0.0",
       "recipe": "recipes/tidal-glass.json",
       "source": "../src/seedbank/effects.ts",
-      "sourceSha256": "67e30bfcbe90428bf31220c0df4f3f68bfeae10d31ddaf933bb4bb857f9aa717",
+      "sourceSha256": "8b4bfcbdda0ba483b9d06a50c21e6b1a614597beaa201c556526d28762977c4a",
       "evidenceSourceSha256": "8f42a2adf1b249609c74e5b7b4ba1dae04bbc2fb5bedc18174952230dbef46b9",
       "sourceDependencies": {},
       "preview": "../public/previews/caustics.png",
@@ -1769,7 +3232,7 @@
       "generatorVersion": "1.0.0",
       "recipe": "recipes/night-signal.json",
       "source": "../src/seedbank/effects.ts",
-      "sourceSha256": "67e30bfcbe90428bf31220c0df4f3f68bfeae10d31ddaf933bb4bb857f9aa717",
+      "sourceSha256": "8b4bfcbdda0ba483b9d06a50c21e6b1a614597beaa201c556526d28762977c4a",
       "evidenceSourceSha256": "8f42a2adf1b249609c74e5b7b4ba1dae04bbc2fb5bedc18174952230dbef46b9",
       "sourceDependencies": {},
       "preview": "../public/previews/phosphor.png",
@@ -1800,7 +3263,7 @@
       "generatorVersion": "1.0.0",
       "recipe": "recipes/soft-impression.json",
       "source": "../src/seedbank/effects.ts",
-      "sourceSha256": "67e30bfcbe90428bf31220c0df4f3f68bfeae10d31ddaf933bb4bb857f9aa717",
+      "sourceSha256": "8b4bfcbdda0ba483b9d06a50c21e6b1a614597beaa201c556526d28762977c4a",
       "evidenceSourceSha256": "8f42a2adf1b249609c74e5b7b4ba1dae04bbc2fb5bedc18174952230dbef46b9",
       "sourceDependencies": {},
       "preview": "../public/previews/halftone.png",

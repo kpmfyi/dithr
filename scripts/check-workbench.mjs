@@ -18,7 +18,9 @@ try {
   await page.getByRole('button', { name: /Broken LCD/ }).click();
   await page.getByRole('button', { name: 'Inspect recipe ↗' }).click();
   const recipe = async () => JSON.parse(await page.locator('.recipe-code').innerText());
-  const blur = () => page.getByLabel('Adjustment step').focus();
+  const blur = () => page.locator('.inspector>.section-heading').click();
+  const tools = name => page.getByRole('tab', {name,exact:true}).click();
+  const lock = async label => { await tools(label.includes('color')?'Color':'Shape'); await page.getByRole('button',{name:label,exact:true}).click(); };
   const before = await recipe();
   await page.getByLabel('Scale value', { exact: true }).fill('1.237'); await blur();
   assert.equal((await recipe()).parameters.scale, 1.237);
@@ -42,7 +44,7 @@ try {
   assert.deepEqual(await recipe(), preDrag, 'one undo restores entire slider gesture');
   checks.push('one slider gesture creates one undo entry');
   assert.equal(await page.getByRole('button', { name: 'Lock Motion', exact: true }).getAttribute('aria-pressed'), 'true');
-  for (const label of ['Lock Scale', 'Lock seed', 'Lock color 1']) await page.getByRole('button', { name: label, exact: true }).click();
+  for (const label of ['Lock Scale', 'Lock seed', 'Lock color 1']) await lock(label);
   const locked = await recipe();
   await page.getByRole('button', { name: 'Generate a new variation' }).click();
   const rerolled = await recipe();
@@ -55,6 +57,7 @@ try {
   assert.equal(nudged.seed, rerolled.seed); assert.deepEqual(nudged.palette, rerolled.palette);
   assert.equal(nudged.parameters.scale, locked.parameters.scale); assert.equal(nudged.parameters.speed, locked.parameters.speed);
   checks.push('full reroll and nudge preserve locked settings, default motion lock, nudge preserves seed/palette');
+  await tools('Color');
   await page.getByLabel('Palette preset', { exact: true }).selectOption('cobalt-cream');
   const mapped = await recipe();
   assert.deepEqual(mapped.palette, [locked.palette[0], '#3163ed', '#ffedbb']);
@@ -64,24 +67,27 @@ try {
   assert.equal((await recipe()).palette[0], '#123456', 'manual edits bypass random locks');
   await page.getByLabel('Palette hex 1').fill('invalid'); await blur();
   assert.equal(await page.getByLabel('Palette hex 1').inputValue(), '#123456');
-  await page.getByText('Browse 588 palette ideas', { exact: true }).click();
+  await page.getByText('Browse 673 palette ideas', { exact: true }).click();
   await page.getByRole('button', { name: 'Use Hot press palette', exact: true }).click();
   assert.deepEqual((await recipe()).palette, ['#123456', '#ff4b2e', '#1b2432']);
   checks.push('preset palettes, palette browser, role swaps and hex entry respect intended lock semantics');
+  await tools('Shape');
   await page.getByRole('button', { name: 'Lock seed', exact: true }).click();
   const preSeed = await recipe();
   await page.getByRole('button', { name: 'Reroll seed only' }).click();
   const seeded = await recipe();
   assert.notEqual(seeded.seed, preSeed.seed); assert.deepEqual(seeded.palette, preSeed.palette); assert.deepEqual(seeded.parameters, preSeed.parameters);
-  for (const label of ['Lock seed', 'Lock Intensity', 'Lock Signal detail', 'Lock color 2', 'Lock color 3']) await page.getByRole('button', { name: label, exact: true }).click();
+  for (const label of ['Lock seed', 'Lock Intensity', 'Lock Signal detail', 'Lock color 2', 'Lock color 3']) await lock(label);
   assert.equal(await page.getByRole('button', { name: 'Generate a new variation' }).isDisabled(), true);
   assert.equal(await page.getByRole('button', { name: 'Nudge', exact: true }).isDisabled(), true);
   assert.equal(await page.getByRole('button', { name: 'Swap roles', exact: true }).isDisabled(), true);
   checks.push('seed-only reroll and disabled random actions when all applicable settings are locked');
+  await tools('Shape');
   await page.getByLabel('Preset name').fill('Precision keeper'); await blur();
-  await page.getByLabel('Frozen time in seconds').fill('3.125'); await blur();
+  await page.getByLabel('Go to time in seconds').fill('3.125'); await blur();
   await page.getByRole('button', { name: /Save preset/ }).click();
   const expected = await recipe();
+  await tools('Export ↗');
   const event = page.waitForEvent('download'); await page.getByRole('button', { name: 'Recipe ↓', exact: true }).click();
   await (await event).saveAs(`${out}/recipe.json`);
   assert.deepEqual(JSON.parse(await readFile(`${out}/recipe.json`, 'utf8')), expected);
@@ -99,6 +105,7 @@ try {
   assert.equal(digest(Buffer.from(independent.png.split(',')[1], 'base64')), digest(await readFile(`${out}/frozen.png`)));
   assert.deepEqual(consumerErrors, []); await consumer.close();
   checks.push('edited feedback shader exports exact recipe and frozen PNG reproducible in independent consumer');
+  await tools('Shape');
   // Metadata and precise live edits keep the clock running instead of restarting it.
   await page.getByRole('button', { name: 'Play animation', exact: true }).click();
   await page.waitForFunction(() => parseFloat(document.querySelector('.time-readout').textContent) > 3.5);
@@ -109,7 +116,8 @@ try {
   assert.ok(parseFloat(await page.locator('.time-readout').innerText()) >= liveTime);
   await page.getByRole('button', { name: 'Pause animation', exact: true }).click();
   checks.push('live parameter and name edits preserve playback time');
-  for (const label of ['Lock Scale', 'Lock seed', 'Lock Intensity', 'Lock Signal detail', 'Lock color 1', 'Lock color 2', 'Lock color 3']) await page.getByRole('button', { name: label, exact: true }).click();
+  for (const label of ['Lock Scale', 'Lock seed', 'Lock Intensity', 'Lock Signal detail', 'Lock color 1', 'Lock color 2', 'Lock color 3']) await lock(label);
+  await tools('Shape');
   await page.getByRole('button', { name: 'Hide recipe ↗' }).click();
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({ path: `${out}/desktop.png`, fullPage: true });

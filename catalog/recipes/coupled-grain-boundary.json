@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.7.0",
+  "kind": "animated-shader",
+  "id": "coupled-grain-boundary",
+  "name": "Grain boundary / synthesis study",
+  "family": "grain-boundary",
+  "seed": 9367,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.5,
+    "intensity": 1.1,
+    "detail": 0.66
+  },
+  "palette": [
+    "#f1e6d0",
+    "#655be5",
+    "#23695d"
+  ],
+  "tags": [
+    "synthesis",
+    "coupled feedback",
+    "crisp",
+    "pixel transport"
+  ],
+  "review": "candidate"
+}

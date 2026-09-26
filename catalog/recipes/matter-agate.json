@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "matter-agate",
+  "name": "Agate / matter study",
+  "family": "agate",
+  "seed": 51358,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#1b2a41",
+    "#5fa8d3",
+    "#e8eef2",
+    "#324a5f",
+    "#cae9ff"
+  ],
+  "tags": [
+    "matter",
+    "natural",
+    "crisp",
+    "mineral"
+  ],
+  "review": "candidate"
+}

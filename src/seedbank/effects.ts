@@ -1,11 +1,15 @@
-import { createIntricacy } from './intricacy';
 import { createMechanism } from './mechanism';
+import { createPattern } from './pattern';
+import { createRaster } from './raster';
+import { createMatter } from './matter';
+import { createSynthesis } from './synthesis';
+import { createIntricacy } from './intricacy';
 import { createEntropy } from './entropy';
 import { createDamage } from './damage';
 import { Color, Vector3 } from 'three';
-import { MeshBasicNodeMaterial } from 'three/webgpu';
+import { MeshBasicNodeMaterial, type Node } from 'three/webgpu';
 import { Fn, abs, cos, exp, float, floor, fract, fwidth, length, max, min, mix, sin, smoothstep, uniform, uv, vec2, vec3 } from 'three/tsl';
-import { isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, isMechanism, type Recipe } from './recipes';
+import { isPattern, isRaster, isMatter, isMechanism, isSynthesis, isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, type Recipe } from './recipes';
 import { additionalColor } from './additional-effects';
 import { createDeparture } from './departures';
 import { createPixelSorter } from './pixel-sorters';
@@ -19,7 +23,7 @@ export function createEffect(recipe: Recipe) {
     intensity: uniform(recipe.parameters.intensity), detail: uniform(recipe.parameters.detail),
     aspect: uniform(1), colors: recipe.palette.map(hex => { const c = new Color(hex); return uniform(new Vector3(c.r, c.g, c.b)); }),
   };
-  const feedback = recipe.family === 'broken-lcd' ? createBrokenLcd(u) : isPixelSorter(recipe.family) ? createPixelSorter(u, recipe.family) : isDeparture(recipe.family) ? createDeparture(u, recipe.family) : isDamage(recipe.family) ? createDamage(u, recipe.family) : isEntropy(recipe.family) ? createEntropy(u, recipe.family) : isIntricacy(recipe.family) ? createIntricacy(u, recipe.family) : isMechanism(recipe.family) ? createMechanism(u, recipe.family) : undefined;
+  const feedback = isPattern(recipe.family) ? createPattern(u, recipe.family) : isRaster(recipe.family) ? createRaster(u, recipe.family) : isMatter(recipe.family) ? createMatter(u, recipe.family) : isMechanism(recipe.family) ? createMechanism(u, recipe.family) : isSynthesis(recipe.family) ? createSynthesis(u, recipe.family) : recipe.family === 'broken-lcd' ? createBrokenLcd(u) : isPixelSorter(recipe.family) ? createPixelSorter(u, recipe.family) : isDeparture(recipe.family) ? createDeparture(u, recipe.family) : isDamage(recipe.family) ? createDamage(u, recipe.family) : isEntropy(recipe.family) ? createEntropy(u, recipe.family) : isIntricacy(recipe.family) ? createIntricacy(u, recipe.family) : undefined;
   const material = feedback?.material ?? new MeshBasicNodeMaterial();
   material.depthTest = false;
   material.depthWrite = false;
@@ -28,7 +32,9 @@ export function createEffect(recipe: Recipe) {
     const p = uv().sub(0.5).mul(vec2(u.aspect, 1));
     const t = u.time.mul(u.speed);
     const s = u.seed;
-    const [paper, mid, light] = u.colors;
+    // In expanded palettes, evaluate the existing graph as three pigment
+    // weights. This decouples geometry from the user's chosen RGB values.
+    const [paper, mid, light] = recipe.palette.length === 3 ? u.colors : [vec3(1, 0, 0), vec3(0, 1, 0), vec3(0, 0, 1)];
     if (recipe.family === 'caustics') {
       const q = p.mul(u.scale).add(vec2(s, s.mul(0.71))).toVar();
       q.addAssign(vec2(sin(q.y.mul(1.7).add(t.mul(0.7))), cos(q.x.mul(1.3).sub(t.mul(0.6)))).mul(0.48));
@@ -62,7 +68,7 @@ export function createEffect(recipe: Recipe) {
       const color = vec3(paper).add(mid.mul(grid.add(ghost))).add(light.mul(trace).mul(u.intensity));
       return color.mul(scan).mul(refresh).mul(grille).mul(edge);
     }
-    if (recipe.family !== 'halftone') return additionalColor(recipe.family, p, t, s, u.scale, u.intensity, u.detail, u.colors);
+    if (recipe.family !== 'halftone') return additionalColor(recipe.family, p, t, s, u.scale, u.intensity, u.detail, [paper, mid, light]);
     // A procedural ink field sampled at screen centers, rather than per pixel,
     // keeps each dot a clean circle as the underlying field breathes.
     const angle = float(0.36);
@@ -83,10 +89,25 @@ export function createEffect(recipe: Recipe) {
     const grain = fract(sin(floor(uv().x.mul(1400)).mul(12.9898).add(floor(uv().y.mul(1000)).mul(78.233)).add(s)).mul(43758.5453)).mul(0.04);
     return mix(mix(paper, mid, ink2.mul(0.85)), light, ink.mul(0.92)).mul(float(1).sub(grain));
   })();
+  if (!feedback && recipe.palette.length !== 3) {
+    // The archived effects keep smooth lighting. Additional pigments share
+    // the original middle and highlight weights; no extra geometry or clock.
+    const original = material.colorNode as Node<'vec3'>;
+    material.colorNode = Fn(() => {
+      const weights = original.max(0).toVar();
+      const middle = u.colors.length >= 4 ? mix(u.colors[1], u.colors[3], weights.y.div(weights.y.add(.15))) : u.colors[1];
+      const highlight = u.colors.length === 5 ? mix(u.colors[2], u.colors[4], weights.z.div(weights.z.add(.15))) : u.colors[2] ?? u.colors[1];
+      return u.colors[0].mul(weights.x).add(middle.mul(weights.y)).add(highlight.mul(weights.z));
+    })();
+  }
   return {
     material, uniforms: u, feedback,
     update(next: Recipe) {
-      feedback?.reset();
+      // Palette edits affect only display uniforms. Keep the transported field
+      // intact instead of replaying feedback while the user drags a color picker.
+      const simulationChanged = u.seed.value !== next.seed / 65535 * 60 ||
+        (['scale', 'speed', 'intensity', 'detail'] as const).some(key => u[key].value !== next.parameters[key]);
+      if (simulationChanged) feedback?.reset();
       u.seed.value = next.seed / 65535 * 60;
       for (const key of ['scale', 'speed', 'intensity', 'detail'] as const) u[key].value = next.parameters[key];
       next.palette.forEach((hex, i) => { const c = new Color(hex); u.colors[i].value.set(c.r, c.g, c.b); });

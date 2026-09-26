@@ -1,7 +1,7 @@
 import { chromium } from 'playwright-core';
 export async function launch() {
   return chromium.launch({ executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome', headless: true,
-    args: ['--no-sandbox', '--disable-dev-shm-usage', '--enable-unsafe-webgpu', ...(process.env.SEEDBANK_GPU === 'hardware' ? [] : ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'])],
+    args: ['--no-sandbox', '--disable-dev-shm-usage', '--enable-unsafe-webgpu', ...(process.env.SEEDBANK_UNCAPPED === '1' ? ['--disable-frame-rate-limit', '--disable-gpu-vsync'] : []), ...(process.env.SEEDBANK_GPU === 'hardware' ? [] : ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'])],
   });
 }
 export async function openConsumer(browser, url, backend) {

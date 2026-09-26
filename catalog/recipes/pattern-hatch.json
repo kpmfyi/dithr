@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "pattern-hatch",
+  "name": "Hatch / pattern study",
+  "family": "hatch",
+  "seed": 41994,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.1,
+    "detail": 0.55
+  },
+  "palette": [
+    "#f0e9dc",
+    "#b3312c",
+    "#1b1b1f",
+    "#4a5a6a",
+    "#d9a441"
+  ],
+  "tags": [
+    "pattern",
+    "ornament",
+    "crisp",
+    "linework"
+  ],
+  "review": "candidate"
+}

@@ -39,7 +39,7 @@ export async function createSeedbank(canvas: HTMLCanvasElement, input: Recipe, b
     setRecipe(input: Recipe) {
       alive();
       const next = validateRecipe(input);
-      if (next.family !== recipe.family) {
+      if (next.family !== recipe.family || next.palette.length !== recipe.palette.length) {
         const old = effect;
         effect = createEffect(next);
         effect.uniforms.aspect.value = canvas.width / canvas.height;

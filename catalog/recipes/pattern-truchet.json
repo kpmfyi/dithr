@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "pattern-truchet",
+  "name": "Truchet / pattern study",
+  "family": "truchet",
+  "seed": 8702,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.2,
+    "detail": 0.55
+  },
+  "palette": [
+    "#101820",
+    "#f2aa4c",
+    "#e9e4d8",
+    "#2e86ab",
+    "#e4572e"
+  ],
+  "tags": [
+    "pattern",
+    "ornament",
+    "crisp",
+    "tiling"
+  ],
+  "review": "candidate"
+}

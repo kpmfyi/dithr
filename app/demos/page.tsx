@@ -1,10 +1,14 @@
 'use client';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import { demos, findDemo } from '../../src/demos/catalog';
-import { families, isCrisp, isDamage, isEntropy, isIntricacy, isMechanism, serializeRecipe } from '../../src/seedbank/recipes';
+import { families, isCrisp, isDamage, isEntropy, isMechanism, isSynthesis, isIntricacy, isPattern, isRaster, isMatter, serializeRecipe } from '../../src/seedbank/recipes';
+import { paletteTheme } from '../../src/workbench/theme';
+import { Icon } from '../components/icons';
+import { PaletteRail } from '../components/palette-rail';
 import { ShaderSurface, type SurfaceReport } from './ShaderSurface';
 import { Scene } from './Scenes';
 import './demos.css';
+import './context.css';
 
 export default function UsageDemos() {
   const [selected, setSelected] = useState(demos[0]);
@@ -58,24 +62,67 @@ surface.render(recipe.time); // the curated frozen moment
 // Your app owns animation, resize, and visibility.
 // Call surface.dispose() when removing the canvas.`;
 
-  return <div className="app-shell demo-shell">
-    <header className="masthead"><a className="brand" href="/" aria-label="Shader Seedbank home"><span className="brand-mark">✳</span><span>shader<span className="brand-secondary">seedbank</span></span></a><span className="header-note">Sharp pixels. Restless signals.</span><nav className="demo-nav" aria-label="Seedbank"><a href="/">The studies</a><a href="/demos" aria-current="page">In context <span>{demos.length}</span></a></nav></header>
-    <main>
-      <div className="intro demo-intro"><div><div className="eyebrow"><span className="tiny-dot"/> FIELD APPLICATIONS / 01—{demos.length}</div><h1>Good texture. <em>Right place.</em></h1><p>{demos.length} studies, out in the world. A considered home for every shader.</p></div><a href="#all-demos" className="text-link">Explore all {demos.length} contexts <span>↓</span></a></div>
+  const theme = paletteTheme(selected.recipe.palette);
+  const themeStyle = { '--p0': theme.roles[0], '--p1': theme.roles[1], '--p2': theme.roles[2], '--p3': theme.roles[3], '--p4': theme.roles[4], '--accent': theme.accent, '--on-accent': theme.onAccent, '--accent-text': theme.accentText } as CSSProperties;
+  const info = families[selected.family];
+  return <div className="studio context-page" style={themeStyle}>
+    <header className="topbar">
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      <a className="wordmark" href="/" aria-label="Shader Seedbank studio"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">seedbank</span></a>
+      <nav className="topnav" aria-label="Seedbank">
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a className="btn" href="/">Studio</a>
+        <a className="btn" href="/demos" aria-current="page">In context <span className="count">{demos.length}</span></a>
+      </nav>
+      <div className="topactions"><a className="btn btn-fill" href={`/?demo=${selected.family}`}>Edit this recipe</a></div>
+    </header>
+    <main className="context-main">
+      <div className="context-intro">
+        <h1>In context</h1>
+        <p>Every study placed in a fictional layout: a sleeve, a stage screen, a poster, a cover. The shader supplies the surface; type and interface stay in sharp HTML. Each comes with notes on placement and a tuned recipe.</p>
+      </div>
       <section className="active-demo" id="active-demo" aria-label="Selected usage demo">
-        <div className="demo-heading"><div><span className="eyebrow">{families[selected.family].number} / {families[selected.family].name.toUpperCase()}</span><h2>{!isCrisp(selected.family) && 'Deprecated · '}{selected.title}</h2></div><div className="demo-selector"><label className="visually-hidden" htmlFor="demo-select">Choose a usage demo</label><select id="demo-select" value={selected.family} onChange={event => choose(event.target.value)}>{!isCrisp(selected.family) && <option value={selected.family}>Archive / {families[selected.family].name}</option>}{demos.map(demo => <option value={demo.family} key={demo.family}>{families[demo.family].number} / {families[demo.family].name}</option>)}</select><button aria-label="Previous usage demo" onClick={() => choose(demos[index < 0 ? demos.length - 1 : (index + demos.length - 1) % demos.length].family)}>←</button><button aria-label="Next usage demo" onClick={() => choose(demos[(index + 1) % demos.length].family)}>→</button></div></div>
-        <div className="demo-workspace"><div className="demo-preview">
-          <div className={`usage-stage scene-${selected.family}${isDamage(selected.family) || isEntropy(selected.family) || isIntricacy(selected.family) || isMechanism(selected.family) ? ' scene-damage' : ''}`} data-family={selected.family} key={selected.family} role="group" aria-label={`${selected.title} composition`}>
-            <Scene family={selected.family} surface={mounted ? <ShaderSurface demo={selected} playing={playing} reset={reset} onReport={onReport}/> : null}/>
+        <div className="context-heading">
+          <div><h2>{info.name}</h2><p><span className="series-name">{info.number}</span> {!isCrisp(selected.family) && 'Archived study. '}{selected.context}</p></div>
+          <div className="stepper">
+            <label className="sr-only" htmlFor="demo-select">Choose a usage demo</label>
+            <select id="demo-select" className="select" value={selected.family} onChange={event => choose(event.target.value)}>{!isCrisp(selected.family) && <option value={selected.family}>Archive / {info.name}</option>}{demos.map(demo => <option value={demo.family} key={demo.family}>{families[demo.family].number} {families[demo.family].name}</option>)}</select>
+            <button className="btn icon-btn" aria-label="Previous usage demo" onClick={() => choose(demos[index < 0 ? demos.length - 1 : (index + demos.length - 1) % demos.length].family)}><Icon name="left"/></button>
+            <button className="btn icon-btn" aria-label="Next usage demo" onClick={() => choose(demos[(index + 1) % demos.length].family)}><Icon name="right"/></button>
           </div>
-          <div className="demo-transport"><button disabled={!report.ready} onClick={() => setPlaying(value => !value)} aria-label={playing ? 'Pause demo motion' : 'Play demo motion'}><span>{playing ? 'Ⅱ' : '▶'}</span> {playing ? 'Pause motion' : 'Play motion'}</button><button disabled={!report.ready} onClick={() => { setPlaying(false); setReset(value => value + 1); }}>Reset still ↺</button><span className="demo-render-state" role="status">{report.error ? 'Still preview · live renderer unavailable' : report.ready ? `${playing ? 'LIVE' : 'FROZEN'} / ${report.backend?.toUpperCase()}` : 'Preparing surface…'}</span></div>
-          <div className="demo-preview-caption"><span>Fictional art direction / live shader + HTML & CSS</span><span>{selected.context}</span></div>
-          {report.error && <p className="demo-error">{report.error} The saved surface is shown instead.</p>}
-        </div><aside className="demo-notes" aria-label="Usage guidance"><span className="context-tag">{selected.category} / {families[selected.family].name}</span><h3>Why it belongs here.</h3><p>{selected.purpose}</p><div className="usage-note"><span>01 / PLACEMENT</span><p>{selected.placement}</p></div><div className="usage-note"><span>02 / ART DIRECTION</span><p>{selected.tuning}</p></div><div className="demo-palette" aria-label="Curated palette">{selected.recipe.palette.map(hex => <span key={hex} style={{ background: hex }} title={hex}><span className="visually-hidden">{hex}</span></span>)}<span className="palette-note">A recipe for this context</span></div><a className="primary-button" href={`/?demo=${selected.family}`}>Edit this recipe <span>↗</span></a><button className="demo-download" onClick={downloadRecipe}>Download tuned recipe ↓</button></aside></div>
-        {notice && <p className="demo-error" role="status">{notice}</p>}
-        <details className="integration-notes"><summary>Use this surface in your project <span>Recipe, motion & integration +</span></summary><div className="integration-body"><div><span className="eyebrow">MOTION & MATERIAL</span><p>{selected.motion}</p><p>These demos render one surface at a time and pause outside the viewport or in a hidden tab. Reduced motion starts on the saved still.</p><p>Download the tuned JSON, then load it with the standalone renderer. The recipe contains the surface; the composition is HTML and CSS. See <a href="/consumer/index.html">the independent consumer ↗</a> for a working integration.</p></div><pre><code>{code}</code></pre></div></details>
+        </div>
+        <div className="context-workspace">
+          <div className="context-preview">
+            <div className={`usage-stage scene-${selected.family}${isDamage(selected.family) || isEntropy(selected.family) || isIntricacy(selected.family) || (isSynthesis(selected.family) || isMechanism(selected.family)) ? ' scene-damage' : ''}${isPattern(selected.family) ? ' scene-pattern' : isRaster(selected.family) ? ' scene-raster' : isMatter(selected.family) ? ' scene-matter' : ''}`} data-family={selected.family} key={selected.family} role="group" aria-label={`${selected.title} composition`}>
+              <Scene family={selected.family} surface={mounted ? <ShaderSurface demo={selected} playing={playing} reset={reset} onReport={onReport}/> : null}/>
+            </div>
+            <div className="context-transport">
+              <button className="btn" disabled={!report.ready} onClick={() => setPlaying(value => !value)} aria-label={playing ? 'Pause demo motion' : 'Play demo motion'}><Icon name={playing ? 'pause' : 'play'}/>{playing ? 'Pause motion' : 'Play motion'}</button>
+              <button className="btn" disabled={!report.ready} onClick={() => { setPlaying(false); setReset(value => value + 1); }} aria-label="Reset still"><Icon name="reset"/>Back to the still</button>
+              <span className="context-state" role="status">{report.error ? 'Showing a saved still; the live renderer is unavailable here.' : report.ready ? `${playing ? 'Live' : 'Paused'}, ${report.backend === 'webgpu' ? 'WebGPU' : 'WebGL2'}` : 'Preparing the surface…'}</span>
+              <span className="context-credit">Fictional art direction</span>
+            </div>
+            {report.error && <p className="error-note">{report.error} The saved surface is shown instead.</p>}
+          </div>
+          <aside className="context-notes" aria-label="Usage guidance">
+            <h3>Why it belongs here</h3><p>{selected.purpose}</p>
+            <h4>Placement</h4><p>{selected.placement}</p>
+            <h4>Tuning</h4><p>{selected.tuning}</p>
+            <h4>Motion</h4><p>{selected.motion}</p>
+            <div className="context-palette"><PaletteRail colors={selected.recipe.palette}/><span>The tuned palette for this layout</span></div>
+            <div className="export-row"><a className="btn btn-fill" href={`/?demo=${selected.family}`}>Edit this recipe</a><button className="btn" onClick={downloadRecipe}>Download tuned recipe</button></div>
+          </aside>
+        </div>
+        {notice && <p className="error-note" role="status">{notice}</p>}
+        <details className="integration-notes"><summary>Use this surface in your project</summary><div className="integration-body"><div><p>These pages render one surface at a time and pause outside the viewport or in a hidden tab. Reduced motion starts on the saved still.</p><p>Download the tuned recipe, then load it with the standalone renderer. The recipe holds the surface; the layout is HTML and CSS. For a complete project with a runnable page and React component, use Export in the studio. <a href="/consumer/index.html">A minimal standalone integration</a> is also available.</p></div><pre className="code-box"><code>{code}</code></pre></div></details>
       </section>
-      <section id="all-demos" className="demo-gallery" aria-labelledby="gallery-title"><div className="gallery-heading"><div><span className="eyebrow">THE APPLICATION INDEX</span><h2 id="gallery-title">{demos.length} ways to <em>put it to work.</em></h2></div><p>Choose a context to see it in motion<br/>and explore the decisions behind it.</p></div><div className="context-grid">{demos.map(demo => <a className="context-card" href={`/demos?study=${demo.family}`} key={demo.family} aria-current={demo === selected ? 'true' : undefined} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); choose(demo.family, true); } }}><div className="context-thumbnail"><img src={`/context-previews/${demo.family}.png`} alt={`${demo.title} — ${demo.context}`} loading="lazy" width="960" height="640"/><span>{families[demo.family].number} / {families[demo.family].name}</span></div><div className="context-card-copy"><span><strong>{demo.title}</strong><small>{demo.context}</small></span><span className="context-arrow">↗</span></div></a>)}</div></section>
-    </main><footer><span>SHADER SEEDBANK <span className="footer-star">✳</span> GROW SOMETHING UNEXPECTED.</span><span>{demos.length} studies. {demos.length} places to begin.</span></footer>
+      <section id="all-demos" className="context-gallery" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">All {demos.length} layouts</h2>
+        <div className="study-grid">{demos.map(demo => <a className="study-card" href={`/demos?study=${demo.family}`} key={demo.family} aria-current={demo === selected ? 'true' : undefined} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); choose(demo.family, true); } }}>
+          <img src={`/context-previews/${demo.family}.png`} alt={`${demo.title}, ${demo.context}`} loading="lazy" width="960" height="640"/>
+          <strong><span>{families[demo.family].number}</span>{families[demo.family].name}</strong><small>{demo.context}</small>
+        </a>)}</div>
+      </section>
+    </main>
   </div>;
 }

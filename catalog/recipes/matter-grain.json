@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "matter-grain",
+  "name": "Grain / matter study",
+  "family": "grain",
+  "seed": 8722,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1,
+    "intensity": 1.1,
+    "detail": 0.55
+  },
+  "palette": [
+    "#3b2416",
+    "#c98b4f",
+    "#f1d9b5",
+    "#7a4a2a",
+    "#e4b27a"
+  ],
+  "tags": [
+    "matter",
+    "natural",
+    "crisp",
+    "material"
+  ],
+  "review": "candidate"
+}

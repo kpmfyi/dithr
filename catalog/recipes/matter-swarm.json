@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "matter-swarm",
+  "name": "Swarm / matter study",
+  "family": "swarm",
+  "seed": 12880,
+  "time": 3.25,
+  "parameters": {
+    "scale": 2.6,
+    "speed": 1.2,
+    "intensity": 1.1,
+    "detail": 0.6
+  },
+  "palette": [
+    "#0b1410",
+    "#ffe066",
+    "#c6f68d",
+    "#2d4a3a",
+    "#ff9f43"
+  ],
+  "tags": [
+    "matter",
+    "natural",
+    "crisp",
+    "points"
+  ],
+  "review": "candidate"
+}

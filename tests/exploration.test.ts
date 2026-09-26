@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { controls, parseRecipe, allPresets as presets, serializeRecipe } from '../src/seedbank/recipes.ts';
+import { GENERATOR_VERSION, controls, parseRecipe, allPresets as presets, serializeRecipe } from '../src/seedbank/recipes.ts';
 import { applyPalette, defaultLocks, explore, palettePresets, parameterKeys, type ExploreAction, type Locks } from '../src/workbench/exploration.ts';
 import { editRecipe, travelRecipe, type RecipeHistory } from '../src/workbench/history.ts';
 
@@ -24,13 +24,13 @@ test('exploration remains portable and deterministic for every family at paramet
 });
 test('all random actions respect individual locks and frozen time', () => {
   const base = presets.at(-1)!;
-  const locked: Locks = { seed: true, scale: true, speed: true, intensity: true, detail: true, palette: [true, true, true] };
+  const locked: Locks = { seed: true, scale: true, speed: true, intensity: true, detail: true, palette: [true, true, true, true, true] };
   for (const action of actions) assert.deepEqual(explore(base, action, 59, locked), base);
   for (const key of [...parameterKeys, 'seed'] as const) {
     const next = explore(base, 'all', 673, { ...unlocked, [key]: true });
     assert.equal(key === 'seed' ? next.seed : next.parameters[key], key === 'seed' ? base.seed : base.parameters[key]);
   }
-  for (let i = 0; i < 3; i++) for (const action of actions) {
+  for (let i = 0; i < base.palette.length; i++) for (const action of actions) {
     const locks = structuredClone(unlocked); locks.palette[i] = true;
     assert.equal(explore(base, action, 578, locks).palette[i], base.palette[i]);
   }
@@ -53,7 +53,7 @@ test('focused rerolls do not disturb other inputs and nudge respects its distanc
   assert.deepEqual(swapped.palette, [base.palette[0], base.palette[2], base.palette[1]]);
   for (const p of palettePresets) {
     assert.deepEqual(applyPalette(base.palette, p.colors, [true, false, false]), [base.palette[0], p.colors[1], p.colors[2]]);
-    parseRecipe(serializeRecipe({ ...base, palette: p.colors }));
+    parseRecipe(serializeRecipe({ ...base, generatorVersion: GENERATOR_VERSION, palette: p.colors }));
   }
 });
 test('history groups a drag, restores exact recipes, branches safely and bounds memory', () => {

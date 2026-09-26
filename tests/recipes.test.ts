@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { presets, allPresets, deprecatedPresets, damageFamilies, entropyFamilies, intricacyFamilies, mechanismFamilies, isMechanism, isIntricacy, isEntropy, isCrisp, isDamage, isPixelSorter, isDeparture, parseRecipe, serializeRecipe, validateRecipe, variation } from '../src/seedbank/recipes.ts';
+import { patternFamilies, rasterFamilies, matterFamilies, isKit, mechanismFamilies, isMechanism, synthesisFamilies, isSynthesis, presets, allPresets, deprecatedPresets, damageFamilies, entropyFamilies, intricacyFamilies, isIntricacy, isEntropy, isCrisp, isDamage, isPixelSorter, isDeparture, parseRecipe, serializeRecipe, validateRecipe, variation, families } from '../src/seedbank/recipes.ts';
 
 test('all catalog recipes survive export and reopen with every rendering input intact', () => {
   for (const recipe of allPresets) {
@@ -34,12 +34,12 @@ test('legacy recipes reopen unchanged while new families require the newer gener
     assert.equal(recipe.generatorVersion, '1.0.0');
   }
   for (const recipe of allPresets.filter(recipe => recipe.generatorVersion !== '1.0.0')) {
-    assert.equal(recipe.generatorVersion, isMechanism(recipe.family) ? '1.7.0' : isIntricacy(recipe.family) ? '1.6.0' : isEntropy(recipe.family) ? '1.5.0' : isDamage(recipe.family) ? '1.4.0' : isDeparture(recipe.family) ? '1.3.0' : isPixelSorter(recipe.family) ? '1.2.0' : '1.1.0');
+    assert.equal(recipe.generatorVersion, isKit(recipe.family) ? '1.9.0' : (isSynthesis(recipe.family) || isMechanism(recipe.family)) ? '1.7.0' : isIntricacy(recipe.family) ? '1.6.0' : isEntropy(recipe.family) ? '1.5.0' : isDamage(recipe.family) ? '1.4.0' : isDeparture(recipe.family) ? '1.3.0' : isPixelSorter(recipe.family) ? '1.2.0' : '1.1.0');
     if (isEntropy(recipe.family)) for (const generatorVersion of ['1.1.0', '1.2.0', '1.3.0', '1.4.0']) assert.throws(() => validateRecipe({ ...recipe, generatorVersion }), /requires generator/);
     if (isDamage(recipe.family)) for (const generatorVersion of ['1.1.0', '1.2.0', '1.3.0']) assert.throws(() => validateRecipe({ ...recipe, generatorVersion }), /requires generator/);
+    if (isKit(recipe.family)) { for (const generatorVersion of ['1.1.0', '1.6.0', '1.7.0', '1.8.0']) assert.throws(() => validateRecipe({ ...recipe, generatorVersion }), /requires generator/); continue; }
     assert.deepEqual(validateRecipe({ ...recipe, generatorVersion: '1.7.0' }).family, recipe.family);
-    if (isMechanism(recipe.family)) assert.throws(() => validateRecipe({ ...recipe, generatorVersion: '1.6.0' }), /requires generator/);
-    else assert.deepEqual(validateRecipe({ ...recipe, generatorVersion: '1.6.0' }).family, recipe.family);
+    assert.deepEqual(validateRecipe({ ...recipe, generatorVersion: '1.9.0' }).family, recipe.family);
     if (isDeparture(recipe.family)) for (const generatorVersion of ['1.1.0', '1.2.0']) assert.throws(() => validateRecipe({ ...recipe, generatorVersion }), /requires generator/);
     if (isPixelSorter(recipe.family)) assert.throws(() => validateRecipe({ ...recipe, generatorVersion: '1.1.0' }), /requires generator/);
     assert.throws(() => validateRecipe({ ...recipe, generatorVersion: '1.0.0' }), /requires generator/);
@@ -54,15 +54,20 @@ test('every registered study has a unique recipe and one complete family definit
 });
 
 // Browsing order and compatibility are separate contracts.
-test('fifty sharp studies lead with the ten endorsed studies; old recipes stay archived', () => {
+test('ninety sharp studies lead with the ten endorsed studies; old recipes stay archived', () => {
   assert.deepEqual(presets.slice(0, 10).map(r => r.family), ['broken-lcd', 'crosscurrent', 'undertow', 'downpour', 'faultline', 'rotor', 'slingshot', 'cell-division', 'shockfront', 'filament']);
   assert.deepEqual(presets.slice(10, 20).map(r => r.family), [...damageFamilies]);
   assert.deepEqual(presets.slice(20, 30).map(r => r.family), [...entropyFamilies]);
-  assert.deepEqual(presets.slice(30, 40).map(r => r.family), [...intricacyFamilies]);
-  assert.deepEqual(presets.slice(40).map(r => r.family), [...mechanismFamilies]);
-  assert.equal(presets.length, 50); assert.equal(deprecatedPresets.length, 15); assert.equal(allPresets.length, 65);
+  assert.deepEqual(presets.slice(30,40).map(r => r.family), [...intricacyFamilies]);
+  assert.deepEqual(presets.slice(40,50).map(r => r.family), [...synthesisFamilies]);
+  assert.deepEqual(presets.slice(50, 60).map(r => r.family), [...mechanismFamilies]);
+  assert.deepEqual(presets.slice(60, 70).map(r => r.family), [...patternFamilies]);
+  assert.deepEqual(presets.slice(70, 80).map(r => r.family), [...rasterFamilies]);
+  assert.deepEqual(presets.slice(80).map(r => r.family), [...matterFamilies]);
+  assert.equal(presets.length, 90); assert.equal(deprecatedPresets.length, 15); assert.equal(allPresets.length, 105);
+  presets.forEach((r, i) => assert.equal(Number(families[r.family].number), i + 1, r.family));
   assert.ok(presets.every(r => isCrisp(r.family)));
   assert.ok(deprecatedPresets.every(r => !isCrisp(r.family)));
-  assert.equal(presets.filter(r => r.tags.includes('grid only')).length, 5);
+  assert.ok(presets.filter(r => r.tags.includes('grid only')).length >= 8);
   assert.equal(new Set([...presets, ...deprecatedPresets].map(r => r.family)).size, allPresets.length);
 });

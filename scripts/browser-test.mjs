@@ -22,7 +22,7 @@ try {
   await page.getByLabel('Preset name').fill('Stored signal');
   await page.getByLabel('Seed', { exact: true }).fill('543');
   await page.getByLabel('Intensity', { exact: true }).fill('1.45');
-  await page.getByLabel('Frozen time in seconds').fill('4.5');
+  await page.getByLabel('Go to time in seconds').fill('4.5');
   await page.getByRole('button', { name: /Save preset/ }).click();
   await page.getByRole('tab', { name: /Saved/ }).click();
   await page.getByRole('button', { name: /Stored signal seed 543/ }).waitFor();
@@ -32,9 +32,10 @@ try {
   await page.getByRole('button', { name: /Stored signal seed 543/ }).click();
   assert.equal(await page.getByLabel('Seed', { exact: true }).inputValue(), '543');
   assert.equal(await page.getByLabel('Intensity', { exact: true }).inputValue(), '1.45');
-  assert.equal(await page.getByLabel('Frozen time in seconds').inputValue(), '4.5');
+  assert.equal(await page.getByLabel('Go to time in seconds').inputValue(), '4.5');
   await page.getByLabel('Renderer backend').selectOption('webgl2');
   await page.waitForFunction(() => !document.querySelector('.play-button').disabled);
+  await page.getByRole('tab', {name:'Export ↗',exact:true}).click();
   const recipeEvent = page.waitForEvent('download'); await page.getByRole('button', { name: 'Recipe ↓', exact: true }).click();
   const recipeDownload = await recipeEvent; await recipeDownload.saveAs(`${out}/exported-recipe.json`);
   const exported = JSON.parse(await readFile(`${out}/exported-recipe.json`, 'utf8'));
@@ -64,7 +65,7 @@ try {
   const before = await page.locator('.time-readout').innerText();
   await page.waitForFunction(before => document.querySelector('.time-readout').innerText !== before, before);
   await page.getByRole('button', { name: 'Freeze this frame' }).click();
-  const frozen = await page.getByLabel('Frozen time in seconds').inputValue();
+  const frozen = await page.getByLabel('Go to time in seconds').inputValue();
   assert.ok(Number(frozen) >= 4.5);
   console.log('Checking measurement');
   await page.getByRole('button', { name: /Measure render/ }).click();

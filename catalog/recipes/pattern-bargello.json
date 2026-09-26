@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.9.0",
+  "kind": "animated-shader",
+  "id": "pattern-bargello",
+  "name": "Bargello / pattern study",
+  "family": "bargello",
+  "seed": 47174,
+  "time": 3.25,
+  "parameters": {
+    "scale": 3,
+    "speed": 1,
+    "intensity": 1.1,
+    "detail": 0.5
+  },
+  "palette": [
+    "#2b193d",
+    "#ff7f51",
+    "#f2d0a4",
+    "#c44569",
+    "#6c9a8b"
+  ],
+  "tags": [
+    "pattern",
+    "ornament",
+    "crisp",
+    "textile"
+  ],
+  "review": "candidate"
+}
