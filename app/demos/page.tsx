@@ -9,6 +9,7 @@ import { ShaderSurface, type SurfaceReport } from './ShaderSurface';
 import { Scene } from './Scenes';
 import './demos.css';
 import './context.css';
+import { SiteCredit } from '../components/site-credit';
 
 export default function UsageDemos() {
   const [selected, setSelected] = useState(demos[0]);
@@ -123,6 +124,7 @@ surface.render(recipe.time); // the curated frozen moment
           <strong><span>{families[demo.family].number}</span>{families[demo.family].name}</strong><small>{demo.context}</small>
         </a>)}</div>
       </section>
+      <SiteCredit className="context-credit"/>
     </main>
   </div>;
 }
