@@ -247,7 +247,7 @@ export default function Studio() {
     <header className="topbar">
       {/* A full reload is intentional: it starts a fresh session with a new random study. */}
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-      <a className="wordmark" href="/" aria-label="Shader Seedbank, start over"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">seedbank</span></a>
+      <a className="wordmark" href="/" aria-label="Dithr, start over"><span className="wordmark-pixels" aria-hidden="true">{Array.from({ length: 9 }, (_, i) => <i key={i}/>)}</span><span className="wordmark-text">dithr</span></a>
       <nav className="topnav" aria-label="Browse">
         <button className="btn" aria-expanded={drawer === 'studies'} onClick={() => setDrawer('studies')}>Studies <span className="count">{presets.length}</span></button>
         <button className="btn" aria-expanded={drawer === 'palettes'} onClick={() => setDrawer('palettes')}>Palettes <span className="count">{palettePresets.length}</span></button>

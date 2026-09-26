@@ -57,7 +57,7 @@ export function exampleHtml(settings: OutputSettings) {
   const { width, height } = validateOutput(settings);
   return `<!doctype html>
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shader Seedbank export</title>
+<title>Dithr export</title>
 <style>body{margin:0;background:#151b19;color:#f5f3ec;font:14px system-ui;display:grid;place-items:center;min-height:100svh}main{width:min(100%,${width}px)}canvas{display:block;width:100%;height:auto;aspect-ratio:${width}/${height};image-rendering:pixelated}button{margin:16px 0;padding:10px 24px;cursor:pointer}#error{white-space:pre-wrap}</style>
 <main><canvas id="shader" width="${width}" height="${height}" aria-label="Animated shader"></canvas><button id="play">Play</button><p id="error" role="alert"></p></main>
 <script type="module">import('./main.js').catch(error=>{document.querySelector('#error').textContent='Could not start shader: '+error.message;});</script></html>
