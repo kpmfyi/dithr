@@ -40,7 +40,9 @@
     "test:code-export": "npm run build:export && node --experimental-strip-types scripts/check-code-export.mjs",
     "test:palette-sizes": "node --experimental-strip-types scripts/check-palette-sizes.mjs",
     "test:studio": "node scripts/check-studio.mjs",
-    "lab": "vite --config vite.lab.config.ts"
+    "lab": "vite --config vite.lab.config.ts",
+    "deploy": "SEEDBANK_SITE_URL=https://dithr.vaporware.gripe npm run build:static && wrangler deploy -c wrangler.static.jsonc",
+    "preview:cloudflare": "wrangler dev -c wrangler.static.jsonc --ip 127.0.0.1 --port 5191"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

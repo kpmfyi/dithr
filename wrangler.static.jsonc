@@ -1,0 +1,16 @@
+// Cloudflare deploy for the static export. A separate file from any wrangler.jsonc,
+// because the vinext build's Cloudflare plugin reads that name for the Worker build.
+// Deploy with `npm run deploy` after `npx wrangler login`.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dithr",
+  "compatibility_date": "2026-05-22",
+  // The vaporware.gripe zone must be in the same Cloudflare account; deploy creates the DNS record.
+  "routes": [{ "pattern": "dithr.vaporware.gripe", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist/client",
+    // /demos serves demos.html; unknown paths get 404.html with a 404 status.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
