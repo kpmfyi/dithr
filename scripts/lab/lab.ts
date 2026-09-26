@@ -1,5 +1,5 @@
 import { createSeedbank } from '../../src/seedbank/renderer';
-import { allPresets, GENERATOR_VERSION, validateRecipe, patternFamilies, rasterFamilies, matterFamilies, type Recipe } from '../../src/seedbank/recipes';
+import { allPresets, GENERATOR_VERSION, validateRecipe, patternFamilies, rasterFamilies, matterFamilies, logicFamilies, type Recipe } from '../../src/seedbank/recipes';
 /** Lab hook: render any recipe at explicit times and return PNG data URLs. */
 const canvas = document.querySelector<HTMLCanvasElement>('#canvas')!;
 const status = document.querySelector('#status')!;
@@ -45,4 +45,4 @@ async function handoff(family: Recipe['family'], width = 480, height = 320) {
   }
   return report;
 }
-Object.assign(window, { lab: { render, timing, handoff, families: [...patternFamilies, ...rasterFamilies, ...matterFamilies], ready: true } });
+Object.assign(window, { lab: { render, timing, handoff, families: [...patternFamilies, ...rasterFamilies, ...matterFamilies, ...logicFamilies], ready: true } });

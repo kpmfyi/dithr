@@ -2,6 +2,7 @@ import type { Recipe, PaletteSize } from '../seedbank/recipes.ts';
 import { moodPalettes } from './mood-palettes.ts';
 import { curatedPalettes } from './curated-palettes.ts';
 import { studioPalettes } from './studio-palettes.ts';
+import { logicPalettes } from './logic-palettes.ts';
 import { deltaE, hexToOklch, hexToRgb, maxChroma, oklchToHex } from './oklab.ts';
 
 export const paletteCollections = [
@@ -14,6 +15,9 @@ export const paletteCollections = [
   { id: 'duotone', name: 'Duotone' },
   { id: 'industrial', name: 'Industrial' },
   { id: 'experimental', name: 'Experimental' },
+  { id: 'signal', name: 'Signal' },
+  { id: 'bitmap', name: 'Bitmap' },
+  { id: 'midtone', name: 'Midtone' },
   { id: 'mood', name: 'Mood' },
   { id: 'hours', name: 'Hours' },
   { id: 'weather', name: 'Weather' },
@@ -23,6 +27,10 @@ export const paletteCollections = [
   { id: 'movements', name: 'Movements' },
   { id: 'materials', name: 'Materials' },
   { id: 'now', name: 'Now' },
+  { id: 'glitch', name: 'Glitch' },
+  { id: 'circuits', name: 'Circuits' },
+  { id: 'signage', name: 'Signage' },
+  { id: 'maps', name: 'Cartography' },
 ] as const;
 export type PaletteCollection = typeof paletteCollections[number]['id'];
 export type FiveColors = [string, string, string, string, string];
@@ -39,7 +47,7 @@ export type PalettePreset = { id: string; name: string; collection: PaletteColle
  * filled roles four and five by farthest-point search, which often chose muddy
  * extremes. */
 type Role = readonly [number, number, number];
-type Template = { name: string; collection: Exclude<PaletteCollection, 'signature' | 'mood' | 'hours' | 'weather' | 'cinema' | 'genre' | 'machines' | 'movements' | 'materials' | 'now'>; roles: readonly [Role, Role, Role, Role, Role] };
+type Template = { name: string; collection: Exclude<PaletteCollection, 'signature' | 'mood' | 'hours' | 'weather' | 'cinema' | 'genre' | 'machines' | 'movements' | 'materials' | 'now' | 'glitch' | 'circuits' | 'signage' | 'maps'>; roles: readonly [Role, Role, Role, Role, Role] };
 const templates: Template[] = [
   { name: 'Voltage', collection: 'electric', roles: [[180, .35, .17], [0, .95, .64], [140, .8, .91], [0, .78, .42], [-45, .9, .79]] },
   { name: 'Arc', collection: 'electric', roles: [[0, .72, .58], [180, .7, .88], [0, .55, .2], [180, .85, .5], [60, .85, .8]] },
@@ -73,6 +81,22 @@ const templates: Template[] = [
   { name: 'Solarize', collection: 'experimental', roles: [[150, .45, .91], [0, .9, .4], [280, .95, .58], [60, .8, .72], [200, .8, .62]] },
   { name: 'Mutant', collection: 'experimental', roles: [[0, .5, .2], [75, .9, .74], [210, .7, .82], [140, .75, .52], [300, .8, .66]] },
   { name: 'Collision', collection: 'experimental', roles: [[220, .6, .55], [0, .8, .78], [110, .5, .16], [0, .8, .44], [60, .9, .91]] },
+  /* Added with the logic studies. Signal is the benchmark look in 18 hues: pale
+   * stock, one electric accent, a dark ink and a bright complementary trace.
+   * Bitmap is the limited, high-contrast register of early colour graphics on a
+   * dark field. Midtone puts a mid-lightness ground under light and dark inks. */
+  { name: 'Stock', collection: 'signal', roles: [[60, .06, .955], [0, .95, .6], [200, .25, .2], [0, .2, .55], [180, .9, .82]] },
+  { name: 'Latch', collection: 'signal', roles: [[200, .08, .94], [0, .9, .55], [0, .5, .25], [120, .6, .7], [-120, .8, .82]] },
+  { name: 'Sync', collection: 'signal', roles: [[0, .12, .93], [180, .95, .62], [0, .6, .28], [180, .35, .48], [60, .9, .85]] },
+  { name: 'Tear', collection: 'signal', roles: [[30, .05, .965], [0, .98, .5], [0, .1, .15], [-30, .7, .78], [150, .85, .68]] },
+  { name: 'Plane', collection: 'bitmap', roles: [[0, .3, .12], [0, .95, .62], [180, .2, .93], [0, .55, .38], [120, .9, .78]] },
+  { name: 'Mask', collection: 'bitmap', roles: [[200, .35, .17], [60, .95, .75], [0, .1, .97], [0, .8, .5], [-60, .85, .68]] },
+  { name: 'Sprite', collection: 'bitmap', roles: [[0, .15, .1], [0, .9, .68], [0, .35, .9], [150, .8, .5], [-150, .85, .8]] },
+  { name: 'Raster', collection: 'bitmap', roles: [[0, .55, .22], [0, .9, .7], [40, .15, .95], [180, .75, .55], [180, .6, .85]] },
+  { name: 'Slab', collection: 'midtone', roles: [[0, .35, .55], [180, .85, .8], [0, .4, .16], [0, .5, .35], [60, .6, .92]] },
+  { name: 'Plaster', collection: 'midtone', roles: [[30, .12, .68], [0, .9, .48], [0, .3, .2], [200, .35, .45], [0, .2, .95]] },
+  { name: 'Bloc', collection: 'midtone', roles: [[0, .5, .48], [120, .8, .8], [0, .1, .1], [240, .6, .3], [0, .3, .93]] },
+  { name: 'Tarmac', collection: 'midtone', roles: [[0, .08, .42], [0, .95, .7], [0, .05, .95], [0, .1, .22], [180, .7, .8]] },
 ];
 /** Eighteen anchors spaced evenly (20°) around the OKLCH hue circle. */
 const hues: readonly (readonly [string, number])[] = [['Rose', 5], ['Scarlet', 25], ['Copper', 45], ['Amber', 65], ['Marigold', 85], ['Citron', 105], ['Lime', 125], ['Fern', 145], ['Jade', 165], ['Lagoon', 185], ['Cyan', 205], ['Glacier', 225], ['Azure', 245], ['Cobalt', 265], ['Iris', 285], ['Violet', 305], ['Orchid', 325], ['Magenta', 345]];
@@ -167,9 +191,9 @@ export function paletteVibes(colors: readonly string[]): PaletteVibes {
   };
 }
 
-/** 12 signatures + 32 structures × 18 hue anchors (576) + 85 earlier hand-authored
+/** 12 signatures + 44 structures × 18 hue anchors (792) + 85 earlier hand-authored
  * palettes (Mood, Hours, Weather, Cinema, Genre) + 56 in Machines, Movements,
- * Materials and Now = 729. */
+ * Materials and Now + 55 in Glitch, Circuits, Signage and Cartography = 1000. */
 export const palettePresets: PalettePreset[] = [
   ...signatures.map(p => ({ ...p, collection: 'signature' as const })),
   ...templates.flatMap(template => hues.map(([hue, angle]) => ({
@@ -181,6 +205,7 @@ export const palettePresets: PalettePreset[] = [
   ...moodPalettes.map(p => ({ ...p, collection: 'mood' as const })),
   ...curatedPalettes,
   ...studioPalettes,
+  ...logicPalettes,
 ];
 const vibeWords = new Map(palettePresets.map(p => { const v = paletteVibes(p.colors); return [p.id, `${v.tone} ${v.energy} ${v.temperature}`]; }));
 export const vibeOf = (palette: PalettePreset) => paletteVibes(palette.colors);

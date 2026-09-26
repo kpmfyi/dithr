@@ -2,6 +2,7 @@ import { createMechanism } from './mechanism';
 import { createPattern } from './pattern';
 import { createRaster } from './raster';
 import { createMatter } from './matter';
+import { createLogic } from './logic';
 import { createSynthesis } from './synthesis';
 import { createIntricacy } from './intricacy';
 import { createEntropy } from './entropy';
@@ -9,7 +10,7 @@ import { createDamage } from './damage';
 import { Color, Vector3 } from 'three';
 import { MeshBasicNodeMaterial, type Node } from 'three/webgpu';
 import { Fn, abs, cos, exp, float, floor, fract, fwidth, length, max, min, mix, sin, smoothstep, uniform, uv, vec2, vec3 } from 'three/tsl';
-import { isPattern, isRaster, isMatter, isMechanism, isSynthesis, isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, type Recipe } from './recipes';
+import { isPattern, isRaster, isMatter, isLogic, isMechanism, isSynthesis, isPixelSorter, isDeparture, isDamage, isEntropy, isIntricacy, type Recipe } from './recipes';
 import { additionalColor } from './additional-effects';
 import { createDeparture } from './departures';
 import { createPixelSorter } from './pixel-sorters';
@@ -23,7 +24,7 @@ export function createEffect(recipe: Recipe) {
     intensity: uniform(recipe.parameters.intensity), detail: uniform(recipe.parameters.detail),
     aspect: uniform(1), colors: recipe.palette.map(hex => { const c = new Color(hex); return uniform(new Vector3(c.r, c.g, c.b)); }),
   };
-  const feedback = isPattern(recipe.family) ? createPattern(u, recipe.family) : isRaster(recipe.family) ? createRaster(u, recipe.family) : isMatter(recipe.family) ? createMatter(u, recipe.family) : isMechanism(recipe.family) ? createMechanism(u, recipe.family) : isSynthesis(recipe.family) ? createSynthesis(u, recipe.family) : recipe.family === 'broken-lcd' ? createBrokenLcd(u) : isPixelSorter(recipe.family) ? createPixelSorter(u, recipe.family) : isDeparture(recipe.family) ? createDeparture(u, recipe.family) : isDamage(recipe.family) ? createDamage(u, recipe.family) : isEntropy(recipe.family) ? createEntropy(u, recipe.family) : isIntricacy(recipe.family) ? createIntricacy(u, recipe.family) : undefined;
+  const feedback = isPattern(recipe.family) ? createPattern(u, recipe.family) : isRaster(recipe.family) ? createRaster(u, recipe.family) : isMatter(recipe.family) ? createMatter(u, recipe.family) : isLogic(recipe.family) ? createLogic(u, recipe.family) : isMechanism(recipe.family) ? createMechanism(u, recipe.family) : isSynthesis(recipe.family) ? createSynthesis(u, recipe.family) : recipe.family === 'broken-lcd' ? createBrokenLcd(u) : isPixelSorter(recipe.family) ? createPixelSorter(u, recipe.family) : isDeparture(recipe.family) ? createDeparture(u, recipe.family) : isDamage(recipe.family) ? createDamage(u, recipe.family) : isEntropy(recipe.family) ? createEntropy(u, recipe.family) : isIntricacy(recipe.family) ? createIntricacy(u, recipe.family) : undefined;
   const material = feedback?.material ?? new MeshBasicNodeMaterial();
   material.depthTest = false;
   material.depthWrite = false;
