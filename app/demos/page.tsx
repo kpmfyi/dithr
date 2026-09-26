@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import { demos, findDemo } from '../../src/demos/catalog';
-import { families, isCrisp, isDamage, isEntropy, isMechanism, isSynthesis, isIntricacy, isPattern, isRaster, isMatter, serializeRecipe } from '../../src/seedbank/recipes';
+import { families, isCrisp, isDamage, isEntropy, isMechanism, isSynthesis, isIntricacy, isPattern, isRaster, isMatter, isLogic, serializeRecipe } from '../../src/seedbank/recipes';
 import { paletteTheme } from '../../src/workbench/theme';
 import { Icon } from '../components/icons';
 import { PaletteRail } from '../components/palette-rail';
@@ -94,7 +94,7 @@ surface.render(recipe.time); // the curated frozen moment
         </div>
         <div className="context-workspace">
           <div className="context-preview">
-            <div className={`usage-stage scene-${selected.family}${isDamage(selected.family) || isEntropy(selected.family) || isIntricacy(selected.family) || (isSynthesis(selected.family) || isMechanism(selected.family)) ? ' scene-damage' : ''}${isPattern(selected.family) ? ' scene-pattern' : isRaster(selected.family) ? ' scene-raster' : isMatter(selected.family) ? ' scene-matter' : ''}`} data-family={selected.family} key={selected.family} role="group" aria-label={`${selected.title} composition`}>
+            <div className={`usage-stage scene-${selected.family}${isDamage(selected.family) || isEntropy(selected.family) || isIntricacy(selected.family) || (isSynthesis(selected.family) || isMechanism(selected.family)) || isLogic(selected.family) ? ' scene-damage' : ''}${isPattern(selected.family) ? ' scene-pattern' : isRaster(selected.family) ? ' scene-raster' : isMatter(selected.family) ? ' scene-matter' : ''}`} data-family={selected.family} key={selected.family} role="group" aria-label={`${selected.title} composition`}>
               <Scene family={selected.family} surface={mounted ? <ShaderSurface demo={selected} playing={playing} reset={reset} onReport={onReport}/> : null}/>
             </div>
             <div className="context-transport">

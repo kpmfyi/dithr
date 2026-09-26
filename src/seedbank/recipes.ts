@@ -1,13 +1,14 @@
 import { patternFamilies, isPattern, patternInfo, patternPresets, type PatternFamily } from './pattern-meta.ts';
 import { rasterFamilies, isRaster, rasterInfo, rasterPresets, type RasterFamily } from './raster-meta.ts';
 import { matterFamilies, isMatter, matterInfo, matterPresets, type MatterFamily } from './matter-meta.ts';
-export { patternFamilies, isPattern, rasterFamilies, isRaster, matterFamilies, isMatter, type PatternFamily, type RasterFamily, type MatterFamily };
+import { logicFamilies, isLogic, logicInfo, logicPresets, type LogicFamily } from './logic-meta.ts';
+export { patternFamilies, isPattern, rasterFamilies, isRaster, matterFamilies, isMatter, logicFamilies, isLogic, type PatternFamily, type RasterFamily, type MatterFamily, type LogicFamily };
 export const RECIPE_VERSION = 1 as const;
 export const GENERATOR_VERSION = '1.9.0' as const;
 export type GeneratorVersion = '1.0.0' | '1.1.0' | '1.2.0' | '1.3.0' | '1.4.0' | '1.5.0' | '1.6.0' | '1.7.0' | '1.8.0' | typeof GENERATOR_VERSION;
 const generatorVersions: readonly string[] = ['1.0.0', '1.1.0', '1.2.0', '1.3.0', '1.4.0', '1.5.0', '1.6.0', '1.7.0', '1.8.0', GENERATOR_VERSION];
-/** Pattern, raster and matter studies (61–90) share the kit lifecycle and generator 1.9.0. */
-export const isKit = (family: string) => isPattern(family) || isRaster(family) || isMatter(family);
+/** Pattern, raster, matter and logic studies (61–100) share the kit lifecycle and generator 1.9.0. */
+export const isKit = (family: string) => isPattern(family) || isRaster(family) || isMatter(family) || isLogic(family);
 export const pixelSorterFamilies = ['crosscurrent', 'undertow', 'downpour', 'faultline'] as const;
 export type PixelSorterFamily = typeof pixelSorterFamilies[number];
 export const isPixelSorter = (family: string): family is PixelSorterFamily => pixelSorterFamilies.some(value => value === family);
@@ -35,7 +36,7 @@ export function advanceTime(family: string, time: number, delta: number) {
   return isEntropy(family) || isIntricacy(family) || isSynthesis(family) || isMechanism(family) || isKit(family) ? Math.min(timeLimit(family), time + delta) : (time + delta) % 3600;
 }
 export const isCrisp = (family: string) => family === 'broken-lcd' || isPixelSorter(family) || isDeparture(family) || isDamage(family) || isEntropy(family) || isIntricacy(family) || isSynthesis(family) || isMechanism(family) || isKit(family);
-export type Family = 'caustics' | 'phosphor' | 'halftone' | 'ink' | 'iridescence' | 'shafts' | 'aurora' | 'moire' | 'contours' | 'weave' | 'dunes' | 'ripples' | 'starfield' | 'marble' | 'glass' | 'broken-lcd' | PixelSorterFamily | DepartureFamily | DamageFamily | EntropyFamily | IntricacyFamily | SynthesisFamily | MechanismFamily | PatternFamily | RasterFamily | MatterFamily;
+export type Family = 'caustics' | 'phosphor' | 'halftone' | 'ink' | 'iridescence' | 'shafts' | 'aurora' | 'moire' | 'contours' | 'weave' | 'dunes' | 'ripples' | 'starfield' | 'marble' | 'glass' | 'broken-lcd' | PixelSorterFamily | DepartureFamily | DamageFamily | EntropyFamily | IntricacyFamily | SynthesisFamily | MechanismFamily | PatternFamily | RasterFamily | MatterFamily | LogicFamily;
 export type Backend = 'auto' | 'webgpu' | 'webgl2';
 export type Parameters = { scale: number; speed: number; intensity: number; detail: number };
 export type Palette = [string, string] | [string, string, string] | [string, string, string, string] | [string, string, string, string, string];
@@ -128,7 +129,7 @@ export const families: Record<Family, { name: string; subtitle: string; descript
   'loupe': { name: 'Loupe', subtitle: "Resolution fails in circles.", description: "Hard-edged lenses crush the moving image into growing mosaic cells; currents tear the enlarged blocks apart.", detail: 'Mosaic size', number: '58' },
   'scanhead': { name: 'Scanhead', subtitle: "Three heads write; every row slips.", description: "Rolling write heads lay down fresh detail while row bands slide and wrap at their own changing speeds.", detail: 'Incision density', number: '59' },
   'interlace': { name: 'Interlace', subtitle: "Two fields, two currents.", description: "Odd and even rows carry different images through different currents, combing every moving edge.", detail: 'Incision density', number: '60' },
-  ...patternInfo, ...rasterInfo, ...matterInfo,
+  ...patternInfo, ...rasterInfo, ...matterInfo, ...logicInfo,
 };
 /** Complete registry, including deprecated recipes for import compatibility. */
 export const allPresets: Recipe[] = [
@@ -210,9 +211,9 @@ export const allPresets: Recipe[] = [
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "rolling-writes", "name": "Scanhead / mechanism study", "kind": "animated-shader", "family": "scanhead", "seed": 28453, "time": 3.25, "parameters": {"scale": 2.6, "speed": 1.5, "intensity": 1.1, "detail": 0.66}, "palette": ["#e8f1f5", "#ff2e97", "#003049"], "tags": ["mechanism", "rolling shutter", "scanlines", "crisp"], "review": "candidate"},
   {"schemaVersion": 1, "generatorVersion": "1.7.0", "id": "combed-fields", "name": "Interlace / mechanism study", "kind": "animated-shader", "family": "interlace", "seed": 46099, "time": 3.25, "parameters": {"scale": 2.5, "speed": 1.5, "intensity": 1.1, "detail": 0.62}, "palette": ["#171a2b", "#3cf2c8", "#ff7a45"], "tags": ["mechanism", "interlace", "scanlines", "crisp"], "review": "candidate"},
 
-  ...patternPresets, ...rasterPresets, ...matterPresets,
+  ...patternPresets, ...rasterPresets, ...matterPresets, ...logicPresets,
 ];
-/** Browsing order: the ten user-endorsed crisp studies, then damage, entropy, intricacy, synthesis, mechanism, pattern, raster and matter studies. */
+/** Browsing order: the ten user-endorsed crisp studies, then damage, entropy, intricacy, synthesis, mechanism, pattern, raster, matter and logic studies. */
 export const presets = allPresets.filter(recipe => isCrisp(recipe.family));
 export const deprecatedPresets = allPresets.filter(recipe => !isCrisp(recipe.family));
 

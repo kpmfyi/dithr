@@ -4,15 +4,15 @@ import { paletteCollections, palettePresets, paletteQuality, filterPalettes, pal
 import { defaultLocks, explore, type Locks } from '../src/workbench/exploration.ts';
 import { presets, parseRecipe, serializeRecipe, GENERATOR_VERSION } from '../src/seedbank/recipes.ts';
 
-test('729 palettes contain distinct combinations, portable hex colors and perceptually separated roles', () => {
-  assert.equal(palettePresets.length, 729);
-  assert.equal(new Set(palettePresets.map(p => p.id)).size, 729);
-  assert.equal(new Set(palettePresets.map(p => p.name)).size, 729);
+test('1000 palettes contain distinct combinations, portable hex colors and perceptually separated roles', () => {
+  assert.equal(palettePresets.length, 1000);
+  assert.equal(new Set(palettePresets.map(p => p.id)).size, 1000);
+  assert.equal(new Set(palettePresets.map(p => p.name)).size, 1000);
   // A reordered color set does not count as an additional color combination.
-  assert.equal(new Set(palettePresets.map(p => [...p.colors].sort().join(','))).size, 729);
-  for (const collection of paletteCollections) assert.equal(filterPalettes(collection.id).length, collection.id === 'signature' ? 12 : ({ mood: 35, hours: 12, weather: 12, cinema: 12, genre: 14, machines: 14, movements: 14, materials: 14, now: 14 } as Record<string, number>)[collection.id] ?? 72);
+  assert.equal(new Set(palettePresets.map(p => [...p.colors].sort().join(','))).size, 1000);
+  for (const collection of paletteCollections) assert.equal(filterPalettes(collection.id).length, collection.id === 'signature' ? 12 : ({ mood: 35, hours: 12, weather: 12, cinema: 12, genre: 14, machines: 14, movements: 14, materials: 14, now: 14, glitch: 14, circuits: 14, signage: 14, maps: 13 } as Record<string, number>)[collection.id] ?? 72);
   // Hand-authored collections carry five distinct roles.
-  for (const id of ['signature', 'mood', 'hours', 'weather', 'cinema', 'genre', 'machines', 'movements', 'materials', 'now']) assert.ok(filterPalettes(id).every(p => p.colors.length === 5 && new Set(p.colors).size === 5), id);
+  for (const id of ['signature', 'mood', 'hours', 'weather', 'cinema', 'genre', 'machines', 'movements', 'materials', 'now', 'glitch', 'circuits', 'signage', 'maps']) assert.ok(filterPalettes(id).every(p => p.colors.length === 5 && new Set(p.colors).size === 5), id);
   for (const palette of palettePresets) {
     const quality = paletteQuality(palette.colors);
     assert.ok(quality.contrast >= (palette.collection === 'signature' ? 3 : 5), palette.id);
@@ -72,7 +72,7 @@ test('generated structures sit on evenly spaced OKLCH hues with a balanced mix o
   const { hexToOklch } = await import('../src/workbench/oklab.ts');
   const { paletteVibes } = await import('../src/workbench/palettes.ts');
   // Each structure's 18 variants keep one value pattern: ground lightness varies little around the wheel.
-  for (const collection of ['electric', 'print', 'night', 'earth', 'pastel', 'duotone', 'industrial', 'experimental']) {
+  for (const collection of ['electric', 'print', 'night', 'earth', 'pastel', 'duotone', 'industrial', 'experimental', 'signal', 'bitmap', 'midtone']) {
     const byTemplate = new Map<string, number[]>();
     for (const p of filterPalettes(collection)) { const t = p.name.split(' ').slice(1).join(' '); byTemplate.set(t, [...(byTemplate.get(t) ?? []), hexToOklch(p.colors[0])[0]]); }
     for (const [name, grounds] of byTemplate) { assert.equal(grounds.length, 18, name); assert.ok(Math.max(...grounds) - Math.min(...grounds) < .16, `${name} ground lightness spread`); }
