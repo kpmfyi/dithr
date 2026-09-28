@@ -1,0 +1,56 @@
+name: Validate and deploy to Cloudflare
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build:static
+      - name: Configure production deployment
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          CLOUDFLARE_DEPLOY_CONFIG: ${{ vars.CLOUDFLARE_DEPLOY_CONFIG }}
+        run: |
+          node --input-type=module <<'JS'
+          import { mkdirSync, writeFileSync } from 'node:fs';
+          if (!process.env.CLOUDFLARE_DEPLOY_CONFIG) throw new Error('Set the CLOUDFLARE_DEPLOY_CONFIG repository variable.');
+          const config = JSON.parse(process.env.CLOUDFLARE_DEPLOY_CONFIG);
+          if (!config.name || !config.account_id || !config.routes?.length) throw new Error('Deployment config needs name, account_id and routes.');
+          config.assets = { directory: '../dist/client', html_handling: 'auto-trailing-slash', not_found_handling: '404-page' };
+          mkdirSync('.local', { recursive: true });
+          writeFileSync('.local/cloudflare.json', JSON.stringify(config));
+          JS
+      - name: Deploy production
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          WRANGLER_LOG_PATH: .wrangler/wrangler.log
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo 'Set the CLOUDFLARE_API_TOKEN repository secret.'
+            exit 1
+          fi
+          ./node_modules/.bin/wrangler deploy --config .local/cloudflare.json

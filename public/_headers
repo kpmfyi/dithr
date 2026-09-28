@@ -1,0 +1,7 @@
+# Keep the static React payloads correctly typed on Cloudflare.
+/*.rsc
+  Content-Type: text/x-component
+
+# Content-hashed assets are safe to cache across deployments.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,4 +1,4 @@
-import { allPresets, controls, families, GENERATOR_VERSION, validateRecipe, type Parameters, type Recipe, type PaletteSize } from '../seedbank/recipes.ts';
+import { presets, allPresets, controls, families, GENERATOR_VERSION, validateRecipe, type Parameters, type Recipe, type PaletteSize } from '../seedbank/recipes.ts';
 
 import { palettePresets, paletteVariant, type PalettePreset } from './palettes.ts';
 export { palettePresets } from './palettes.ts';
@@ -68,7 +68,7 @@ export const defaultScope: RollScope = { study: true, palette: true, shape: true
  * across most of its range), so nearly every roll stays inside the study's good
  * zone. Motion keeps its lock. A new study keeps the current colors unless the
  * palette is rolled too. Deterministic for a given entropy value. */
-export function roll(base: Recipe, scope: RollScope, entropy: number, locks: Locks, palettePool: readonly PalettePreset[] = palettePresets, studyPool: readonly Recipe[] = allPresets): Recipe {
+export function roll(base: Recipe, scope: RollScope, entropy: number, locks: Locks, palettePool: readonly PalettePreset[] = palettePresets, studyPool: readonly Recipe[] = presets): Recipe {
   const current = validateRecipe(base);
   if (!Number.isInteger(entropy) || entropy < 0 || entropy > 0xffffffff) throw new Error('Invalid roll entropy');
   let state = entropy >>> 0;

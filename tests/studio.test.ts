@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { allPresets, presets, validateRecipe, controls, GENERATOR_VERSION } from '../src/seedbank/recipes.ts';
+import { allPresets, presets, deprecatedPresets, validateRecipe, controls, GENERATOR_VERSION } from '../src/seedbank/recipes.ts';
 import { decodeRecipe, encodeRecipe, recipeFromHash, recipeHash } from '../src/workbench/share.ts';
 import { paletteTheme } from '../src/workbench/theme.ts';
 import { defaultLocks, defaultScope, roll } from '../src/workbench/exploration.ts';
@@ -69,4 +69,17 @@ test('series cover the active catalog exactly once, in order', () => {
   assert.deepEqual(listed, presets.map(r => r.family));
   assert.equal(studiesIn('all').length, presets.length);
   for (const s of series) assert.equal(studiesIn(s.id).length, 10);
+});
+
+test('default study rolls use the active catalog while legacy recipes remain editable', () => {
+  const active = new Set(presets.map(recipe => recipe.family));
+  for (const base of deprecatedPresets) {
+    assert.deepEqual(decodeRecipe(encodeRecipe(base)), base);
+    for (let entropy = 0; entropy < 100; entropy++) {
+      assert.ok(active.has(roll(base, defaultScope, entropy, defaultLocks).family));
+    }
+    const edited = roll(base, { ...defaultScope, study: false }, 42, defaultLocks);
+    assert.equal(edited.family, base.family);
+    assert.deepEqual(validateRecipe(edited), edited);
+  }
 });
