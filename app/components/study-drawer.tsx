@@ -1,6 +1,6 @@
 'use client';
 import { useMemo, useState } from 'react';
-import { deprecatedPresets, families, presets, type Recipe } from '../../src/seedbank/recipes';
+import { families, presets, type Recipe } from '../../src/seedbank/recipes';
 import { series, seriesOf } from '../../src/workbench/series';
 import { Drawer } from './drawer';
 import { PaletteRail } from './palette-rail';
@@ -20,18 +20,18 @@ function Card({ recipe, current, saved, onChoose, onRemove }: { recipe: Recipe; 
   </div>;
 }
 export function StudyDrawer({ current, saved, onChoose, onRemove, onClose, seriesFilter, setSeriesFilter }: Props) {
-  const [tab, setTab] = useState<'studies' | 'saved' | 'archive'>('studies');
+  const [tab, setTab] = useState<'studies' | 'saved'>('studies');
   const [query, setQuery] = useState('');
-  const shelf = tab === 'saved' ? saved : tab === 'archive' ? deprecatedPresets : presets;
+  const shelf = tab === 'saved' ? saved : presets;
   const visible = useMemo(() => shelf.filter(r => matches(r, query) && (tab !== 'studies' || seriesFilter === 'all' || seriesOf(r.family)?.id === seriesFilter)), [shelf, query, tab, seriesFilter]);
   const grouped = tab === 'studies' && !query && seriesFilter === 'all';
   return <Drawer title="Studies" label="Study browser" onClose={onClose}
     tools={<>
-      <div className="chips" role="tablist" aria-label="Shelf">{([['studies', 'Studies', presets.length], ['saved', 'Saved', saved.length], ['archive', 'Archive', deprecatedPresets.length]] as const).map(([id, name, n]) => <button key={id} role="tab" aria-selected={tab === id} className="btn" onClick={() => setTab(id)}>{name} <span className="count">{n}</span></button>)}</div>
+      <div className="chips" role="tablist" aria-label="Shelf">{([['studies', 'Studies', presets.length], ['saved', 'Saved', saved.length]] as const).map(([id, name, n]) => <button key={id} role="tab" aria-selected={tab === id} className="btn" onClick={() => setTab(id)}>{name} <span className="count">{n}</span></button>)}</div>
       <label className="search"><span className="sr-only">Search studies</span><input type="search" aria-label="Search studies" placeholder="Search names, moods, techniques" value={query} onChange={e => setQuery(e.target.value)}/><span className="count">{visible.length}</span></label>
       {tab === 'studies' && <div className="chips" role="group" aria-label="Series">{[{ id: 'all', name: 'All' }, ...series].map(s => <button key={s.id} className="btn" aria-pressed={seriesFilter === s.id} onClick={() => setSeriesFilter(s.id)}>{s.name}</button>)}</div>}
     </>}
-    footer={<>{tab === 'studies' ? <span>{seriesFilter === 'all' ? 'Rolling a new study picks from all studies.' : `Rolling a new study picks from ${series.find(s => s.id === seriesFilter)?.name}.`}</span> : tab === 'archive' ? <span>Earlier soft-edged experiments, kept so old recipes still open.</span> : <span>Saved on this device only.</span>}
+    footer={<>{tab === 'studies' ? <span>{seriesFilter === 'all' ? 'Rolling a new study picks from all studies.' : `Rolling a new study picks from ${series.find(s => s.id === seriesFilter)?.name}.`}</span> : <span>Saved on this device only.</span>}
       <a className="btn" style={{ marginLeft: 'auto' }} href={`/demos?study=${current.family}`}>See studies in context</a></>}>
     {grouped ? series.map(s => <section className="series-block" key={s.id}><h3>{s.name}<span>{s.note}</span></h3>
       <div className="study-grid">{presets.filter(r => s.families.includes(r.family)).map(r => <Card key={r.id} recipe={r} current={r.family === current.family} onChoose={() => onChoose(r)}/>)}</div></section>)

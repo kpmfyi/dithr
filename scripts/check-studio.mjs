@@ -115,6 +115,7 @@ try {
   await page.keyboard.press('Escape');
   await page.goto(`${url}/?study=pyre`, { waitUntil: 'networkidle' }); await settle();
   await page.getByRole('button', { name: /^Studies/ }).click();
+  assert.equal(await page.getByRole('tab', { name: /Archive/ }).count(), 0);
   await page.getByRole('tab', { name: /Saved/ }).click();
   await page.getByRole('button', { name: /Studio check keeper seed/ }).click(); await settle();
   const restored = await recipe();
