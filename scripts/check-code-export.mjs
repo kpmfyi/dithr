@@ -10,6 +10,8 @@ const out=process.env.EXPORT_EVIDENCE_DIR || 'artifacts/code-export-01';
 const recipe={...presets.at(-1),seed:31415,time:123.456,generatorVersion:GENERATOR_VERSION,palette:['#132a35','#f26849','#d9eea2','#7950df','#36c4b8']};
 const output={width:864,height:1080,animate:false,backend:'webgl2'};
 const source=JSON.parse(await readFile('public/export/source.json','utf8'));
+assert.equal(source.LICENSE, await readFile('LICENSE', 'utf8'), 'Exports include the project license');
+assert.equal(source['THIRD_PARTY_LICENSES.txt'], await readFile('node_modules/three/LICENSE', 'utf8'), 'Exports preserve the dependency license');
 const files={...source,'main.js':integrationCode(recipe,output),'Shader.tsx':reactCode(recipe,output),'integration.ts':typescriptCode(recipe,output),
  'index.html':exampleHtml(output),'recipe.json':serializeRecipe(recipe),'output.json':JSON.stringify(output),'README.md':exportReadme(recipe,output),'seedbank.js':await readFile('public/export/seedbank.js','utf8')};
 for(const [name,contents] of Object.entries(files)){

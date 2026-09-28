@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import './studio.css';
-// Share cards need absolute URLs. Vercel exposes the production domain at build
-// time; SEEDBANK_SITE_URL overrides it for other hosts.
-const site = process.env.SEEDBANK_SITE_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : undefined);
+// Set the public origin at build time so share cards use absolute URLs.
+// Keep Vercel's environment fallback for existing deployments.
+const site = process.env.SEEDBANK_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : undefined);
 export const metadata: Metadata = {
   ...(site ? { metadataBase: new URL(site) } : {}),
   title: 'Dithr: roll and export pixel shaders',
