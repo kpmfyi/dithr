@@ -6,6 +6,7 @@ await build({configFile:false,publicDir:false,build:{outDir:'public/export',empt
 const files={};
 for(const name of (await readdir('src/seedbank')).filter(n=>n.endsWith('.ts')).sort())files[`src/seedbank/${name}`]=await readFile(`src/seedbank/${name}`,'utf8');
 files['THIRD_PARTY_LICENSES.txt']=await readFile('node_modules/three/LICENSE','utf8');
+files['LICENSE']=await readFile('LICENSE','utf8');
 await mkdir('public/export',{recursive:true});
 await writeFile('public/export/source.json',JSON.stringify(files));
-console.log(`Prepared portable export runtime and ${Object.keys(files).length-1} source files.`);
+console.log(`Prepared portable export runtime and ${Object.keys(files).length-2} source files, with project and dependency licenses.`);

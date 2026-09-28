@@ -14,11 +14,15 @@ const checks = [
   ['private key', /-----BEGIN (?:[A-Z]+ )?PRIVATE KEY-----/g],
   ['GitHub token', /\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,})\b/g],
   ['service token', /\b(?:sk-(?:proj-)?[A-Za-z0-9_-]{24,}|xox[baprs]-[A-Za-z0-9-]{20,}|AKIA[A-Z0-9]{16})\b/g],
+  ['Cloudflare token', /\bcf(?:ut|at)_[A-Za-z0-9_-]{20,}\b/g],
+  ['Google API key', /\bAIza[A-Za-z0-9_-]{30,}\b/g],
+  ['assistant session link', /https?:\/\/(?:claude\.ai\/code\/session[^\s<>]*|(?:chatgpt\.com|chat\.openai\.com)\/(?:c|share)\/[^\s<>]+)/gi],
+  ['hosting identity', /["'](?:account_id|projectId|orgId)["']\s*:\s*["'](?!0{8}-)[A-Za-z0-9_-]{16,}["']/g],
   ['credential in URL', /https?:\/\/[^\s/@:]+:[^\s/@]+@/g],
   ['literal credential assignment', /\b(?:api[_-]?key|access[_-]?token|auth[_-]?token|password|client[_-]?secret)\s*[=:]\s*["'][A-Za-z0-9_./+\-=]{16,}["']/gi],
 ];
 function checkBlob(path, bytes) {
-  if (excludedPath.test(path) || path === '.openai/hosting.json' || /(?:^|\/)(?:\.env(?:\..*)?|\.npmrc|\.netrc)$/.test(path) || /\.(?:key|pem|p12|pfx|keystore|bundle|service)$/.test(path)) add(path, 'local or credential file must not be tracked');
+  if (excludedPath.test(path) || path === '.openai/hosting.json' || /(?:^|\/)(?:\.env(?:\..*)?|\.dev\.vars(?:\..*)?|\.npmrc|\.netrc)$/.test(path) || /\.(?:key|pem|p12|pfx|keystore|bundle|service)$/.test(path)) add(path, 'local or credential file must not be tracked');
   // PNG text and EXIF chunks can disclose paths, author names and capture details.
   if (bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
     for (let offset = 8; offset + 12 <= bytes.length;) {
@@ -52,7 +56,8 @@ if (!stagedOnly) {
     const raw = git('cat-file', 'commit', commit).toString();
     for (const role of ['author', 'committer']) {
       const identity = raw.split('\n').find(line => line.startsWith(`${role} `));
-      if (!identity?.startsWith(`${role} Shader Seedbank Contributors <contributors@example.invalid> `)) add(`commit ${commit.slice(0, 12)}`, `review ${role} identity`);
+      const publicIdentity = new RegExp(`^${role} .+ <(?:contributors@example\\.invalid|[A-Za-z0-9+_.-]+@users\\.noreply\\.github\\.com|noreply@github\\.com)> `);
+      if (!identity || !publicIdentity.test(identity)) add(`commit ${commit.slice(0, 12)}`, `review ${role} identity`);
     }
     checkBlob(`commit ${commit.slice(0, 12)} message`, Buffer.from(raw.split('\n\n').slice(1).join('\n\n')));
     for (const record of git('ls-tree', '-r', '-z', commit).toString().split('\0').filter(Boolean)) {
