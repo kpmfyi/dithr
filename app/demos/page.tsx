@@ -124,7 +124,7 @@ surface.render(recipe.time); // the curated frozen moment
           <strong><span>{families[demo.family].number}</span>{families[demo.family].name}</strong><small>{demo.context}</small>
         </a>)}</div>
       </section>
-      <SiteCredit className="context-credit"/>
+      <SiteCredit className="context-credit" palette={selected.recipe.palette}/>
     </main>
   </div>;
 }

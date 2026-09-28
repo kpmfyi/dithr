@@ -295,7 +295,7 @@ export default function Studio() {
           {tab === 'color' && <ColorControls {...history} locks={locks} setLocks={setLocks} busy={busy} onMessage={setStatus} openPalettes={() => setDrawer('palettes')} pool={pool}/>}
           {tab === 'frame' && <FrameControls recipe={recipe} time={time} busy={busy} ready={ready} begin={begin} end={end} onSeek={seekTo} onFreeze={freeze} output={output} setOutput={setOutput} previewEdge={previewEdge} setPreviewEdge={setPreviewEdge} backend={backend} setBackend={setBackend} actualBackend={actualBackend}/>}
         </div>
-        <SiteCredit/>
+        <SiteCredit palette={recipe.palette}/>
       </aside>
     </main>
     {drawer === 'studies' && <StudyDrawer current={recipe} saved={saved} onChoose={r => { choose(r.id.startsWith('saved-') ? r : { ...r, palette: r.palette }); setDrawer(null); }} onRemove={remove} onClose={() => setDrawer(null)} seriesFilter={seriesFilter} setSeriesFilter={setSeriesFilter}/>}
